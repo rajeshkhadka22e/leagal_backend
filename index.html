@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibuwa Investments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+     <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+              },
+              fontFamily: {
+                'logo': ['Libre Baskerville', 'serif'],
+                'body': ['Raleway', 'sans-serif'],
+                'content': ['Poppins', 'sans-serif'],
+            },
+            },
+          },
+        };
+      </script>
+</head>
+    <body>
+        <!-- Navbar -->
+        <header class="fixed  top-0 left-0 w-full bg-white shadow-md z-50">
+            <div class="container px-20 mx-auto">
+                <div class="flex justify-between items-center py-4">
+                    <!-- Left Content: Logo and Name -->
+                    <div class="flex items-center space-x-2">
+                        <img src="image/logo.jpg" alt="Sibuwa Logo" class="h-16">
+                        <h1 class="text-gray-700 font-logo text-3xl font-medium">Legal <br> Avenues</h1>
+                    </div>
+                    <!-- Navigation Menu -->
+                    <div class="items-center text-lg text-gray-500 font-content font-medium">    
+                        <div class="hidden md:block text-right">
+                            <p>Call: 0123456789</p>
+                        </div>
+                        <nav class="hidden md:flex space-x-7 border-t border-gray-300 mt-2">
+                            <a href="#" class="hover:text-blue-600 hover:underline">Home</a>
+                            <a href="#" class="hover:text-blue-600 hover:underline">About Us</a>
+                            <a href="#" class="hover:text-blue-600 hover:underline">Services</a>
+                            <a href="#" class="hover:text-blue-600 hover:underline">Careers</a>
+                            <a href="#" class="hover:text-blue-600 hover:underline">Testimonials</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+
+
+        <!-- Hero Section -->
+        <section class="container px-20 mt-[10rem] mx-auto  ">
+            <div class="  grid grid-cols-1 md:grid-cols-2 gap-10 items-center my-14 ">
+                <div class="max-w-lg">
+                    <h2 class="text-5xl leading-tight font-body font-normal ">Looking for <span class="text-sky-950 font-bold">Financial Growth?</span></h2>
+                    <p class="mt-4 text-gray-600 text-2xl font-body ">Discover how we can help you grow your investments with expert advice and proven strategies.</p>
+                    <button class="mt-6 px-3.5 py-2.5 font-content text-xl  border border-gray-500 hover:border-white font-light rounded-3xl transition-colors hover:text-white hover:bg-gray-400">Know More</button>
+                </div>
+                <div class="mt-10 md:mt-0">
+                    <img src="image/hero_image.jpg" alt="Financial Growth" class="w-full ">
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- About Section -->
+        <section class="container px-20 mx-auto mb-14">
+            <div class=" md:flex items-center gap-10">
+                <div class="">
+                    <h3 class="text-5xl font-body  font-bold text-sky-950">About</h3>
+                    <div class="mt-2 w-20 h-1 bg-yellow-500"></div>
+                </div>
+                <p class="bg-yellow-50 mt-6 text-gray-600 text-2xl font-content leading-snug p-8">
+                    In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="mb-14">
+            <div class="flex flex-col  w-full">
+                <div class="absolute w-full ">
+                    <img src="image/banner-2.jpg" alt="Sibuwa Logo" class="w-full h-52 object-cover">
+
+                </div>
+                <div class="z-10 container px-20 mx-auto mt-14">
+                    <h3 class="text-white font-bold font-body text-5xl">services</h3>
+                    <div class="mt-2 w-20 h-1 bg-yellow-500"></div>
+                    <div class="rounded-2xl mt-10 bg-slate-50 shadow-md grid md:grid-cols-3 grid-cols-1 py-14 justify-between justify-items-center  px-20 font-content text-2xl font-bold text-sky-950">
+                        <div class="">
+                            <h3 class="capitalize">Risk Management</h3>
+                        </div>
+                        <div class="">
+                            <h3 class="capitalize">compilation $ regularity</h3>
+                        </div>
+                        <div class="">
+                            <h3 class="capitalize">Data analytics</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+
+        <!-- case studies -->
+         <section class="mb-14">
+            <div class="container px-20 mx-auto">
+               <div class="mb-14">
+                <h3 class="text-5xl font-body  font-bold text-sky-950">Case Studies Insights</h3>
+                <div class="mt-2 w-24 h-1 bg-yellow-500"></div>
+                
+               </div>
+            </div>
+         </section>
+       
+    </body>
+</html>
