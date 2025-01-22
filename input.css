@@ -61,7 +61,8 @@ button {
 
 .color{
     color: #002F5A;
-    font-size: 2.625rem;
+    font-size: 1.5625rem;
+    font-weight: 700;
 }
 
 
@@ -70,7 +71,7 @@ a{
     font-weight: 400;
 }
 .color span{
-    font-size:3.875rem
+    font-size:2rem;
 }
 
 
