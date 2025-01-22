@@ -1,3 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "PT Serif", serif;
+    
+}
+:root {
+    --primary-color: #002F5A;
+    --secondary-color: #FFD700;
+    --tertiary-color: #F5F5F5;
+    --quaternary-color: #F5F5F5;
+    --quinary-color: #F5F5F5;
+    --senary-color: #F5F5F5;
+    --septenary-color: #F5F5F5;
+    --octonary-color: #F5F5F5;
+    --nonary-color: #F5F5F5;
+    --denary-color: #F5F5F5;
+
+
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(105, 104, 104);
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 3.125rem;
+    color: #002F5A ;
+}
+
+h4 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #002F5A ;
+}
+
+
+ h5{
+    font-weight: 400;
+    font-size: .8rem;
+ }
+h6 {
+    font-size: 1.75rem;
+    font-weight: 300;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 300;
+
+}
+
+.color{
+    color: #002F5A;
+    font-size: 2.625rem;
+}
+
+
+a{
+    font-size: 16px;
+    font-weight: 400;
+}
+.color span{
+    font-size:3.875rem
+}
+
+
+
+.testimonials_p{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #000000;
+}
+.testimonials_p_name{
+    font-size: .875rem;
+    font-weight: 800;
+    color:  #000000;
+}
+
+.testimonials_p_name_Consultant{
+    font-family: "Manrope", sans-serif;
+    font-size:.625rem;
+    font-weight: 400;
+    color: #505050;
+}
+
+
+
