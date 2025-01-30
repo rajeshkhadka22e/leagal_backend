@@ -148,82 +148,110 @@
         </header>
     
 
-        
-<!-- services section -->
-        <div class="mt-24">
-            <div class="flex flex-col  w-full">
-                <div class="absolute w-full ">
-            <img  class="h-56 w-full object-cover " src="image/abut.png" alt="">
-                </div>
-                <div class="z-10 container px-20 mx-auto mt-14  ">
-                    <div class="rounded-2xl md:mt-24 bg-white shadow-md  py-8 justify-between flex items-center  mb-8 px-10">
-                        <div>
-                            <h3 class="">Services</h3>
-                            <div class=" w-20 h-1 bg-yellow-500"></div>
-                        </div>
-                        <a class="text-2xl font-normal text-gray-400" href="">Home > Services </a>
-                    </div>   
-                </div>
+        <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-14">
+            <div class="justify-center text-center mb-10">
+                <h3 class="text-white capitalize">Our Practice Areas</h3>
             </div>
-        </div>
-
-        <!-- management -->
-         <section class="container md:ml-auto px-10 md:px-0 mb-14 mt-10">
-            <div class="flex flex-col gap-16 md:gap-24">
-
-                <!-- risk management -->
-                <div class="grid md:grid-cols-4 items-center gap-8 md:gap-0">
-                    <h2 class="color "> Risk <br> <span class="">Management</span></h2>
-                    <div class="bg-yellow-50 col-span-3 p-10 flex flex-col rounded-3xl relative">
-                        <div class="absolute -top-8 -left-8 h-20 w-20 ">
-                            <img  src="image/logo1.png" alt="management" class="rounded-full border-yellow-500 border-2 h-20 w-20">
+    
+            <div class="w-full overflow-hidden relative">
+                <button onclick="slideLeft()"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">◀</button>
+    
+                <div id="slider"
+                    class="relative flex gap-10 overflow-x-auto scroll-smooth w-full h-[400px] custom-scrollbar">
+                    <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem] border-2 border-white px-3 py-4">
+                      <h3 class="text-white text-xl justify-center text-center">Corporate & Business Law</h3>
+                        <ul class=" flex flex-col ">
+                            <li>Company registration & compliance
+                            </li>
+                            <li>Contract drafting & review
+                            </li>
+                            <li>Mergers & acquisitions
+                            </li>
+                            <li>Corporate governance
+                            </li>
+                        </ul>
+                        <div
+                            class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                            <h3 class="text-lg font-bold mt-2 text-black">Babita KC</h3>
+                            <p class="text-sm text-black">Intellectual Property Lawyer</p>
                         </div>
-                        <div class=" relative gap-4">
-                            <p class="md:max-w-screen-md text-gray-500 items-start">
-                                In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum repellendus tempore ullam enim corrupti ut suscipit animi? Reprehenderit nesciunt natus aperiam laboriosam atque tempore aspernatur neque, placeat optio quo non?
-                            </p>
-                            <button class="px-5 py-3 border rounded-3xl border-gray-400 bg-yellow-50 mt-4 capitalize">know more</button>
+                    </div>
+    
+                    <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                        <figure>
+                            <img class="w-full h-[300px] object-cover rounded-lg" src="image/lawer1.jpg" alt="">
+                        </figure>
+                        <div
+                            class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                            <h3 class="text-lg font-bold mt-2 text-black">Samita Oli</h3>
+                            <p class="text-sm text-black">Corporate Lawyer</p>
+                        </div>
+                    </div>
+    
+                    <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                        <figure>
+                            <img class="w-full h-[300px] object-cover rounded-lg" src="image/lawer2.jpg" alt="">
+                        </figure>
+                        <div
+                            class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                            <h3 class="text-lg font-bold mt-2 text-black capitalize">Sarmila KC</h3>
+                            <p class="text-sm text-black">Bankruptcy Lawyer</p>
+                        </div>
+                    </div>
+    
+                    <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                        <figure>
+                            <img class="w-full h-[300px] object-cover rounded-lg" src="image/lawer4.jpg" alt="">
+                        </figure>
+                        <div
+                            class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                            <h3 class="text-lg font-bold mt-2 text-black capitalize">Rahul Sharma</h3>
+                            <p class="text-sm text-black">Criminal Lawyer</p>
+                        </div>
+                    </div>
+    
+                    <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                        <figure>
+                            <img class="w-full h-[300px] object-cover rounded-lg" src="image/lawer1.jpg" alt="">
+                        </figure>
+                        <div
+                            class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                            <h3 class="text-lg font-bold mt-2 text-black">Samita Oli</h3>
+                            <p class="text-sm text-black">Corporate Lawyer</p>
+                        </div>
+                    </div>
+    
+                    <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                        <figure>
+                            <img class="w-full h-[300px] object-cover rounded-lg" src="image/lawer2.jpg" alt="">
+                        </figure>
+                        <div
+                            class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                            <h3 class="text-lg font-bold mt-2 text-black capitalize">Sarmila KC</h3>
+                            <p class="text-sm text-black">Bankruptcy Lawyer</p>
+                        </div>
+                    </div>
+    
+                    <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                        <figure>
+                            <img class="w-full h-[300px] object-cover rounded-lg" src="image/lawer4.jpg" alt="">
+                        </figure>
+                        <div
+                            class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                            <h3 class="text-lg font-bold mt-2 text-black capitalize">Rahul Sharma</h3>
+                            <p class="text-sm text-black">Criminal Lawyer</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- compliance & regularity -->
-                <div class="grid md:grid-cols-4 items-center gap-8 md:gap-0">
-                    <h2 class="color"> Compliance & <br> <span class="">Regularity</span></h2>
-                    <div class="bg-yellow-50 col-span-3 p-10 flex flex-col rounded-3xl relative">
-                        <div class="absolute -top-8 -left-8 h-20 w-20">
-                            <img  src="image/logo2.png" alt="management" class="rounded-full border-yellow-500 border-2 h-20 w-20">
-                        </div>
-                        <div class=" relative gap-4">
-                            <p class="md:max-w-screen-md text-gray-500 items-start">
-                                In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, nostrum quod! Atque saepe, quis quas quo exercitationem sapiente, quisquam nisi reiciendis nostrum tempora nesciunt iure velit tenetur inventore molestias quae.
-                            </p>
-                            <button class="px-5 py-3 border rounded-3xl border-gray-300 bg-yellow-50 capitalize mt-4">know more</button>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="grid md:grid-cols-4 items-center gap-8 md:gap-0">
-                    <h2 class="color"> Data <br><span class="">Analytics</span></h2>
-                    <div class="bg-yellow-50 col-span-3 p-10 flex flex-col rounded-3xl relative">
-                        <div class="absolute -top-8 -left-8 h-20 w-20 ">
-                            <img  src="image/logo3.png" alt="management" class="rounded-full border-yellow-500 border-2 h-20 w-20">
-                        </div>
-                        <div class=" relative gap-4">
-                            <p class="md:max-w-screen-md text-gray-30 items-start">
-                                In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas reprehenderit deleniti architecto ipsum maxime a, cupiditate, facilis voluptatem, incidunt cum officia qui et itaque! Quis esse sunt tempore totam laborum?
-                            </p>
-                            <button class="px-5 py-3 border rounded-3xl border-gray-300 bg-yellow-50 mt-4 capitalize">know more</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
+    
+                <button onclick="slideRight()"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 items-center text-center justify-center  rounded-full z-10">▶</button>
             </div>
-         </section>
-
+    
+    
+        </section>
+<script src="script.js"></script>
     </body>
 </html>
     
