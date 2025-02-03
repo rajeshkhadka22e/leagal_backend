@@ -1,0 +1,667 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legal Avenues</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <!-- Your custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="font-body lg:mb-10 mb-3 ">
+    <!-- Navbar -->
+    <header class="w-full bg-white relative shadow-md z-50 min-h-[8.75rem]">
+        <div class="bg-[#1F3F5C] lg:px-[6.25rem] px-4">
+            <div class="flex justify-between items-center py-3 text-white">
+                <p class="">Call 9801064680</p>
+                <div class="flex space-x-4 justify-center">
+                    <a href="https://www.facebook.com/avenues.legal/?profile_tab_item_selected=about&_rdr"
+                        target="_blank" aria-label="Facebook" class="hover:text-blue-200">
+                        <svg class="h-4 w-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_17_61)">
+                                <path
+                                    d="M24 0C10.7453 0 0 10.7453 0 24C0 35.255 7.74912 44.6995 18.2026 47.2934V31.3344H13.2538V24H18.2026V20.8397C18.2026 12.671 21.8995 8.8848 29.9194 8.8848C31.44 8.8848 34.0637 9.18336 35.137 9.48096V16.129C34.5706 16.0694 33.5866 16.0397 32.3645 16.0397C28.4294 16.0397 26.9088 17.5306 26.9088 21.4061V24H34.7482L33.4013 31.3344H26.9088V47.8243C38.7926 46.3891 48.001 36.2707 48.001 24C48 10.7453 37.2547 0 24 0Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_17_61">
+                                    <rect width="48" height="48" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram"
+                        class="hover:text-pink-500">
+                        <svg class="h-4 w-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_17_63)">
+                                <path
+                                    d="M24 4.32187C30.4125 4.32187 31.1719 4.35 33.6938 4.4625C36.0375 4.56562 37.3031 4.95938 38.1469 5.2875C39.2625 5.71875 40.0688 6.24375 40.9031 7.07812C41.7469 7.92188 42.2625 8.71875 42.6938 9.83438C43.0219 10.6781 43.4156 11.9531 43.5188 14.2875C43.6313 16.8187 43.6594 17.5781 43.6594 23.9813C43.6594 30.3938 43.6313 31.1531 43.5188 33.675C43.4156 36.0188 43.0219 37.2844 42.6938 38.1281C42.2625 39.2438 41.7375 40.05 40.9031 40.8844C40.0594 41.7281 39.2625 42.2438 38.1469 42.675C37.3031 43.0031 36.0281 43.3969 33.6938 43.5C31.1625 43.6125 30.4031 43.6406 24 43.6406C17.5875 43.6406 16.8281 43.6125 14.3063 43.5C11.9625 43.3969 10.6969 43.0031 9.85313 42.675C8.7375 42.2438 7.93125 41.7188 7.09688 40.8844C6.25313 40.0406 5.7375 39.2438 5.30625 38.1281C4.97813 37.2844 4.58438 36.0094 4.48125 33.675C4.36875 31.1438 4.34063 30.3844 4.34063 23.9813C4.34063 17.5688 4.36875 16.8094 4.48125 14.2875C4.58438 11.9437 4.97813 10.6781 5.30625 9.83438C5.7375 8.71875 6.2625 7.9125 7.09688 7.07812C7.94063 6.23438 8.7375 5.71875 9.85313 5.2875C10.6969 4.95938 11.9719 4.56562 14.3063 4.4625C16.8281 4.35 17.5875 4.32187 24 4.32187ZM24 0C17.4844 0 16.6688 0.028125 14.1094 0.140625C11.5594 0.253125 9.80625 0.665625 8.2875 1.25625C6.70312 1.875 5.3625 2.69062 4.03125 4.03125C2.69063 5.3625 1.875 6.70313 1.25625 8.27813C0.665625 9.80625 0.253125 11.55 0.140625 14.1C0.028125 16.6687 0 17.4844 0 24C0 30.5156 0.028125 31.3312 0.140625 33.8906C0.253125 36.4406 0.665625 38.1938 1.25625 39.7125C1.875 41.2969 2.69063 42.6375 4.03125 43.9688C5.3625 45.3 6.70313 46.125 8.27813 46.7344C9.80625 47.325 11.55 47.7375 14.1 47.85C16.6594 47.9625 17.475 47.9906 23.9906 47.9906C30.5063 47.9906 31.3219 47.9625 33.8813 47.85C36.4313 47.7375 38.1844 47.325 39.7031 46.7344C41.2781 46.125 42.6188 45.3 43.95 43.9688C45.2812 42.6375 46.1063 41.2969 46.7156 39.7219C47.3063 38.1938 47.7188 36.45 47.8313 33.9C47.9438 31.3406 47.9719 30.525 47.9719 24.0094C47.9719 17.4938 47.9438 16.6781 47.8313 14.1188C47.7188 11.5688 47.3063 9.81563 46.7156 8.29688C46.125 6.70312 45.3094 5.3625 43.9688 4.03125C42.6375 2.7 41.2969 1.875 39.7219 1.26562C38.1938 0.675 36.45 0.2625 33.9 0.15C31.3313 0.028125 30.5156 0 24 0Z"
+                                    fill="white" />
+                                <path
+                                    d="M24 11.6719C17.1938 11.6719 11.6719 17.1938 11.6719 24C11.6719 30.8062 17.1938 36.3281 24 36.3281C30.8062 36.3281 36.3281 30.8062 36.3281 24C36.3281 17.1938 30.8062 11.6719 24 11.6719ZM24 31.9969C19.5844 31.9969 16.0031 28.4156 16.0031 24C16.0031 19.5844 19.5844 16.0031 24 16.0031C28.4156 16.0031 31.9969 19.5844 31.9969 24C31.9969 28.4156 28.4156 31.9969 24 31.9969Z"
+                                    fill="white" />
+                                <path
+                                    d="M39.6937 11.1843C39.6937 12.778 38.4 14.0624 36.8156 14.0624C35.2219 14.0624 33.9375 12.7687 33.9375 11.1843C33.9375 9.59053 35.2313 8.30615 36.8156 8.30615C38.4 8.30615 39.6937 9.5999 39.6937 11.1843Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_17_63">
+                                    <rect width="48" height="48" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="https://np.linkedin.com/company/legal-avenues" target="_blank" aria-label="LinkedIn"
+                        class="hover:text-blue-200">
+                        <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_17_68)">
+                                <path
+                                    d="M44.4469 0H3.54375C1.58437 0 0 1.54688 0 3.45938V44.5312C0 46.4437 1.58437 48 3.54375 48H44.4469C46.4062 48 48 46.4438 48 44.5406V3.45938C48 1.54688 46.4062 0 44.4469 0ZM14.2406 40.9031H7.11563V17.9906H14.2406V40.9031ZM10.6781 14.8688C8.39062 14.8688 6.54375 13.0219 6.54375 10.7437C6.54375 8.46562 8.39062 6.61875 10.6781 6.61875C12.9563 6.61875 14.8031 8.46562 14.8031 10.7437C14.8031 13.0125 12.9563 14.8688 10.6781 14.8688ZM40.9031 40.9031H33.7875V29.7656C33.7875 27.1125 33.7406 23.6906 30.0844 23.6906C26.3812 23.6906 25.8187 26.5875 25.8187 29.5781V40.9031H18.7125V17.9906H25.5375V21.1219H25.6312C26.5781 19.3219 28.9031 17.4188 32.3625 17.4188C39.5719 17.4188 40.9031 22.1625 40.9031 28.3313V40.9031Z"
+                                    fill="white" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_17_68">
+                                    <rect width="48" height="48" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@yourprofile" target="_blank" aria-label="TikTok"
+                        class="hover:text-black">
+                        <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M34.1451 0H26.0556V32.6956C26.0556 36.5913 22.9444 39.7913 19.0725 39.7913C15.2007 39.7913 12.0894 36.5913 12.0894 32.6956C12.0894 28.8696 15.1315 25.7391 18.8651 25.6V17.3913C10.6374 17.5304 4 24.2783 4 32.6956C4 41.1827 10.7757 48 19.1417 48C27.5075 48 34.2833 41.1131 34.2833 32.6956V15.9304C37.3255 18.1565 41.059 19.4783 45 19.5479V11.3391C38.9157 11.1304 34.1451 6.12173 34.1451 0Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/+9779801064680" target="_blank" aria-label="WhatsApp"
+                        class="hover:text-green-500">
+                        <svg class="h-4 w-4" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 48L3.374 35.674C1.292 32.066 0.198 27.976 0.2 23.782C0.206 10.67 10.876 0 23.986 0C30.348 0.002 36.32 2.48 40.812 6.976C45.302 11.472 47.774 17.448 47.772 23.804C47.766 36.918 37.096 47.588 23.986 47.588C20.006 47.586 16.084 46.588 12.61 44.692L0 48ZM13.194 40.386C16.546 42.376 19.746 43.568 23.978 43.57C34.874 43.57 43.75 34.702 43.756 23.8C43.76 12.876 34.926 4.02 23.994 4.016C13.09 4.016 4.22 12.884 4.216 23.784C4.214 28.234 5.518 31.566 7.708 35.052L5.71 42.348L13.194 40.386ZM35.968 29.458C35.82 29.21 35.424 29.062 34.828 28.764C34.234 28.466 31.312 27.028 30.766 26.83C30.222 26.632 29.826 26.532 29.428 27.128C29.032 27.722 27.892 29.062 27.546 29.458C27.2 29.854 26.852 29.904 26.258 29.606C25.664 29.308 23.748 28.682 21.478 26.656C19.712 25.08 18.518 23.134 18.172 22.538C17.826 21.944 18.136 21.622 18.432 21.326C18.7 21.06 19.026 20.632 19.324 20.284C19.626 19.94 19.724 19.692 19.924 19.294C20.122 18.898 20.024 18.55 19.874 18.252C19.724 17.956 18.536 15.03 18.042 13.84C17.558 12.682 17.068 12.838 16.704 12.82L15.564 12.8C15.168 12.8 14.524 12.948 13.98 13.544C13.436 14.14 11.9 15.576 11.9 18.502C11.9 21.428 14.03 24.254 14.326 24.65C14.624 25.046 18.516 31.05 24.478 33.624C25.896 34.236 27.004 34.602 27.866 34.876C29.29 35.328 30.586 35.264 31.61 35.112C32.752 34.942 35.126 33.674 35.622 32.286C36.118 30.896 36.118 29.706 35.968 29.458Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                    <a href="mailto:avenues.legal@gmail.com" aria-label="Email" class="text-2xl hover:text-red-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                            stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="18" rx="3" fill="#FFFFFF" stroke="" />
+                            <path d="M2,6 L12,13 L22,6" stroke="#000000" fill="none" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center py-3 lg:px-[6.25rem] px-4">
+            <div class="flex items-center space-x-2 gap-1">
+                <img src="{% static 'image/image 2.png' %}" alt="Legal Avenues" class="h-14" />
+            </div>
+
+            <!-- Hamburger Menu for Mobile -->
+            <button id="menu-toggle" class="md:hidden text-gray-500 hover:text-[#025098] focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav id="menu"
+                class="hidden md:flex lg:space-x-6 space-x-2 text-base text-gray-500 font-medium items-center">
+                <a href="index.html" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Home</a>
+                <a href="about.html" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">About
+                    Us</a>
+                <a href="services.html"
+                    class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Services</a>
+                <a href="#" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Publication</a>
+                <a href="team.html" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Team</a>
+                <a href="#"
+                    class="rounded-xl text-white bg-[#025098] px-3 py-3 flex items-center gap-3 hover:bg-green-500 transition-transform"
+                    target="_blank" aria-label="Contact us">
+                    Contact us <img src="image/frame1.png" alt="contact us" />
+                </a>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class=" md:hidden absolute right-0 top-[124px] flex-col space-y-4 mt-4 bg-white p-4 z-50 rounded-b-lg  text-gray-500 font-medium">
+            <a href="index.html" class="block hover:text-[#025098]">Home</a>
+            <a href="about.html" class="block hover:text-[#025098]">About Us</a>
+            <a href="services.html" class="block hover:text-[#025098]">Services</a>
+            <a href="#" class="block hover:text-[#025098]">Publication</a>
+            <a href="team.html" class="block hover:text-[#025098]">Team</a>
+            <a href="#"
+                class="rounded-xl bg-[#025098] px-3 py-3 flex text-white items-center gap-3 hover:bg-green-500 transition-transform object-contain"
+                target="_blank" aria-label="Contact us">
+                Contact us <img src="image/Frame (1).png" alt="contact us" />
+            </a>
+        </div>
+
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-[#274F74] z-10 text-white min-w-full lg:pl-[6.25rem] md:h-[658px] ">
+        <div class="grid grid-cols-1 md:grid-cols-2 pt-[7rem] md:pt-0  lg:gap-[7.8125rem] md:h-[658px] gap-10 md:gap-0">
+            <div class="gap-10 flex flex-col py-0 md:pt-[9rem] px-4 lg:px-0 ">
+                <div class="flex flex-col gap-10">
+                    <!-- <h1>Welcome To Legal Avenues</h1> -->
+                    <h2 class="capitalize font-bold md:text-[2.5rem] text-[2rem] text-white">
+                        Dedicated to Achieving the Best Possible Outcome
+                    </h2>
+                    <p class="text-base leading-6">
+                        "Available for Justice" reflects our unwavering commitment to standing by you in your pursuit of fairness and legal solutions. With dedication, integrity, and a client-focused approach, we ensure your voice is heard and your rights are protected.
+                    </p>
+                </div>
+                <div class="flex md:gap-6 gap-4">
+                    <a href="#"
+                        class="bg-white items-center text-black flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:bg-[#3C6183] hover:text-white">View
+                        Services <img src="image/Frame.png" alt="View us" /></a>
+                    <a href="#"
+                        class="bg-[#3C6183] items-center text-white flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:text-black hover:bg-white">Contact
+                        Us <img src="image/frame1.png" alt="contact us" /></a>
+                </div>
+            </div>
+            <!-- <button class="mt-6 px-[24px] py-[12px] border bg-[#274F74] border-gray-500 hover:border-white rounded-3xl transition-colors text-white hover:bg-gray-400">
+                </button> -->
+            <div class="md:h-[658px] ">
+                <img src="image/hero__.svg" alt="Financial Growth" class="w-full object-cover h-[658px]" />
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+
+
+    <section class="bg-white lg:pl-[6.25rem] py-[6.25rem]">
+        <div class=" grid md:grid-cols-3 w-full gap-0 px-3 md:px-0 md:gap-[6.25rem]">
+            <div class="relative w-[24rem] h-[24rem] ">
+                <div
+                    class="absolute top-[1.25rem] left-[1.25rem] transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#274F74] z-10 hidden lg:flex flex-col justify-center items-center rounded-lg ">
+                    <div class="h-16 w-16 bg-white rounded-full mb-2"></div>
+                    <p class="text-3xl text-white font-bold">500+</p>
+                    <p class="text-center text-white text-sm">Customer</p>
+                </div>
+
+                <figure class="h-full">
+                    <img src="image/about_img.avif" alt="about_img" class="w-[24rem] h-[24rem] rounded object-cover" />
+                </figure>
+
+                <div
+                    class="absolute bottom-[1.25rem] right-[1.25rem] transform translate-x-1/2 translate-y-1/2 w-40 h-40 bg-slate-100 z-10 hidden lg:flex flex-col justify-center items-center rounded-lg ">
+                    <div class="h-16 w-16 bg-white rounded-full mb-2"></div>
+                    <p class="text-3xl font-bold">10+</p>
+                    <p class="text-center text-sm">Years of Experiences</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:pr-[6.25rem] col-span-2 ">
+                <h2 class="capitalize text-base ">At <span class="text-lg font-bold">Legal Avenues</span>, we understand the importance of timely and effective legal solutions. Our team works closely with clients to provide expert guidance and ensure their legal rights are protected. We offer personalized services tailored to meet the specific needs of each client, striving to achieve the best possible outcomes in every case..</p>
+
+               
+                <div class="flex relative mt-4">
+                    <p>Our mission is to deliver reliable legal advice and services with the highest ethical standards. Whether you are an individual seeking legal representation or a company in need of corporate legal services, we are here to support you.</p>
+                </div>
+                <div class="flex relative my-4 ">
+                    <p>We pride ourselves on our professionalism, integrity, and dedication to client success. Our goal is to build long-lasting relationships based on trust and mutual respect. We are committed to helping you navigate the complexities of Nepali law and ensure your legal matters are handled with the utmost care and attention.</p>
+                </div>
+                <button class="px-3 py-2 bg-blue-800 text-white max-w-32">Know Me</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- our practice  person -->
+
+    <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-14">
+        <div class="justify-center text-center mb-10">
+            <h3 class="text-white capitalize">Our Practice Areas</h3>
+        </div>
+    
+        <div class="w-full overflow-hidden relative">
+            <button onclick="slideLeft()"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">◀</button>
+    
+            <div id="slider" class="relative flex gap-10 overflow-x-auto scroll-smooth w-full h-[300px] custom-scrollbar">
+                
+                <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
+                    <figure>
+                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="image/criminal.jpeg" alt="">
+                    </figure>
+                    <div class="bg-white px-3 text-center rounded-b-lg py-3">
+                        <h3 class="text-sm font-bold text-black">Criminal Law
+                        </h3>
+                        <p class="text-sm text-black line-clamp-2 overflow-hidden">We provide legal defense and representation for individuals facing criminal charges.
+                            
+                            White-collar crimes and fraud cases
+                            Criminal defense litigation
+                            Anti-corruption laws and investigations</p>
+                        <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
+                    </div>
+                </div>
+    
+                <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
+                    <figure>
+                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="image/Bankruptcy-Law.jpg" alt="">
+                    </figure>
+                    <div class="bg-white px-3 text-center rounded-b-lg py-3">
+                        <h3 class="text-sm font-bold text-black">Banking & Finance Law</h3>
+                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance in financial transactions, banking regulations, and compliance...
+                            <span class="flex flex-col absolute">
+                                
+                                <span> Business and company registration</sapn>
+                                    <span>Foreign direct investment (FDI) advisory</span>
+                                    <span>Mergers & acquisitions (M&A)</span>
+                                    <span>Corporate governance & regulatory compliance</span>
+                                    <span>Intellectual property (trademarks, patents, copyright)</span>
+                                    <sapn>Commercial contracts and agreements</span>
+                            </span>
+                         </p>
+                        <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
+                    </div>
+                </div>
+                 
+                <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
+                    <figure>
+                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="image/criminal.jpeg" alt="">
+                    </figure>
+                    <div class="bg-white px-3 text-center rounded-b-lg py-3 ">
+                        <h3 class="text-sm font-bold text-black"> Technology, Media & Telecommunications (TMT) Law
+                        </h3>
+                        <p class="text-sm text-black overflow-hidden line-clamp-1">We assist businesses in managing legal risks in the digital and media landscape.
+
+                            Cyber law and data protection compliance
+                            E-commerce regulations
+                            IT contracts and software licensing
+                        </p>
+                        <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
+                    </div>
+                </div>
+    
+                <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
+                    <figure>
+                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="image/Bankruptcy-Law.jpg" alt="">
+                    </figure>
+                    <div class="bg-white px-3 text-center rounded-b-lg py-3">
+                        <h3 class="text-sm font-bold text-black"> Immigration & Nationality Law
+                        </h3>
+                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance in financial transactions, banking regulations, and compliance...
+                            <span class="flex flex-col absolute">
+                                
+                                    <span> Business and company registration</sapn>
+                                    <span>Foreign direct investment (FDI) advisory</span>
+                                    <span>Mergers & acquisitions (M&A)</span>
+                                    <span>Corporate governance & regulatory compliance</span>
+                                    <span>Intellectual property (trademarks, patents, copyright)</span>
+                                    <sapn>Commercial contracts and agreements</span>
+                            </span>
+                         </p>
+                        <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
+                    </div>
+                </div>
+
+                 
+            
+    
+                <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
+                    <figure>
+                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="image/Bankruptcy-Law.jpg" alt="">
+                    </figure>
+                    <div class="bg-white px-3 text-center rounded-b-lg py-3">
+                        <h3 class="text-sm font-bold text-black">Banking & Finance Law</h3>
+                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance in financial transactions, banking regulations, and compliance...
+                            <span class="flex flex-col absolute">
+                                
+                                    <span> Business and company registration</span>
+                                    <span>Foreign direct investment (FDI) advisory</span>
+                                    <span>Mergers & acquisitions (M&A)</span>
+                                    <span>Corporate governance & regulatory compliance</span>
+                                    <span>Intellectual property (trademarks, patents, copyright)</span>
+                                    <sapn>Commercial contracts and agreements</span>
+                            <span>
+                         </p>
+                        <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
+                    </div>
+                </div>
+            </div>
+            <button onclick="slideRight()"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">▶</button>
+        </div>
+    </section>
+    
+    <!-- Popup Modal -->
+    <div id="popupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-lg w-[400px] text-center">
+            <h3 id="popupTitle" class="text-lg font-bold text-black"></h3>
+            <p id="popupContent" class="text-sm text-black mt-2"></p>
+            <button onclick="closePopup()" class="mt-3 bg-[#274F74] text-white px-4 py-2 rounded-md">Complete</button>
+        </div>
+    </div>
+    
+  
+    
+    <!-- faq Section -->
+        <section class="bg-white md:px-[6.25rem] py-[6.25rem]">
+            <h2 class="text-2xl font-bold  px-6">Frequently Asked Questions</h2>
+            <div class="grid  md:grid-cols-2 gap-[6.25rem] md:max-h-[400px] md:px-0 px-3">
+                <div class="p-6  md:max-h-[400px] rounded-lg overflow-y-scroll no-scrollbar">
+                    <div class="space-y-4">
+                        <!-- FAQ Items -->
+                        <div class="">
+                            <div class="flex justify-between border-2 p-2 rounded">
+                                <button class="w-full text-left font-semibold" onclick="toggleFaq(1)">Can foreigners register
+                                    and own a company in Nepal?</button>
+                                    <div class="text-gray-400  font-bold text-2xl">+</div>
+                                </div>
+                            <p id="faq1" class="hidden text-black mt-2">approval is required from the Department of Industry
+                                (DOI) or Nepal Rastra Bank (NRB). Some industries are restricted for foreign investment, so
+                                legal consultation is recommended.</p>
+                        </div>
+                        <div class=" pb-2">
+                            <div class="flex justify-between border-2 p-2 rounded">
+                                <button class="w-full text-left font-semibold" onclick="toggleFaq(2)">How can a company be closed or dissolved in Nepal?</button>
+                                <div class="text-gray-400  font-bold text-2xl">+</div>
+                            </div>
+                            <p id="faq2" class="hidden text-black mt-2"> • Voluntary liquidation by shareholders.
+                                • Involuntary liquidation due to bankruptcy or legal violations.
+                                • Striking off by the Office of the Company Registrar (OCR) if the company fails to comply
+                                with legal requirements.
+                                The process includes settling liabilities, notifying creditors, and obtaining clearance from
+                                tax authorities.</p>
+                        </div>
+                        <div class="pb-2">
+                        <div class="flex justify-between border-2 p-2 rounded">
+                            <button class="w-full text-left font-semibold" onclick="toggleFaq(3)">How can I register a
+                                trademark in Nepal?</button>
+                                <div class="text-gray-400  font-bold text-2xl">+</div>
+
+                        </div>
+                            <p id="faq3" class="hidden text-black mt-2">To register a trademark, you must file an
+                                application with the Department of Industry (DOI) along with the brand name/logo, business
+                                details, and a prescribed fee. The process usually takes 6–12 months. Once registered, a
+                                trademark is valid for 7 years and can be renewed.
+                                What should I do if a cheque I received bounces?
+                                If a cheque you received bounces, you can file a complaint under the Negotiable Instruments
+                                Act within 5 years from the date of issuance. Legal action can be taken against the issuer
+                                for recovery of the amount</p>
+                        </div>
+                        <div class="pb-2">
+                        <div class="flex justify-between border-2 p-2 rounded">
+                            <button class="w-full text-left font-semibold" onclick="toggleFaq(4)">What should I do if I am a
+                                victim of online fraud in Nepal?</button>
+                                <div class="text-gray-400  font-bold text-2xl">+</div>
+
+                        </div>
+                            <p id="faq4" class="hidden text-black mt-2">If you are a victim of online fraud, you should:
+                                • Report the incident to the Cyber Bureau of Nepal Police.
+                                • File a complaint with the Department of Information Technology (DoIT).
+                                • Gather evidence such as messages, emails, and transaction details for investigation.
+                            </p>
+                        </div>
+                        <div class=" pb-2">
+                            <div class="flex justify-between border-2 p-2 rounded">
+                                <button class="w-full text-left font-semibold" onclick="toggleFaq(5)">What are the penalties for
+                                    cybercrime in Nepal?</button>
+                                    <div class="text-gray-400  font-bold text-2xl">+</div>
+                            </div>
+                            <p id="faq5" class="hidden text-black mt-2">Under the Electronic Transactions Act, 2008,
+                                cybercrimes such as hacking, identity theft, and online fraud can result in fines up to NPR
+                                100,000 or imprisonment up to 5 years, depending on the severity of the offense. .</p>
+                        </div>
+                        <div class=" pb-2">
+                        <div class="flex justify-between border-2 p-2 rounded">
+                            <button class="w-full text-left font-semibold" onclick="toggleFaq(6)">What is the punishment for
+                                defamation in Nepal?</button>
+                                <div class="text-gray-400  font-bold text-2xl">+</div>
+
+                        </div>
+                            <p id="faq6" class="hidden text-black mt-2">Defamation (including online defamation) is
+                                punishable under the Muluki Penal Code with fines up to NPR 30,000 or imprisonment up to 2
+                                years, depending on the nature of the case.</p>
+                        </div>
+                        <!-- <div class="border-b pb-2">
+                            <button class="w-full text-left font-semibold" onclick="toggleFaq(7)">What is this about?</button>
+                            <p id="faq7" class="hidden text-black mt-2">This is an FAQ section.</p>
+                        </div>
+                        <div class="border-b pb-2">
+                            <button class="w-full text-left font-semibold" onclick="toggleFaq(8)">How does it work?</button>
+                            <p id="faq8" class="hidden text-black mt-2">Click on a question to reveal the answer. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus sunt exercitationem, earum commodi quod soluta aliquid eaque, repudiandae deleniti, aspernatur consectetur. Consequuntur excepturi placeat reiciendis! Voluptatibus, sed aliquid. Eaque, porro.</p>
+                        </div> -->
+                    </div>
+                </div>
+
+            
+                <div class="col-span-1 max-h-[400px] ">
+                    <img src="image/law_.jpg" alt="Sample Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+            </div>
+
+
+
+         </section>
+
+
+
+
+    <!--  form  -->
+
+    <section class="bg-white px-[6.25rem]">
+        <div class="grid md:grid-cols-2 grid-cols-1 pb-[6.25rem] gap-[6.25rem]">
+            <div>
+                <img src="image/abut.png" alt="" class="rounded-lg h-full">
+            </div>
+
+
+            <form action="#" method="post" class="">
+                <h3 class="capitalize">contact us </h3>
+                <div class="flex flex-col gap-2">
+                    <label class="capitalize" for="">full name</label>
+                    <input type="text" class="py-2 border-2 border-gray-500 rounded-lg px-1 text-base"
+                        placeholder="Your Name" required>
+                    <label for="" class="capitalize">Email</label>
+                    <input type="email"
+                        class="py-2 border-2 border-gray-500 rounded-lg hover:border-black px-1 text-base"
+                        placeholder="example@gmail.com" required>
+                    <textarea name="lorem ...." id="" rows="5" cols="10"
+                        class="border-2 border-gray-500 hover:border-black text-base rounded-lg px-1 py-2"
+                        required></textarea>
+                </div>
+                <button
+                    class="border-2 border-gray-500 px-2 py-2 rounded-lg mt-2 hover:bg-[#274F74] hover:text-white transition delay-100 duration-75">Submit</button>
+            </form>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <!-- <section class="mb-14">
+        <div class="flex flex-col w-full">
+            <div class="absolute w-full">
+                <img src="image/banner_0.jpeg" alt="Sibuwa Logo" class="w-full h-[20.375rem] object-cover" />
+            </div>
+            <div class="z-10 container px-20 mx-auto mt-14">
+                <h3 class="text-white">Services</h3>
+                <div class="w-20 h-1 bg-yellow-500"></div>
+                <div
+                    class="rounded-2xl mt-[5.5rem] bg-white shadow-md grid md:grid-cols-4 grid-cols-1 py-12 justify-between justify-items-center items-center">
+                    <div class="items-center flex flex-col">
+                        <img src="image/logo1.png" alt="" />
+                        <h4 class="capitalize">civil litigation</h4>
+                    </div>
+                    <div class="items-center flex flex-col">
+                        <img src="image/logo2.png" alt="" />
+
+                        <h4 class="capitalize">corporate law</h4>
+                    </div>
+                    <div class="items-center flex flex-col">
+                        <img src="image/logo3.png" alt="" />
+                        <h4 class="capitalize">criminal defense</h4>
+                    </div>
+                    <div class="items-center flex flex-col">
+                        <img src="image/logo3.png" alt="" />
+                        <h4 class="capitalize">family law</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Publication
+         <section class="mb-14">
+            <div class="container px-20 mx-auto">
+               <div class="mb-14">
+                <h3 class="">Publication</h3>
+                <div class="mt-2 w-24 h-1 bg-yellow-500"></div>
+               </div>
+               <div class="flex items-center gap-6">
+                    <span class="">
+                        <img src="image/arrow.png" alt="arrow" class="w-10 h-10">
+                    </span>
+                    <div class="grid grid-cols-4 gap-[5.25rem]  ">
+                        <div class=" flex flex-col items-start gap-3">
+                            <div class="h-[17.5rem] w-64 bg-slate-400"></div>
+                            <h5 class=" bg-yellow-400 text-center px-7 py-1 rounded-2xl ">case studies</h5>
+                        </div>
+                        <div class=" flex flex-col items-start gap-3">
+                            <div class="h-[12.5rem] w-64 bg-slate-400"></div>
+                            <h5 class=" bg-yellow-400 text-center px-7 py-1 rounded-2xl ">case studies</h5>
+                        </div>
+                        <div class=" flex flex-col items-start gap-3">
+                            <div class="h-[22.5rem] w-64 bg-slate-400"></div>
+                            <h5 class=" bg-yellow-400 text-center px-7 py-1 rounded-2xl ">case studies</h5>
+                        </div>    
+                        <div class=" flex flex-col items-start gap-3">
+                            <div class="h-[17.5rem] w-64 bg-slate-400"></div>
+                            <h5 class=" bg-yellow-400 text-center px-7 py-1 rounded-2xl ">case studies</h5>
+                        </div>
+                    </div>
+               </div>
+
+            </div>
+         </section> -->
+
+    <!-- Testimonials -->
+    <!-- <section>
+            <div class="container px-20 mx-auto ">
+                <div class="mb-14">
+                    <h3 class="">Testimonials</h3>
+                    <div class="mt-2 w-24 h-1 bg-yellow-500"></div>
+                </div>
+                <div class="grid grid-cols-3 gap-8">
+                    <div class=" h-56 bg-[#EBF6FF] p-4 relative rounded-2xl flex flex-col  gap-4">
+                        <div class="absolute -top-10 left-6 h-[4.7344rem] w-[4.7344rem] rounded-full">
+                            <img src="image/Ellipse1.png" alt="">
+                        </div>
+                        <div class="flex justify-end ">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                        </div>
+                        <div class=" flex flex-col gap-4">
+                            <p class="testimonials_p">
+                                Website design did exactly what you said it does. Just what I was looking for. Nice work on your website design.
+                            </p>
+
+                           <div class="gap-1">
+                            <p class="testimonials_p_name">
+                                Kyle Roberts DVM
+                            </p>
+                            <p class="testimonials_p_name_Consultant">Customer Web Consultant</p>
+                           </div>
+                        </div>
+                    </div>
+
+                    <div class=" bg-[#EBF6FF] p-4 relative rounded-2xl flex flex-col  gap-4">
+                        <div class="absolute -top-10 left-6 h-[4.7344rem] w-[4.7344rem] rounded-full">
+                            <img src="image/Ellipse1.png" alt="">
+                        </div>
+                        <div class="flex justify-end ">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                        </div>
+                        <div class=" flex flex-col gap-4">
+                            <p class="testimonials_p">
+                                I will let my mum know about this, she could really make use of software! Very easy to use. Since I invested in software I made over 100,000 dollars profits. I just can't get enough of software. I want to get a T-Shirt with software on it so I can show it off to everyone.                            </p>
+
+                           <div class="gap-1">
+                            <p class="testimonials_p_name">
+                                Kyle Roberts DVM
+                            </p>
+                            <p class="testimonials_p_name_Consultant">Customer Web Consultant</p>
+                           </div>
+                        </div>
+                    </div>
+
+                    <div class="h-56 bg-[#EBF6FF] p-4 relative rounded-2xl flex flex-col  gap-4">
+                        <div class="absolute -top-10 left-6 h-[4.7344rem] w-[4.7344rem] rounded-full">
+                            <img src="image/Ellipse1.png" alt="">
+                        </div>
+                        <div class="flex justify-end ">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                            <img src="image/Star 2.png" alt="star">
+                        </div>
+                        <div class=" flex flex-col gap-4">
+                            <p class="testimonials_p">
+                                Website design did exactly what you said it does. Just what I was looking for. Nice work on your website design.
+                            </p>
+
+                           <div class="gap-1">
+                            <p class="testimonials_p_name">
+                                Kyle Roberts DVM
+                            </p>
+                            <p class="testimonials_p_name_Consultant">Customer Web Consultant</p>
+                           </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container px-20 mx-auto my-14">
+               <div class="border border-yellow-500 flex items-center text-[2.6rem]  rounded-2xl justify-between text-primary p-6">
+                <h2 class="self-start">Want to start business with us?</h2>
+                <div class="flex items-center gap-4">
+                    <h2>Lets Talk</h2>
+                    <img class="rotate-180" src="image/arrow.png" alt="">
+                 </div>
+               </div>
+               </div>
+         </section> -->
+    <!-- footer -->
+    <section>
+        <div class="bg-red-500 py-6 px-8">
+            <div class="grid grid-cols-4 container px-20 mx-auto">
+                <h2 class="text-4xl text-gray-400">About</h2>
+                <div class="flex flex-col color gap-2">
+                    <h2 class="text-4xl text-gray-400">services</h2>
+                    <a class="" href="">Risk Management</a>
+                    <a class="">compilation $ regularity</a>
+                    <a class="">Data analytics</a>
+                </div>
+                <div class="flex flex-col">
+                    <a class="text-4xl text-gray-400" href="">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</html>
