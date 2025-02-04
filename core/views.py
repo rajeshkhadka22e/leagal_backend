@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.views import View
-
+from .models import FAQ
 # Create your views here.
 
 class indexView(View):
     def get(self, request):
-        return render(request, 'index.html')
+        faqs = FAQ.objects.all()
+        return render(request, 'index.html', {'faqs': faqs})
 
 
 

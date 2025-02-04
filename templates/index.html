@@ -20,18 +20,20 @@
     <!-- Navbar -->
     {% include "navbar.html" %}
 
-     {% block hero %}
+    {% block hero %}
     <!-- Hero Section -->
     <section class="bg-[#274F74] z-10 text-white min-w-full lg:pl-[6.25rem] md:h-[658px] ">
         <div class="grid grid-cols-1 md:grid-cols-2 pt-[7rem] md:pt-0  lg:gap-[7.8125rem] md:h-[658px] gap-10 md:gap-0">
             <div class="gap-10 flex flex-col py-0 md:pt-[9rem] px-4 lg:px-0 ">
                 <div class="flex flex-col gap-10">
                     <!-- <h1>Welcome To Legal Avenues</h1> -->
-                    <h2 class="capitalize font-bold md:text-[2.5rem] text-[2rem] text-white">
+                    <h2 class="capitalize font-bold text-4xl text-white">
                         Dedicated to Achieving the Best Possible Outcome
                     </h2>
                     <p class="text-base leading-6">
-                        "Available for Justice" reflects our unwavering commitment to standing by you in your pursuit of fairness and legal solutions. With dedication, integrity, and a client-focused approach, we ensure your voice is heard and your rights are protected.
+                        "Available for Justice" reflects our unwavering commitment to standing by you in your pursuit of
+                        fairness and legal solutions. With dedication, integrity, and a client-focused approach, we
+                        ensure your voice is heard and your rights are protected.
                     </p>
                 </div>
                 <div class="flex md:gap-6 gap-4">
@@ -46,7 +48,8 @@
             <!-- <button class="mt-6 px-[24px] py-[12px] border bg-[#274F74] border-gray-500 hover:border-white rounded-3xl transition-colors text-white hover:bg-gray-400">
                 </button> -->
             <div class="md:h-[658px] ">
-                <img src="{% static 'image/hero__.svg' %}" alt="Financial Growth" class="w-full object-cover h-[658px]" />
+                <img src="{% static 'image/hero__.svg' %}" alt="Financial Growth"
+                    class="w-full object-cover h-[658px]" />
             </div>
         </div>
     </section>
@@ -55,6 +58,9 @@
 
 
     <section class="bg-white lg:pl-[6.25rem] py-[6.25rem]">
+        <h1 class="capitalize font-bold md:text-2xl text-2xl mb-14 text-[#274F74]">
+            About Legal Avenues
+        </h1>
         <div class=" grid md:grid-cols-3 w-full gap-0 px-3 md:px-0 md:gap-[6.25rem]">
             <div class="relative w-[24rem] h-[24rem] ">
                 <div
@@ -65,7 +71,8 @@
                 </div>
 
                 <figure class="h-full">
-                    <img src="{% static 'image/about_img.avif' %}" alt="about_img" class="w-[24rem] h-[24rem] rounded object-cover" />
+                    <img src="{% static 'image/about_img.avif' %}" alt="about_img"
+                        class="w-[24rem] h-[24rem] rounded object-cover" />
                 </figure>
 
                 <div
@@ -77,16 +84,27 @@
             </div>
 
             <div class="flex flex-col lg:pr-[6.25rem] col-span-2 ">
-                <h2 class="capitalize text-base ">At <span class="text-lg font-bold">Legal Avenues</span>, we understand the importance of timely and effective legal solutions. Our team works closely with clients to provide expert guidance and ensure their legal rights are protected. We offer personalized services tailored to meet the specific needs of each client, striving to achieve the best possible outcomes in every case..</p>
+                <h2 class="capitalize text-base ">At <span class="text-lg font-bold">Legal Avenues</span>, we understand
+                    the importance of timely and effective legal solutions. Our team works closely with clients to
+                    provide expert guidance and ensure their legal rights are protected. We offer personalized services
+                    tailored to meet the specific needs of each client, striving to achieve the best possible outcomes
+                    in every case..</p>
 
-               
-                <div class="flex relative mt-4">
-                    <p>Our mission is to deliver reliable legal advice and services with the highest ethical standards. Whether you are an individual seeking legal representation or a company in need of corporate legal services, we are here to support you.</p>
-                </div>
-                <div class="flex relative my-4 ">
-                    <p>We pride ourselves on our professionalism, integrity, and dedication to client success. Our goal is to build long-lasting relationships based on trust and mutual respect. We are committed to helping you navigate the complexities of Nepali law and ensure your legal matters are handled with the utmost care and attention.</p>
-                </div>
-                <button class="px-3 py-2 bg-blue-800 text-white max-w-32">Know Me</button>
+
+                    <div class="flex relative mt-4">
+                        <p>Our mission is to deliver reliable legal advice and services with the highest ethical
+                            standards. Whether you are an individual seeking legal representation or a company in need
+                            of corporate legal services, we are here to support you.</p>
+                    </div>
+                    <div class="flex relative my-4 ">
+                        <p>We pride ourselves on our professionalism, integrity, and dedication to client success. Our
+                            goal is to build long-lasting relationships based on trust and mutual respect. We are
+                            committed to helping you navigate the complexities of Nepali law and ensure your legal
+                            matters are handled with the utmost care and attention.</p>
+                    </div>
+                    <a href="#"
+                        class="bg-[#3C6183] items-center text-white px-4 py-2 rounded hover:text-black hover:bg-white min-w-6 hover:border-2  hover:border-black">Know
+                        Me</a>
             </div>
         </div>
     </section>
@@ -94,62 +112,74 @@
 
     <!-- our practice  person -->
 
-    <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-14">
+    <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-[6.25rem] relative">
         <div class="justify-center text-center mb-10">
-            <h3 class="text-white capitalize">Our Practice Areas</h3>
+            <h3 class="text-white capitalize text-2xl ">Our Practice Areas</h3>
         </div>
-    
-        <div class="w-full overflow-hidden relative">
-            <button onclick="slideLeft()"
-                class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">◀</button>
-    
-            <div id="slider" class="relative flex gap-10 overflow-x-auto scroll-smooth w-full h-[300px] custom-scrollbar">
-                
+        <button onclick="slideLeft()"
+            class="absolute left-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">
+            <p class="px-[0.68rem] py-[0.75rem]">◀</p>
+        </button>
+        <button onclick="slideRight()"
+            class="absolute right-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">▶</button>
+
+        <div class="w-full overflow-hidden ">
+
+            <div id="slider"
+                class="relative flex gap-10 overflow-x-auto scroll-smooth w-full h-[300px] custom-scrollbar">
+
                 <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
                     <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/criminal.jpeg' %}" alt="">
+                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/criminal.jpeg' %}"
+                            alt="">
                     </figure>
                     <div class="bg-white px-3 text-center rounded-b-lg py-3">
                         <h3 class="text-sm font-bold text-black">Criminal Law
                         </h3>
-                        <p class="text-sm text-black line-clamp-2 overflow-hidden">We provide legal defense and representation for individuals facing criminal charges.
-                            
+                        <p class="text-sm text-black line-clamp-2 overflow-hidden">We provide legal defense and
+                            representation for individuals facing criminal charges.
+
                             White-collar crimes and fraud cases
                             Criminal defense litigation
                             Anti-corruption laws and investigations</p>
                         <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
                     </div>
                 </div>
-    
+
                 <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
                     <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
+                        <img class="w-full h-[150px] object-cover rounded-t-lg"
+                            src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
                     </figure>
                     <div class="bg-white px-3 text-center rounded-b-lg py-3">
                         <h3 class="text-sm font-bold text-black">Banking & Finance Law</h3>
-                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance in financial transactions, banking regulations, and compliance...
+                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance
+                            in financial transactions, banking regulations, and compliance...
                             <span class="flex flex-col absolute">
-                                
+
                                 <span> Business and company registration</sapn>
                                     <span>Foreign direct investment (FDI) advisory</span>
                                     <span>Mergers & acquisitions (M&A)</span>
                                     <span>Corporate governance & regulatory compliance</span>
                                     <span>Intellectual property (trademarks, patents, copyright)</span>
-                                    <sapn>Commercial contracts and agreements</span>
+                                    <sapn>Commercial contracts and agreements
+                                </span>
                             </span>
-                         </p>
+                        </p>
                         <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
                     </div>
                 </div>
-                 
+
                 <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
                     <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/criminal.jpeg' %}" alt="">
+                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/criminal.jpeg' %}"
+                            alt="">
                     </figure>
                     <div class="bg-white px-3 text-center rounded-b-lg py-3 ">
                         <h3 class="text-sm font-bold text-black"> Technology, Media & Telecommunications (TMT) Law
                         </h3>
-                        <p class="text-sm text-black overflow-hidden line-clamp-1">We assist businesses in managing legal risks in the digital and media landscape.
+                        <p class="text-sm text-black overflow-hidden line-clamp-1">We assist businesses in managing
+                            legal risks in the digital and media landscape.
 
                             Cyber law and data protection compliance
                             E-commerce regulations
@@ -158,58 +188,64 @@
                         <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
                     </div>
                 </div>
-    
+
                 <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
                     <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
+                        <img class="w-full h-[150px] object-cover rounded-t-lg"
+                            src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
                     </figure>
                     <div class="bg-white px-3 text-center rounded-b-lg py-3">
                         <h3 class="text-sm font-bold text-black"> Immigration & Nationality Law
                         </h3>
-                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance in financial transactions, banking regulations, and compliance...
+                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance
+                            in financial transactions, banking regulations, and compliance...
                             <span class="flex flex-col absolute">
-                                
-                                    <span> Business and company registration</sapn>
+
+                                <span> Business and company registration</sapn>
                                     <span>Foreign direct investment (FDI) advisory</span>
                                     <span>Mergers & acquisitions (M&A)</span>
                                     <span>Corporate governance & regulatory compliance</span>
                                     <span>Intellectual property (trademarks, patents, copyright)</span>
-                                    <sapn>Commercial contracts and agreements</span>
+                                    <sapn>Commercial contracts and agreements
+                                </span>
                             </span>
-                         </p>
+                        </p>
                         <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
                     </div>
                 </div>
 
-                 
-            
-    
+
+
+
                 <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
                     <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
+                        <img class="w-full h-[150px] object-cover rounded-t-lg"
+                            src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
                     </figure>
                     <div class="bg-white px-3 text-center rounded-b-lg py-3">
                         <h3 class="text-sm font-bold text-black">Banking & Finance Law</h3>
-                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance in financial transactions, banking regulations, and compliance...
+                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance
+                            in financial transactions, banking regulations, and compliance...
                             <span class="flex flex-col absolute">
-                                
-                                    <span> Business and company registration</span>
-                                    <span>Foreign direct investment (FDI) advisory</span>
-                                    <span>Mergers & acquisitions (M&A)</span>
-                                    <span>Corporate governance & regulatory compliance</span>
-                                    <span>Intellectual property (trademarks, patents, copyright)</span>
-                                    <sapn>Commercial contracts and agreements</span>
+
+                                <span> Business and company registration</span>
+                                <span>Foreign direct investment (FDI) advisory</span>
+                                <span>Mergers & acquisitions (M&A)</span>
+                                <span>Corporate governance & regulatory compliance</span>
+                                <span>Intellectual property (trademarks, patents, copyright)</span>
+                                <sapn>Commercial contracts and agreements
+                            </span>
                             <span>
-                         </p>
+                        </p>
                         <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
                     </div>
                 </div>
             </div>
-            <button onclick="slideRight()"
-                class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">▶</button>
+
         </div>
+
     </section>
-    
+
     <!-- Popup Modal -->
     <div id="popupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
         <div class="bg-white p-6 rounded-lg w-[400px] text-center">
@@ -218,319 +254,96 @@
             <button onclick="closePopup()" class="mt-3 bg-[#274F74] text-white px-4 py-2 rounded-md">Complete</button>
         </div>
     </div>
-    
-  
-    
+
+
+
     <!-- faq Section -->
-        <section class="bg-white md:px-[6.25rem] py-[6.25rem]">
-            <h2 class="text-2xl font-bold  px-6">Frequently Asked Questions</h2>
-            <div class="grid  md:grid-cols-2 gap-[6.25rem] md:max-h-[400px] md:px-0 px-3">
-                <div class="p-6  md:max-h-[400px] rounded-lg overflow-y-scroll no-scrollbar">
-                    <div class="space-y-4">
-                        <!-- FAQ Items -->
-                        <div class="">
-                            <div class="flex justify-between border-2 p-2 rounded">
-                                <button class="w-full text-left font-semibold" onclick="toggleFaq(1)">Can foreigners register
-                                    and own a company in Nepal?</button>
-                                    <div class="text-gray-400  font-bold text-2xl">+</div>
-                                </div>
-                            <p id="faq1" class="hidden text-black mt-2">approval is required from the Department of Industry
-                                (DOI) or Nepal Rastra Bank (NRB). Some industries are restricted for foreign investment, so
-                                legal consultation is recommended.</p>
+    <section class="bg-white md:px-[6.25rem] py-[6.25rem]">
+        <h2 class="text-2xl font-bold mb-5 ">Frequently Asked Questions</h2>
+        <div class="grid  md:grid-cols-2 gap-[6.25rem]  md:px-0 px-3">
+            <div class="overflow-y-scroll no-scrollbar">
+                <div class="flex flex-col gap-6">
+                    <!-- FAQ Items -->
+                    {% for faq in faqs %}
+                    <div class="border-2 p-2 rounded">
+                        <div class="flex justify-between cursor-pointer" onclick="toggleFaq({{ faq.id }})">
+                            <button class="w-full text-left font-semibold">{{ faq.question }}</button>
+                            <div id="icon{{ faq.id }}" class="text-gray-400 font-bold text-2xl">+</div>
                         </div>
-                        <div class=" pb-2">
-                            <div class="flex justify-between border-2 p-2 rounded">
-                                <button class="w-full text-left font-semibold" onclick="toggleFaq(2)">How can a company be closed or dissolved in Nepal?</button>
-                                <div class="text-gray-400  font-bold text-2xl">+</div>
-                            </div>
-                            <p id="faq2" class="hidden text-black mt-2"> • Voluntary liquidation by shareholders.
-                                • Involuntary liquidation due to bankruptcy or legal violations.
-                                • Striking off by the Office of the Company Registrar (OCR) if the company fails to comply
-                                with legal requirements.
-                                The process includes settling liabilities, notifying creditors, and obtaining clearance from
-                                tax authorities.</p>
-                        </div>
-                        <div class="pb-2">
-                        <div class="flex justify-between border-2 p-2 rounded">
-                            <button class="w-full text-left font-semibold" onclick="toggleFaq(3)">How can I register a
-                                trademark in Nepal?</button>
-                                <div class="text-gray-400  font-bold text-2xl">+</div>
-
-                        </div>
-                            <p id="faq3" class="hidden text-black mt-2">To register a trademark, you must file an
-                                application with the Department of Industry (DOI) along with the brand name/logo, business
-                                details, and a prescribed fee. The process usually takes 6–12 months. Once registered, a
-                                trademark is valid for 7 years and can be renewed.
-                                What should I do if a cheque I received bounces?
-                                If a cheque you received bounces, you can file a complaint under the Negotiable Instruments
-                                Act within 5 years from the date of issuance. Legal action can be taken against the issuer
-                                for recovery of the amount</p>
-                        </div>
-                        <div class="pb-2">
-                        <div class="flex justify-between border-2 p-2 rounded">
-                            <button class="w-full text-left font-semibold" onclick="toggleFaq(4)">What should I do if I am a
-                                victim of online fraud in Nepal?</button>
-                                <div class="text-gray-400  font-bold text-2xl">+</div>
-
-                        </div>
-                            <p id="faq4" class="hidden text-black mt-2">If you are a victim of online fraud, you should:
-                                • Report the incident to the Cyber Bureau of Nepal Police.
-                                • File a complaint with the Department of Information Technology (DoIT).
-                                • Gather evidence such as messages, emails, and transaction details for investigation.
-                            </p>
-                        </div>
-                        <div class=" pb-2">
-                            <div class="flex justify-between border-2 p-2 rounded">
-                                <button class="w-full text-left font-semibold" onclick="toggleFaq(5)">What are the penalties for
-                                    cybercrime in Nepal?</button>
-                                    <div class="text-gray-400  font-bold text-2xl">+</div>
-                            </div>
-                            <p id="faq5" class="hidden text-black mt-2">Under the Electronic Transactions Act, 2008,
-                                cybercrimes such as hacking, identity theft, and online fraud can result in fines up to NPR
-                                100,000 or imprisonment up to 5 years, depending on the severity of the offense. .</p>
-                        </div>
-                        <div class=" pb-2">
-                        <div class="flex justify-between border-2 p-2 rounded">
-                            <button class="w-full text-left font-semibold" onclick="toggleFaq(6)">What is the punishment for
-                                defamation in Nepal?</button>
-                                <div class="text-gray-400  font-bold text-2xl">+</div>
-
-                        </div>
-                            <p id="faq6" class="hidden text-black mt-2">Defamation (including online defamation) is
-                                punishable under the Muluki Penal Code with fines up to NPR 30,000 or imprisonment up to 2
-                                years, depending on the nature of the case.</p>
-                        </div>
-                        <!-- <div class="border-b pb-2">
-                            <button class="w-full text-left font-semibold" onclick="toggleFaq(7)">What is this about?</button>
-                            <p id="faq7" class="hidden text-black mt-2">This is an FAQ section.</p>
-                        </div>
-                        <div class="border-b pb-2">
-                            <button class="w-full text-left font-semibold" onclick="toggleFaq(8)">How does it work?</button>
-                            <p id="faq8" class="hidden text-black mt-2">Click on a question to reveal the answer. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus sunt exercitationem, earum commodi quod soluta aliquid eaque, repudiandae deleniti, aspernatur consectetur. Consequuntur excepturi placeat reiciendis! Voluptatibus, sed aliquid. Eaque, porro.</p>
-                        </div> -->
+                        <p id="faq{{ faq.id }}" class="hidden text-black mt-2">{{ faq.answer }}</p>
                     </div>
-                </div>
+                    {% endfor %}
 
-            
-                <div class="col-span-1 max-h-[400px] ">
-                    <img src="{% static 'image/law_.jpg' %}" alt="Sample Image" class="w-full h-full object-cover rounded-lg">
                 </div>
             </div>
 
 
+            <div class="col-span-1  ">
+                <img src="{% static 'image/law_.jpg' %}" alt="Sample Image"
+                    class="w-full h-full object-cover rounded-lg">
+            </div>
+        </div>
 
-         </section>
+
+
+    </section>
 
 
 
 
     <!--  form  -->
 
-    <section class="bg-white px-[6.25rem]">
-        <div class="grid md:grid-cols-2 grid-cols-1 pb-[6.25rem] gap-[6.25rem]">
-            <div>
-                <img src="{% static 'image/abut.png' %}" alt="" class="rounded-lg h-full">
-            </div>
+    <section class="bg-[#274F74]">
+        <div class="grid md:grid-cols-2 grid-cols-1 ">
 
 
-            <form action="#" method="post" class="">
-                <h3 class="capitalize">contact us </h3>
+            <form action="#" method="post" class=" px-[6.25rem] py-[6.25rem] col-span-1">
+                <h3 class="capitalize text-white text-2xl">We Are Committed To Help You With Your Requirements </h3>
                 <div class="flex flex-col gap-2">
-                    <label class="capitalize" for="">full name</label>
-                    <input type="text" class="py-2 border-2 border-gray-500 rounded-lg px-1 text-base"
-                        placeholder="Your Name" required>
-                    <label for="" class="capitalize">Email</label>
+                    <div class="flex  justify-between">
+                        <div class="flex-col flex gap-2 text-base">
+                            <label class="capitalize text-white" for="">First name</label>
+                            <input type="text"
+                                class="py-2 border bg-[#274F74] border-white rounded-lg px-1 text-base  text-white focus:outline-none"
+                                placeholder="First Name" required>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="capitalize text-white" for="">Last name</label>
+                            <input type="text" 
+                                    class="py-2 border border-white bg-[#274F74] rounded-lg px-1 text-base text-white focus:outline-none "
+                                 placeholder="Last Name">
+
+                        </div>
+                    </div>
+
+                    <label for="" class="capitalize text-white">Email</label>
                     <input type="email"
-                        class="py-2 border-2 border-gray-500 rounded-lg hover:border-black px-1 text-base"
+                        class="py-2 border bg-[#274F74] border-white rounded-lg px-1 text-base  text-white focus:outline-none"
                         placeholder="example@gmail.com" required>
-                    <textarea name="lorem ...." id="" rows="5" cols="10"
-                        class="border-2 border-gray-500 hover:border-black text-base rounded-lg px-1 py-2"
+
+                    <label for="" class="capitalize text-white">your message</label>
+                    <textarea placeholder="I want to know about..." id="" rows="5" cols="10"
+                        class="border bg-[#274F74] border-white text-base rounded-lg px-1 py-2  text-white focus:outline-none"
                         required></textarea>
                 </div>
+               <div class="flex">
                 <button
-                    class="border-2 border-gray-500 px-2 py-2 rounded-lg mt-2 hover:bg-[#274F74] hover:text-white transition delay-100 duration-75">Submit</button>
+                class="border-1 flex border border-white px-2 py-2 rounded-lg mt-2 bg-white text-black transition delay-100 duration-75">Send
+                Message <img class=' w-2' src="{% static 'image/Frame.png' %}" alt=""></button>
+               </div>
             </form>
+
+            <div class="col-span-1 w-full">
+                <img src="{% static 'image/image 3.png' %}" alt="" class=" w-full">
+            </div>
+
         </div>
     </section>
-    <!-- Services Section -->
-    <!-- <section class="mb-14">
-        <div class="flex flex-col w-full">
-            <div class="absolute w-full">
-                <img src="image/banner_0.jpeg" alt="Sibuwa Logo" class="w-full h-[20.375rem] object-cover" />
-            </div>
-            <div class="z-10 container px-20 mx-auto mt-14">
-                <h3 class="text-white">Services</h3>
-                <div class="w-20 h-1 bg-yellow-500"></div>
-                <div
-                    class="rounded-2xl mt-[5.5rem] bg-white shadow-md grid md:grid-cols-4 grid-cols-1 py-12 justify-between justify-items-center items-center">
-                    <div class="items-center flex flex-col">
-                        <img src="image/logo1.png" alt="" />
-                        <h4 class="capitalize">civil litigation</h4>
-                    </div>
-                    <div class="items-center flex flex-col">
-                        <img src="image/logo2.png" alt="" />
-
-                        <h4 class="capitalize">corporate law</h4>
-                    </div>
-                    <div class="items-center flex flex-col">
-                        <img src="image/logo3.png" alt="" />
-                        <h4 class="capitalize">criminal defense</h4>
-                    </div>
-                    <div class="items-center flex flex-col">
-                        <img src="image/logo3.png" alt="" />
-                        <h4 class="capitalize">family law</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Publication
-         <section class="mb-14">
-            <div class="container px-20 mx-auto">
-               <div class="mb-14">
-                <h3 class="">Publication</h3>
-                <div class="mt-2 w-24 h-1 bg-yellow-500"></div>
-               </div>
-               <div class="flex items-center gap-6">
-                    <span class="">
-                        <img src="image/arrow.png" alt="arrow" class="w-10 h-10">
-                    </span>
-                    <div class="grid grid-cols-4 gap-[5.25rem]  ">
-                        <div class=" flex flex-col items-start gap-3">
-                            <div class="h-[17.5rem] w-64 bg-slate-400"></div>
-                            <h5 class=" bg-yellow-400 text-center px-7 py-1 rounded-2xl ">case studies</h5>
-                        </div>
-                        <div class=" flex flex-col items-start gap-3">
-                            <div class="h-[12.5rem] w-64 bg-slate-400"></div>
-                            <h5 class=" bg-yellow-400 text-center px-7 py-1 rounded-2xl ">case studies</h5>
-                        </div>
-                        <div class=" flex flex-col items-start gap-3">
-                            <div class="h-[22.5rem] w-64 bg-slate-400"></div>
-                            <h5 class=" bg-yellow-400 text-center px-7 py-1 rounded-2xl ">case studies</h5>
-                        </div>    
-                        <div class=" flex flex-col items-start gap-3">
-                            <div class="h-[17.5rem] w-64 bg-slate-400"></div>
-                            <h5 class=" bg-yellow-400 text-center px-7 py-1 rounded-2xl ">case studies</h5>
-                        </div>
-                    </div>
-               </div>
-
-            </div>
-         </section> -->
-
-    <!-- Testimonials -->
-    <!-- <section>
-            <div class="container px-20 mx-auto ">
-                <div class="mb-14">
-                    <h3 class="">Testimonials</h3>
-                    <div class="mt-2 w-24 h-1 bg-yellow-500"></div>
-                </div>
-                <div class="grid grid-cols-3 gap-8">
-                    <div class=" h-56 bg-[#EBF6FF] p-4 relative rounded-2xl flex flex-col  gap-4">
-                        <div class="absolute -top-10 left-6 h-[4.7344rem] w-[4.7344rem] rounded-full">
-                            <img src="image/Ellipse1.png" alt="">
-                        </div>
-                        <div class="flex justify-end ">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                        </div>
-                        <div class=" flex flex-col gap-4">
-                            <p class="testimonials_p">
-                                Website design did exactly what you said it does. Just what I was looking for. Nice work on your website design.
-                            </p>
-
-                           <div class="gap-1">
-                            <p class="testimonials_p_name">
-                                Kyle Roberts DVM
-                            </p>
-                            <p class="testimonials_p_name_Consultant">Customer Web Consultant</p>
-                           </div>
-                        </div>
-                    </div>
-
-                    <div class=" bg-[#EBF6FF] p-4 relative rounded-2xl flex flex-col  gap-4">
-                        <div class="absolute -top-10 left-6 h-[4.7344rem] w-[4.7344rem] rounded-full">
-                            <img src="image/Ellipse1.png" alt="">
-                        </div>
-                        <div class="flex justify-end ">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                        </div>
-                        <div class=" flex flex-col gap-4">
-                            <p class="testimonials_p">
-                                I will let my mum know about this, she could really make use of software! Very easy to use. Since I invested in software I made over 100,000 dollars profits. I just can't get enough of software. I want to get a T-Shirt with software on it so I can show it off to everyone.                            </p>
-
-                           <div class="gap-1">
-                            <p class="testimonials_p_name">
-                                Kyle Roberts DVM
-                            </p>
-                            <p class="testimonials_p_name_Consultant">Customer Web Consultant</p>
-                           </div>
-                        </div>
-                    </div>
-
-                    <div class="h-56 bg-[#EBF6FF] p-4 relative rounded-2xl flex flex-col  gap-4">
-                        <div class="absolute -top-10 left-6 h-[4.7344rem] w-[4.7344rem] rounded-full">
-                            <img src="image/Ellipse1.png" alt="">
-                        </div>
-                        <div class="flex justify-end ">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                            <img src="image/Star 2.png" alt="star">
-                        </div>
-                        <div class=" flex flex-col gap-4">
-                            <p class="testimonials_p">
-                                Website design did exactly what you said it does. Just what I was looking for. Nice work on your website design.
-                            </p>
-
-                           <div class="gap-1">
-                            <p class="testimonials_p_name">
-                                Kyle Roberts DVM
-                            </p>
-                            <p class="testimonials_p_name_Consultant">Customer Web Consultant</p>
-                           </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="container px-20 mx-auto my-14">
-               <div class="border border-yellow-500 flex items-center text-[2.6rem]  rounded-2xl justify-between text-primary p-6">
-                <h2 class="self-start">Want to start business with us?</h2>
-                <div class="flex items-center gap-4">
-                    <h2>Lets Talk</h2>
-                    <img class="rotate-180" src="image/arrow.png" alt="">
-                 </div>
-               </div>
-               </div>
-         </section> -->
-    <!-- footer -->
+ 
     <section>
-        <div class="bg-red-500 py-6 px-8">
-            <div class="grid grid-cols-4 container px-20 mx-auto">
-                <h2 class="text-4xl text-gray-400">About</h2>
-                <div class="flex flex-col color gap-2">
-                    <h2 class="text-4xl text-gray-400">services</h2>
-                    <a class="" href="">Risk Management</a>
-                    <a class="">compilation $ regularity</a>
-                    <a class="">Data analytics</a>
-                </div>
-                <div class="flex flex-col">
-                    <a class="text-4xl text-gray-400" href="">Get in Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    {% endblock  %}
+  
+    {% endblock %}
+    {% include "footer.html" %}
 </body>
 
 <script src="{% static 'js/script.js' %}"></script>

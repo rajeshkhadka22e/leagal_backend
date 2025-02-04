@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+    'filehub',
+
 ]
 
 MIDDLEWARE = [
@@ -122,8 +124,22 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = "media/"
+MEDIA_ROOT = "path/to/media"
+FILEHUB_LOGIN_URL = "/login/"
+DIRECTORY = "uploads"
+
+
+FILE_TYPE_CATEGORIES = {
+    'images': ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'tiff', 'webp'],
+    'videos': ['mp4', 'webm', 'ogg', 'avi', 'mkv', 'mov', 'wmv', '3gp', 'mpeg', 'mpg4'],
+    'musics': ['mp3', 'wav', 'flac', 'aac', 'wma', 'm4a'],
+    'archives': ['zip', 'rar', 'tar', 'gz']
+}
+
+FILEHUB_THEME_COLOR = "#3498db"
