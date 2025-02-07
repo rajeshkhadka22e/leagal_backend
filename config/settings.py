@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
     'filehub',
+    'core',
+    
 
 ]
 
@@ -115,6 +116,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -134,8 +136,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Where collectstatic will 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "media/"
-MEDIA_ROOT = "path/to/media"
-FILEHUB_LOGIN_URL = "/login/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DIRECTORY = "uploads"
 
 

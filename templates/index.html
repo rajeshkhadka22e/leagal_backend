@@ -41,7 +41,7 @@
                 </div>
                 <div class="flex md:gap-6 gap-4">
                     <a href="#"
-                        class="bg-white items-center text-black flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:bg-[#3C6183] hover:text-white">View
+                        class="bg-white items-center text-black flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:bg-[#3C6183] hover:text-white transition delay-150 duration-300">View
                         Services <img src="{% static 'image/Frame.png' %}" alt="View us" /></a>
                     {% comment %} <a href="#"
                         class="bg-[#3C6183] items-center text-white flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:text-black hover:bg-white">Contact
@@ -274,7 +274,7 @@
 
     <!-- faq Section -->
     <section class="bg-white md:px-[6.25rem] py-[6.25rem]">
-        <h2 class="text-2xl font-bold mb-5 ">Frequently Asked Questions</h2>
+        <h2 class="text-3xl font-bold mb-5 text-[#274F74] ">Frequently Asked Questions</h2>
         <div class="grid  md:grid-cols-2 gap-[6.25rem]  md:px-0 px-3">
             <div class=" ">
                 <div class="flex flex-col gap-6">
@@ -310,7 +310,7 @@
 
     <section class="bg-[#274F74] ">
         <div class="grid md:grid-cols-2 grid-cols-1">
-            <form action="#" method="post" class=" px-[6.25rem] py-[6.25rem] col-span-1">
+            <form action="#" method="post" class=" px-[6.25rem] py-[6.25rem] col-span-1 h-[40.625rem]">
                 <h3 class="capitalize text-white text-2xl">We Are Committed To Help You With Your Requirements </h3>
                 <div class="flex flex-col gap-2">
                     <div class=" grid grid-cols-2 gap-4 ">
@@ -338,12 +338,13 @@
                     <textarea placeholder="I want to know about..." id="" rows="5" cols="10"
                         class="border bg-[#274F74] border-white text-base rounded px-1 py-2  text-white focus:outline-none"
                         required></textarea>
+                    <div class="flex items-center text-center">
+                            <button
+                            class="border-1 flex items-center text-center  border-white px-2 py-2 rounded mt-2 bg-white text-black transition delay-100 duration-75">Send
+                            Message <img class=' w-4  ' src="{% static 'image/Frame.png' %}" alt=""></button>
+                    </div>
                 </div>
-               <div class="flex items-center text-center">
-                <button
-                class="border-1 flex items-center text-center  border-white px-2 py-2 rounded mt-2 bg-white text-black transition delay-100 duration-75">Send
-                Message <img class=' w-4  ' src="{% static 'image/Frame.png' %}" alt=""></button>
-               </div>
+            
             </form>
 
             <div class="col-span-1 w-full h-[500px] ">

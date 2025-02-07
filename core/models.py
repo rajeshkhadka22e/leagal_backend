@@ -1,5 +1,6 @@
 # models.py
 from django.db import models
+from filehub.fields import ImagePickerField
 
 class FAQ(models.Model):
     question = models.CharField(max_length=255)
@@ -13,7 +14,7 @@ class FAQ(models.Model):
 class TeamMember(models.Model):
     name = models.CharField(max_length=255)
     position = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='team/')
+    image = ImagePickerField()
     bio = models.TextField(help_text="Full detail information for this team member.")
 
     def __str__(self):
