@@ -7,8 +7,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Legal Avenues</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
     <!-- Your custom CSS -->
+     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -27,7 +30,7 @@
             <div class="gap-10 flex flex-col py-0 md:pt-[9rem] px-4 lg:px-0 ">
                 <div class="flex flex-col gap-10">
                     <!-- <h1>Welcome To Legal Avenues</h1> -->
-                    <h2 class="capitalize font-bold text-4xl text-white">
+                    <h2 class="capitalize font-bold text-[2.8rem] text-white">
                         Dedicated to Achieving the Best Possible Outcome
                     </h2>
                     <p class="text-base leading-6">
@@ -40,9 +43,9 @@
                     <a href="#"
                         class="bg-white items-center text-black flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:bg-[#3C6183] hover:text-white">View
                         Services <img src="{% static 'image/Frame.png' %}" alt="View us" /></a>
-                    <a href="#"
+                    {% comment %} <a href="#"
                         class="bg-[#3C6183] items-center text-white flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:text-black hover:bg-white">Contact
-                        Us <img src="{% static 'image/frame1.png' %}" alt="contact us" /></a>
+                        Us <img src="{% static 'image/frame1.png' %}" alt="contact us" /></a> {% endcomment %}
                 </div>
             </div>
             <!-- <button class="mt-6 px-[24px] py-[12px] border bg-[#274F74] border-gray-500 hover:border-white rounded-3xl transition-colors text-white hover:bg-gray-400">
@@ -58,7 +61,8 @@
 
 
     <section class="bg-white lg:pl-[6.25rem] py-[6.25rem]">
-        <h1 class="capitalize font-bold md:text-2xl text-2xl mb-14 text-[#274F74]">
+        <h1 class="capitalize font-bold text-3xl mb-20 text-[#274F74]"> 
+            <!-- text-center   -->
             About Legal Avenues
         </h1>
         <div class=" grid md:grid-cols-3 w-full gap-0 px-3 md:px-0 md:gap-[6.25rem]">
@@ -114,7 +118,7 @@
 
     <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-[6.25rem] relative">
         <div class="justify-center text-center mb-10">
-            <h3 class="text-white capitalize text-2xl ">Our Practice Areas</h3>
+            <h3 class="text-white capitalize font-bold text-3xl ">Our Practice Areas</h3>
         </div>
         <button onclick="slideLeft()"
             class="absolute left-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">
@@ -123,11 +127,21 @@
         <button onclick="slideRight()"
             class="absolute right-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">▶</button>
 
-        <div class="w-full overflow-hidden ">
+        <div class="w-full overflow-hidden  custom-scrollbar">
 
-            <div id="slider"
-                class="relative flex gap-10 overflow-x-auto scroll-smooth w-full h-[300px] custom-scrollbar">
+            <div id="slider" class="relative flex gap-10 overflow-x-auto scroll-smooth w-full h-[300px] custom-scrollbar">
 
+                <style>
+.custom-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.custom-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+                </style>
                 <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
                     <figure>
                         <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/criminal.jpeg' %}"
@@ -247,13 +261,14 @@
     </section>
 
     <!-- Popup Modal -->
-    <div id="popupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white p-6 rounded-lg w-[400px] text-center">
-            <h3 id="popupTitle" class="text-lg font-bold text-black"></h3>
-            <p id="popupContent" class="text-sm text-black mt-2"></p>
-            <button onclick="closePopup()" class="mt-3 bg-[#274F74] text-white px-4 py-2 rounded-md">Complete</button>
-        </div>
+<div id="popupModal" class="hidden fixed inset-0 bg-transparent flex items-center justify-center z-50"> 
+    <!-- Added 'flex items-center justify-center' to center the popup -->
+    <div class="bg-white p-6 rounded-lg w-[400px] bg-opacity-60 text-center mx-auto">
+        <h3 id="popupTitle" class="text-lg font-bold text-black"></h3>
+        <p id="popupContent" class="text-sm text-black mt-2"></p>
+        <button onclick="closePopup()" class="mt-3 bg-[#274F74] text-white px-4 py-2 rounded-md">Complete</button>
     </div>
+</div>
 
 
 
@@ -261,11 +276,11 @@
     <section class="bg-white md:px-[6.25rem] py-[6.25rem]">
         <h2 class="text-2xl font-bold mb-5 ">Frequently Asked Questions</h2>
         <div class="grid  md:grid-cols-2 gap-[6.25rem]  md:px-0 px-3">
-            <div class="overflow-y-scroll no-scrollbar">
+            <div class=" ">
                 <div class="flex flex-col gap-6">
                     <!-- FAQ Items -->
                     {% for faq in faqs %}
-                    <div class="border-2 p-2 rounded">
+                    <div class="border-2 p-2 rounded ">
                         <div class="flex justify-between cursor-pointer" onclick="toggleFaq({{ faq.id }})">
                             <button class="w-full text-left font-semibold">{{ faq.question }}</button>
                             <div id="icon{{ faq.id }}" class="text-gray-400 font-bold text-2xl">+</div>
@@ -293,24 +308,22 @@
 
     <!--  form  -->
 
-    <section class="bg-[#274F74]">
-        <div class="grid md:grid-cols-2 grid-cols-1 ">
-
-
+    <section class="bg-[#274F74] ">
+        <div class="grid md:grid-cols-2 grid-cols-1">
             <form action="#" method="post" class=" px-[6.25rem] py-[6.25rem] col-span-1">
                 <h3 class="capitalize text-white text-2xl">We Are Committed To Help You With Your Requirements </h3>
                 <div class="flex flex-col gap-2">
-                    <div class="flex  justify-between">
+                    <div class=" grid grid-cols-2 gap-4 ">
                         <div class="flex-col flex gap-2 text-base">
                             <label class="capitalize text-white" for="">First name</label>
                             <input type="text"
-                                class="py-2 border bg-[#274F74] border-white rounded-lg px-1 text-base  text-white focus:outline-none"
+                                class="py-2 border bg-[#274F74] border-white rounded px-1 text-base  text-white focus:outline-none"
                                 placeholder="First Name" required>
                         </div>
                         <div class="flex flex-col gap-2">
                             <label class="capitalize text-white" for="">Last name</label>
                             <input type="text" 
-                                    class="py-2 border border-white bg-[#274F74] rounded-lg px-1 text-base text-white focus:outline-none "
+                                    class="py-2 border border-white bg-[#274F74] rounded px-1 text-base text-white focus:outline-none "
                                  placeholder="Last Name">
 
                         </div>
@@ -318,23 +331,23 @@
 
                     <label for="" class="capitalize text-white">Email</label>
                     <input type="email"
-                        class="py-2 border bg-[#274F74] border-white rounded-lg px-1 text-base  text-white focus:outline-none"
+                        class="py-2 border bg-[#274F74] border-white rounded px-1 text-base  text-white focus:outline-none"
                         placeholder="example@gmail.com" required>
 
                     <label for="" class="capitalize text-white">your message</label>
                     <textarea placeholder="I want to know about..." id="" rows="5" cols="10"
-                        class="border bg-[#274F74] border-white text-base rounded-lg px-1 py-2  text-white focus:outline-none"
+                        class="border bg-[#274F74] border-white text-base rounded px-1 py-2  text-white focus:outline-none"
                         required></textarea>
                 </div>
-               <div class="flex">
+               <div class="flex items-center text-center">
                 <button
-                class="border-1 flex border border-white px-2 py-2 rounded-lg mt-2 bg-white text-black transition delay-100 duration-75">Send
-                Message <img class=' w-2' src="{% static 'image/Frame.png' %}" alt=""></button>
+                class="border-1 flex items-center text-center  border-white px-2 py-2 rounded mt-2 bg-white text-black transition delay-100 duration-75">Send
+                Message <img class=' w-4  ' src="{% static 'image/Frame.png' %}" alt=""></button>
                </div>
             </form>
 
-            <div class="col-span-1 w-full">
-                <img src="{% static 'image/image 3.png' %}" alt="" class=" w-full">
+            <div class="col-span-1 w-full h-[500px] ">
+                <img src="{% static 'image/image 3.png' %}" alt="" style="height: 650px;" class="h-[500px] w-full object-cover">
             </div>
 
         </div>

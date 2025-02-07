@@ -2,26 +2,59 @@
 {% load static %}
 
 {% block hero %}
-    <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-14 relative">
+    <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-14 ">
         <div class="justify-center text-center mb-10">
             <h3 class="text-white capitalize">Our Legal team </h3>
         </div>
-        <button onclick="slideLeft()"
-                class="absolute left-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-40">◀</button>
-
-
-        <div class="w-full overflow-hidden relative">
-            
-            <div id="slider"
-                class="relative flex gap-10 overflow-x-auto scroll-smooth w-full h-[400px] custom-scrollbar">
-                <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+      
+        <div class="w-full ">       
+            <div id="" class=" grid  md:grid-cols-4 gap-10  mb-10 ">
+                {% for member in team_members %}
+                <div class="cart flex-shrink-0  h-[300px] relative rounded-lg pb-[4rem] mb-14">
                     <figure>
-                        <img class="w-full h-[300px] object-cover rounded-lg" src="{% static 'image/lawer.jpg' %}" alt="">
+                        <img class="w-full h-[300px] object-cover rounded-lg" src="{{ member.image.url }}" alt="{{ member.name }}">
                     </figure>
                     <div
                         class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
-                        <h3 class="text-lg font-bold mt-2 text-black">Babita KC</h3>
-                        <p class="text-sm text-black">Intellectual Property Lawyer</p>
+                        <h3 class="text-lg font-bold mt-2 text-black capitalize">{{ member.name }}</h3>
+                        <p class="text-sm text-black capitalize mb-2">{{ member.position }}</p>
+                        <a href="{% url 'core:team_member_detail' member.id %}" class=" inline-block mt-2 px-3 py-0.5 text-black rounded max-w-28 border-2">View Details</a>
+
+                    </div>
+                </div>
+                {% empty %}
+                <p>No team members found.</p>
+            {% endfor %}
+                {% comment %} <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                    <figure>
+                        <img class="w-full h-[300px] object-cover rounded-lg" src="{% static 'image/lawer1.jpg' %}" alt="">
+                    </figure>
+                    <div
+                        class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                        <h3 class="text-lg font-bold mt-2 text-black">Samita Oli</h3>
+                        <p class="text-sm text-black">Corporate Lawyer</p>
+                    </div>
+                </div>
+
+                <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                    <figure>
+                        <img class="w-full h-[300px] object-cover rounded-lg" src="{% static 'image/lawer2.jpg' %}" alt="">
+                    </figure>
+                    <div
+                        class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                        <h3 class="text-lg font-bold mt-2 text-black capitalize">Sarmila KC</h3>
+                        <p class="text-sm text-black">Bankruptcy Lawyer</p>
+                    </div>
+                </div>
+
+                <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
+                    <figure>
+                        <img class="w-full h-[300px] object-cover rounded-lg" src="{% static 'image/lawer4.jpg' %}" alt="">
+                    </figure>
+                    <div
+                        class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                        <h3 class="text-lg font-bold mt-2 text-black capitalize">Rahul Sharma</h3>
+                        <p class="text-sm text-black">Criminal Lawyer</p>
                     </div>
                 </div>
 
@@ -56,45 +89,10 @@
                         <h3 class="text-lg font-bold mt-2 text-black capitalize">Rahul Sharma</h3>
                         <p class="text-sm text-black">Criminal Lawyer</p>
                     </div>
-                </div>
-
-                <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
-                    <figure>
-                        <img class="w-full h-[300px] object-cover rounded-lg" src="{% static 'image/lawer1.jpg' %}" alt="">
-                    </figure>
-                    <div
-                        class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
-                        <h3 class="text-lg font-bold mt-2 text-black">Samita Oli</h3>
-                        <p class="text-sm text-black">Corporate Lawyer</p>
-                    </div>
-                </div>
-
-                <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
-                    <figure>
-                        <img class="w-full h-[300px] object-cover rounded-lg" src="{% static 'image/lawer2.jpg' %}" alt="">
-                    </figure>
-                    <div
-                        class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
-                        <h3 class="text-lg font-bold mt-2 text-black capitalize">Sarmila KC</h3>
-                        <p class="text-sm text-black">Bankruptcy Lawyer</p>
-                    </div>
-                </div>
-
-                <div class="cart flex-shrink-0 w-[300px] h-[300px] relative rounded-lg pb-[4rem]">
-                    <figure>
-                        <img class="w-full h-[300px] object-cover rounded-lg" src="{% static 'image/lawer4.jpg' %}" alt="">
-                    </figure>
-                    <div
-                        class="absolute bg-white -bottom-[3rem] p-3 text-center w-[80%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
-                        <h3 class="text-lg font-bold mt-2 text-black capitalize">Rahul Sharma</h3>
-                        <p class="text-sm text-black">Criminal Lawyer</p>
-                    </div>
-                </div>
+                </div> {% endcomment %}
             </div>
 
             </div>
-            <button onclick="slideRight()"
-            class="absolute right-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 items-center text-center justify-center  rounded-full z-10">▶</button>
   
 
 

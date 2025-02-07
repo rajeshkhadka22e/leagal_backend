@@ -9,3 +9,12 @@ class FAQ(models.Model):
         return self.question
 
 
+
+class TeamMember(models.Model):
+    name = models.CharField(max_length=255)
+    position = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='team/')
+    bio = models.TextField(help_text="Full detail information for this team member.")
+
+    def __str__(self):
+        return self.name

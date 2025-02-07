@@ -1,0 +1,17 @@
+.no-scrollbar::-webkit-scrollbar {
+    display: none; 
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+#slider {
+    white-space: nowrap;
+    display: flex; 
+    min-width: 100%; 
+}
+.font-body{
+    font-family: "PT Serif", serif;
+
+}
