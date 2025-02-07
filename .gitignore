@@ -12,7 +12,7 @@ tailwind.config.js
 # Ignore PostCSS files
 postcss.config.js
 # Ignore environment files
-.env/
+env/
 .venv/
 venv/
 
