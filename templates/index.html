@@ -9,7 +9,9 @@
     <title>Legal Avenues</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-
+    {% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/custom.css' %}">
+{% endblock %}
     <!-- Your custom CSS -->
      
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,9 +41,9 @@
                         ensure your voice is heard and your rights are protected.
                     </p>
                 </div>
-                <div class="flex md:gap-6 gap-4">
+                <div class="flex md:gap-6 gap-2">
                     <a href="#"
-                        class="bg-white items-center text-black flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:bg-[#3C6183] hover:text-white transition delay-150 duration-300">View
+                        class="bg-white items-center text-black flex py-2  px-2 gap-0.5 rounded hover:bg-[#3C6183] hover:text-white transition delay-150 duration-300">View
                         Services <img src="{% static 'image/Frame.png' %}" alt="View us" /></a>
                     {% comment %} <a href="#"
                         class="bg-[#3C6183] items-center text-white flex py-2 md:px-6 px-3 md:gap-3 gap-0.5 rounded hover:text-black hover:bg-white">Contact
@@ -107,7 +109,7 @@
                             matters are handled with the utmost care and attention.</p>
                     </div>
                     <a href="#"
-                        class="bg-[#3C6183] items-center text-white px-4 py-2 rounded hover:text-black hover:bg-white min-w-6 hover:border-2  hover:border-black">Know
+                        class="bg-[#3C6183] items-center text-white py-2  px-2 rounded min-w-6 hover:bg-[#274F74]  transition delay-150 duration-300">Know
                         Me</a>
             </div>
         </div>
@@ -132,22 +134,22 @@
             <div id="slider" class="relative flex gap-10 overflow-x-auto scroll-smooth w-full h-[300px] custom-scrollbar">
 
                 <style>
-.custom-scrollbar::-webkit-scrollbar {
-    display: none;
-}
+                        .custom-scrollbar::-webkit-scrollbar {
+                            display: none;
+                        }
 
-/* Hide scrollbar for Firefox */
-.custom-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-}
+                        /* Hide scrollbar for Firefox */
+                        .custom-scrollbar {
+                            scrollbar-width: none;
+                            -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+                        }
                 </style>
                 <div class="cart flex-shrink-0 w-[300px]" onclick="openPopup(this)">
                     <figure>
                         <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/criminal.jpeg' %}"
                             alt="">
                     </figure>
-                    <div class="bg-white px-3 text-center rounded-b-lg py-3">
+                    <div class="bg-white px-3 text-center rounded-b-lg py-3 crusor-pointer">
                         <h3 class="text-sm font-bold text-black">Criminal Law
                         </h3>
                         <p class="text-sm text-black line-clamp-2 overflow-hidden">We provide legal defense and
@@ -280,7 +282,7 @@
                 <div class="flex flex-col gap-6">
                     <!-- FAQ Items -->
                     {% for faq in faqs %}
-                    <div class="border-2 p-2 rounded ">
+                    <div class="border-2 border-gray-300 p-2 rounded ">
                         <div class="flex justify-between cursor-pointer" onclick="toggleFaq({{ faq.id }})">
                             <button class="w-full text-left font-semibold">{{ faq.question }}</button>
                             <div id="icon{{ faq.id }}" class="text-gray-400 font-bold text-2xl">+</div>
@@ -310,7 +312,7 @@
 
     <section class="bg-[#274F74] ">
         <div class="grid md:grid-cols-2 grid-cols-1">
-            <form action="#" method="post" class=" px-[6.25rem] py-[6.25rem] col-span-1 h-[40.625rem]">
+            <form action="#" method="post" class=" px-[6.25rem] py-[6.25rem] col-span-1 h-[40.625rem] flex flex-col gap-5">
                 <h3 class="capitalize text-white text-2xl">We Are Committed To Help You With Your Requirements </h3>
                 <div class="flex flex-col gap-2">
                     <div class=" grid grid-cols-2 gap-4 ">
@@ -338,9 +340,9 @@
                     <textarea placeholder="I want to know about..." id="" rows="5" cols="10"
                         class="border bg-[#274F74] border-white text-base rounded px-1 py-2  text-white focus:outline-none"
                         required></textarea>
-                    <div class="flex items-center text-center">
+                    <div class="flex items-center text-center ">
                             <button
-                            class="border-1 flex items-center text-center  border-white px-2 py-2 rounded mt-2 bg-white text-black transition delay-100 duration-75">Send
+                            class="border-1 flex items-center text-center  border-white px-2 py-2 gap-0.5 rounded mt-2 bg-white text-black transition delay-100 duration-75">Send
                             Message <img class=' w-4  ' src="{% static 'image/Frame.png' %}" alt=""></button>
                     </div>
                 </div>

@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block hero %}
+<section class="px-[100px]">
+  <div class="space-y-10">
+    {% for section in sections %}
+    <div class="card flex items-center gap-20">
+      <!-- Text Section -->
+      <div class="flex flex-col w-1/2">
+        <h3 class="text-2xl">{{ section.title }}</h3>
+        <p class="text-base">
+          {{ section.description }}
+        </p>
+      </div>
+
+      <!-- Image Section -->
+      <figure class="flex justify-center w-1/2">
+        <img src="{{ section.image.url }}" alt="{{ section.title }}" class="h-[300px] w-full object-cover self-center">
+      </figure>
+    </div>
+    {% endfor %}
+  </div>
+
+  <style>
+    /* The .card class is already a flex container due to Tailwind's 'flex' class.
+       Use nth-child to reverse the order on even cards */
+    .card:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  </style>
+</section>
+{% endblock %}

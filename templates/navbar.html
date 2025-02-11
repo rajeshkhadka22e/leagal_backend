@@ -103,13 +103,12 @@
                 Us</a>
             <a href="{% url 'core:service' %}"
                 class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Services</a>
-            <a href="#" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Publication</a>
+            <a href="{% url 'core:publication' %}" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Publication</a>
             <a href="{% url 'core:team' %}" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Team</a>
-            <a href="#"
-                class="rounded-xl text-white bg-[#025098] px-3 py-1 flex items-center gap-3 hover:bg-green-500 transition-transform"
-                target="_blank" aria-label="Contact us">
-                Contact us <img src="{% static 'image/frame1.png' %}" alt="contact us" />
-            </a>
+           
+            <a href="#"  target="_blank" aria-label="Contact us"
+            class="hover:bg-[#274F74] items-center  flex py-2  px-2  gap-0.5 rounded bg-[#3C6183] text-white transition delay-150 duration-300">Contact us
+             <img src="{% static 'image/frame1.png' %}" alt="View us" /></a>
         </nav>
     </div>
 
@@ -121,10 +120,9 @@
         <a href="services.html" class="block hover:text-[#025098]">Services</a>
         <a href="#" class="block hover:text-[#025098]">Publication</a>
         <a href="team.html" class="block hover:text-[#025098]">Team</a>
-        <a href="#"
-            class="rounded-xl bg-[#025098] px-3 py-3 flex text-white items-center gap-3 hover:bg-green-500 transition-transform object-contain"
+        <a href="#" class="rounded-xl bg-[#025098] px-3 py-3 flex border-2 shadow text-white items-center gap-1 hover:bg-green-500 transition-transform object-contain"
             target="_blank" aria-label="Contact us">
-            Contact us <img src="{% static 'image/Frame (1).png' %}" alt="contact us" />
+            Contact us <img src="{% static 'image/frame1.png' %}" alt="contact us" />
         </a>
     </div>
 

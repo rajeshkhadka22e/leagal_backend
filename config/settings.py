@@ -26,12 +26,13 @@ SECRET_KEY = 'django-insecure-!*%xi(^=3cthwyc%(fb^^o(^j9=%8v$^ofs5vn)knj+8my4kw$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'dashub',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'filehub',
     'core',
+    'tinymce',
+
     
 
 ]
@@ -104,6 +107,22 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DASHHUB_SETTINGS = {
+    "site_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2_pVkRRqmwVonhBj-iZu6WsmDcL6bLjYww&s",
+    "theme_color": "#009688",
+    "custom_css": "admin/css/custom.css",
+    "hide_models": [
+        "auth.group",
+        "auth.user",
+    ],
+    "icons": {
+        "core.contentsection": "fa-solid fa-file-lines",
+        "core.faq": "fa-solid fa-circle-question",
+        "core.teammemberdescription": "fa-solid fa-user-pen",
+        "core.teams": "fa-solid fa-users"
+    }
+
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -148,3 +167,32 @@ FILE_TYPE_CATEGORIES = {
 }
 
 FILEHUB_THEME_COLOR = "#3498db"
+
+# Tinymce Configuration
+TINYMCE_JS_URL = "https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.5.1/tinymce.min.js"
+TINYMCE_DEFAULT_CONFIG = {
+    "promotion": False,
+    "menubar": "file edit view insert format tools table",
+    "plugins": "codesample link media image code fullscreen filehub table autolink advlist lists autoresize emoticons "
+               "wordcount",
+    "toolbar": [
+        "bold italic underline strikethrough | subscript superscript | list bullist numlist blockquote alignleft "
+        "aligncenter alignright alignjustify autolink link table",
+        "styles forecolor |  subscript superscript | outdent indent | filehub image media emoticons | "
+        "wordcount codesample fullscreen code"
+    ],
+    "image_advtab": False,
+    "external_filemanager_path": "/admin/fm/select/",
+    "filemanager_title": "Filemanager",
+    "external_plugins": {
+        "filehub": "/static/filehub/plugin.min.js"
+    },
+    "relative_urls": False,
+    "remove_script_host": True,
+    "toolbar_sticky": True,
+    "image_dimensions": False,
+    "noneditable_noneditable_class": 'alert',
+    "min_height": 300,
+    "content_css": 'light',
+    "license_key": "gpl",
+}

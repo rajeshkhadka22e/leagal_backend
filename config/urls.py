@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', include('filehub.urls')),  
     path('admin/', admin.site.urls),  
     path('', include('core.urls')),
+    path('tinymce/', include('tinymce.urls')),
 
 ]
 

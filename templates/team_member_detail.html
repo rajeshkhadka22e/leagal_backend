@@ -2,13 +2,38 @@
 {% load static %}
 
 {% block hero %}
-<div class="max-w-3xl mx-auto mt-10 gap-10 flex">
-    <img class="w-[400px] h-[400px] object-cover rounded-lg" src="{{ team_member.image.url }}" alt="{{ team_member.name }}">
-    <div>
+<div class="px-[6.25rem] mx-auto mt-10 flex flex-wrap gap-10">
+    <div class="w-full sm:w-auto">
+        <img class="w-[300px] h-[300px] object-cover rounded-lg" src="{{ team_member.lawyer_image }}" alt="{{ team_member.name }}">
+    </div>
+
+    <div class="flex-1 min-w-[300px]">
         <h1 class="text-2xl font-bold mt-4 capitalize">{{ team_member.name }}</h1>
-    <h2 class="text-lg text-gray-600 capitalize">{{ team_member.position }}</h2>
-    <p class="mt-4">{{ team_member.bio }}</p>
-    <a href="{% url 'core:team' %}" class="text-blue-500 mt-4 inline-block border-2 border-blue-100 rounded  px-2 py-0.5 ">Back to Team</a>
-  </div>
-</div>
-{% endblock  %}
+        <h2 class="text-lg text-gray-600 capitalize">{{ team_member.position }}</h2>
+        <p class="mt-4 text-capitalize">{{ team_member.bio }}</p>
+
+        <div class="mt-6">
+            {% for description in team_member.descriptions.all %}
+                <div class="description-item mt-4">
+                    <h4 class="font-semibold text-uppercase">{{ description.topic }}</h4>
+                    {% if description.is_list_item %}
+                        <ul class="list-disc pl-5">
+                            <li>{{ description.description }}</li>
+                        </ul>
+                    {% else %}
+                        <p>{{ description.description }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <a href="{% url 'core:team' %}" class="text-blue-500 mt-4 inline-block border-2 border-blue-100 rounded px-2 py-0.5">
+            Back to Team
+        </a>
+    </div>
+    <p>{{ description.description }}</p>
+
+</div>  
+
+
+{% endblock %}
