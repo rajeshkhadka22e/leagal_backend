@@ -44,10 +44,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     const popupModal = document.getElementById("popupModal");
     const popupContent = popupModal.querySelector("div"); // The inner content box
+    const popupOverlay = document.getElementById("popupOverlay");
+
 
     function openPopup(element) {
         const title = element.querySelector("h3").innerText;
         const content = element.querySelector("p").innerText;
+        // popupOverlay.classList.remove("hidden");
         document.getElementById("popupTitle").innerText = title;
         document.getElementById("popupContent").innerText = content;
         popupModal.classList.remove("hidden");
@@ -55,6 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function closePopup() {
         popupModal.classList.add("hidden");
+        // popupOverlay.classList.add("hidden");
+
     }
 
     // Close when clicking outside the content box

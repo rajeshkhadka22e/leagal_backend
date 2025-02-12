@@ -13,7 +13,7 @@ class FAQAdmin(admin.ModelAdmin):
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
     # inlines = [TeamMemberDescriptionInline]
-    list_display = ('name', 'position','image_tag', 'number')  
+    list_display = ('image_tag', 'name', 'position', 'number')  
     ordering = ('number',) 
     prepopulated_fields = {"slug": ("name",)}
     fields = ("name", "slug", "number", "position", "description", "lawyer_image")
@@ -23,7 +23,7 @@ class TeamMemberAdmin(admin.ModelAdmin):
     description_display.short_description = 'Description'
     def image_tag(self, obj):
         if obj.lawyer_image:  
-            return format_html('<img src="{}" width="250" height="150" style="border-radius:5px;"/>', obj.lawyer_image)
+            return format_html('<img src="{}" width="150" height="100" style="border-radius:5px; object-fit:cover;"/>', obj.lawyer_image)
         return "No Image"
 
     image_tag.short_description = 'Image'
@@ -32,11 +32,11 @@ class TeamMemberAdmin(admin.ModelAdmin):
 
 @admin.register(publication)
 class publication(admin.ModelAdmin):
-    list_display = ('title', 'image_tag')  # Use 'image_tag' instead of 'image'
+    list_display = ('image_tag', 'title')  # Use 'image_tag' instead of 'image'
 
     def image_tag(self, obj):
         if obj.image:  
-            return format_html('<img src="{}" width="250" height="150" style="border-radius:5px;"/>', obj.image)
+            return format_html('<img src="{}" width="150" height="100" style="border-radius:5px;"/>', obj.image)
         return "No Image"
 
     image_tag.short_description = 'Image'

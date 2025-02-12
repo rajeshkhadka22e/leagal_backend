@@ -116,11 +116,17 @@ DASHHUB_SETTINGS = {
         "auth.user",
     ],
     "icons": {
-        "core.contentsection": "fa-solid fa-file-lines",
+        "core.publication": "fa-solid fa-book-open",
         "core.faq": "fa-solid fa-circle-question",
-        "core.teammemberdescription": "fa-solid fa-user-pen",
-        "core.teams": "fa-solid fa-users"
-    }
+        "core.TeamMember": "fa-solid fa-user"
+    },
+    "default_orders": {
+    "core.teammember": 3,
+    "core.faq": 1,
+    "core.publication": 2,
+    },
+    "sidebar_search": True,
+    "sidebar_search_placeholder": "Search..."
 
 }
 
