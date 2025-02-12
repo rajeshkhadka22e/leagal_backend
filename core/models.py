@@ -20,9 +20,9 @@ class TeamMember(models.Model):
     name = models.CharField("Name", max_length=100)
     position =models.CharField(max_length=200)
     lawyer_image = ImagePickerField()
-    description = HTMLField("Description")
+    description = HTMLField()
     slug = models.SlugField("Slug", blank=True, null=True)
-    number = models.IntegerField("Order Number", default=20) 
+    number = models.IntegerField("order", null=True) 
     class Meta:
         verbose_name = "Team Member"
         verbose_name_plural = "Team Members"
