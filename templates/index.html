@@ -90,7 +90,7 @@
             </div>
 
             <div class="flex flex-col lg:pr-[6.25rem] col-span-2 ">
-                <h2 class="capitalize text-base ">At <span class="text-lg font-bold">Legal Avenues</span>, we understand
+                <h2 class=" text-base ">At <span class="text-lg font-bold">Legal Avenues</span>, we understand
                     the importance of timely and effective legal solutions. Our team works closely with clients to
                     provide expert guidance and ensure their legal rights are protected. We offer personalized services
                     tailored to meet the specific needs of each client, striving to achieve the best possible outcomes
@@ -110,7 +110,7 @@
                     </div>
                     <a href="#"
                         class="bg-[#3C6183] items-center text-white py-2  px-2 rounded min-w-6 hover:bg-[#274F74]  transition delay-150 duration-300">Know
-                        Me</a>
+                        More</a>
             </div>
         </div>
     </section>
@@ -262,19 +262,17 @@
 
     </section>
 
-    <div id="popupOverlay" class="h"></div> <!-- Overlay for darkening background -->
+    <div id="popupOverlay" class="hidden fixed inset-0 bg-transparent bg-opacity-50 z-10"></div> <!-- Overlay for darkening background -->
 
     <!-- Popup Modal -->
-    <div id="popupModal" class="hidden fixed inset-0 bg-gray-500 flex items-center justify-center opacity-50 z-30"> 
-        <!-- Added 'flex items-center justify-center' to center the popup -->
-        <div class="bg-black p-6 rounded-lg text-white w-[400px] opacity-100 text-center mx-auto z-50">
-            <h3 id="popupTitle" class="text-lg font-bold "></h3>
-            <p id="popupContent" class="text-sm  mt-2"></p>
-            <button onclick="closePopup()" class="mt-3 bg-[#274F74] text-white px-4 py-2 rounded-md">Complete</button>
-        </div>
+<div id="popupModal" class="hidden fixed inset-0 bg-gray-500 flex items-center justify-center opacity-50 z-30"> 
+    <!-- Added 'flex items-center justify-center' to center the popup -->
+    <div class="bg-black p-6 rounded-lg text-white w-[400px] opacity-100 text-center mx-auto z-50">
+        <h3 id="popupTitle" class="text-lg font-bold "></h3>
+        <p id="popupContent" class="text-sm  mt-2"></p>
+        <button onclick="closePopup()" class="mt-3 bg-[#274F74] text-white px-4 py-2 rounded-md">Complete</button>
     </div>
-
-    
+</div>
 
 
 
