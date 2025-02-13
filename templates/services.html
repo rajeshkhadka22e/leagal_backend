@@ -2,6 +2,15 @@
 {% load static %}
 
 {% block hero %}
+<section>
+  <div class="relative h-[300px] w-full">
+      <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
+      <div class="absolute top-0 left-0 w-full h-full z-20 flex justify-center items-center">
+          <h1 class="text-5xl text-white font-bold">Our Services</h1>
+      </div>
+  </div>
+</section>
+
 <section class="px-[100px] py-3">
   <div class="space-y-10">
     {% for Service in Service %}
