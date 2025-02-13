@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from .models import FAQ,TeamMember,publication
+from .models import FAQ,TeamMember,services,publication
 # Create your views here.
 
 class indexView(View):
@@ -32,12 +32,24 @@ class TeamMemberDetailView(View):
             'team_member': team_member,
         }
         return render(request, 'team_member_detail.html', context)
-class ServiceView(View):
-    def get(self, request):
-        return render(request, 'services.html')
-
-
+    
 class PublicationView(View):
     def get(self, request):
-        publications = publication.objects.all()
-        return render(request, 'publication.html',{'publications': publications})
+        publications = publication.objects.filter(is_services=False)
+        context = {
+            'publications': publications,
+        }
+        return render(request, 'publication.html',context)
+
+    
+class publicationdetailView(View):
+    def get(self, request, slug):
+        publication_obj = get_object_or_404(publication, slug=slug)
+        return render(request, 'publication_detail.html', {
+            'publication': publication_obj
+        })
+
+class ServiceView(View):
+    def get(self, request):
+        Service = services.objects.filter(is_services=True)
+        return render(request, 'services.html',{'Service': Service})

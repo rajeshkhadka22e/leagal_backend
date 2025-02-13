@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block hero %}
+<div class="md:px-[6.25rem] px-[2rem] mx-auto mt-10 flex flex-wrap gap-10">
+    <div class="w-full sm:w-auto mb-4 md:sticky md:top-4 h-max">
+        <img class="md:w-[300px] h-[300px] object-cover rounded-lg item-center md:item-left" src="{{ publication.image }}" alt="{{ publication.title }}">
+        <h1 class="text-2xl font-bold mt-4 capitalize text-center md:text-left">{{ publication.title }}</h1>
+    </div>
+    
+    <!-- Main Content Section -->
+    <div class="flex-1 min-w-[300px]">
+        <div class="mt-0">
+            <div class="description-item mt-4">
+                <h2 class="text-lg text-gray-600 capitalize text-center md:text-left">{{ publication.description|safe }}</h2>
+            </div>
+        </div>
+        <a href="{% url 'core:publication' %}" class="text-blue-500 mt-4 inline-block border-2 border-blue-100 rounded px-2 py-0.5">
+            Back to Team
+        </a>
+
+    </div>
+</div>
+{% endblock %}

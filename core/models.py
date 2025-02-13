@@ -20,7 +20,7 @@ class TeamMember(models.Model):
     name = models.CharField("Name", max_length=100)
     position =models.CharField(max_length=200)
     lawyer_image = ImagePickerField()
-    description = HTMLField()
+    description = HTMLField("description")
     slug = models.SlugField("Slug", blank=True, null=True)
     number = models.IntegerField("order", null=True) 
     class Meta:
@@ -49,14 +49,30 @@ class TeamMember(models.Model):
 
 
 
-class publication(models.Model):
+
+class services(models.Model):
     title = models.CharField("Title", max_length=255)
     description = HTMLField("Description")
     image = ImagePickerField("Image")
+    is_services = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = "services"
+        verbose_name_plural = "services"
+
+    def __str__(self):
+        return self.title
+
+class publication(services):
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
 
     class Meta:
         verbose_name = "publication"
         verbose_name_plural = "publications"
 
-    def __str__(self):
-        return self.title
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)  # Generate slug only for publications
+        self.is_services = False
+        super().save(*args, **kwargs)
+

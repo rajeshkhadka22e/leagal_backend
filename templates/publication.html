@@ -1,31 +1,37 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block hero %}
-<section class="px-[100px] py-3">
-  <div class="space-y-10">
-    {% for publications in publications %}
-    <div class="card flex items-center gap-20">
-      <!-- Text Section -->
-      <div class="flex flex-col w-1/2">
-        <h3 class="text-2xl">{{ publications.title }}</h3>
-        <p class="text-base">
-          {{ publications.description|safe }}
-        </p>
+    <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-14 ">
+      <div class="">
+        <div class="flex flex-col w-full">
+          <div class="z-10 px-5 md:px-10 lg:px-20 mx-auto md:mb-10 mb-5">
+            <h3 class="text-5xl font-bold">Our Publication</h3>
+          </div>
+        </div>
       </div>
-
-      <!-- Image Section -->
-      <figure class="flex justify-center w-1/2">
-        <img src="{{ publications.image }}" alt="{{ publications.title }}" class="h-[300px] w-full object-cover self-center">
-      </figure>
-    </div>
-    {% endfor %}
-  </div>
-
-  <style>
-    .card:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-  </style>
-</section>
+      
+      <div class="w-full mb-10 ">       
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10  ">
+          {% for publication in publications %}
+            <div class="cart flex-shrink-0 h-[450px] relative rounded-lg ">
+              <figure>
+                <img class="w-full h-[300px] object-cover rounded-lg" src="{{ publication.image }}" alt="{{ publication.name }}">
+              </figure>
+              <div class="text-white ">
+                <h3 class="text-lg font-bold mt-2 capitalize">{{ publication.title }}</h3>
+                {% comment %} <p class="text-sm capitalize my-2 line-clamp-2 ">{{ publication.description|safe }}</p> {% endcomment %}
+                <!-- Corrected: Removed extra loop -->
+                <a href="{% url 'core:publication_detail' publication.slug %}" 
+                  class="inline-block p-1.5 py-0.5  rounded max-w-36 border hover:bg-[#274F74] transition delay-150 duration-300 text-white">
+                    View publication
+                </a>                    
+              </div>
+            </div>
+          {% empty %}
+            <p>No publications found.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
 {% endblock %}

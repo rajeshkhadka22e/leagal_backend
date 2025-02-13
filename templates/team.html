@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block hero %}
@@ -8,16 +8,17 @@
         </div>
       
         <div class="w-full">       
-            <div class="grid md:grid-cols-4 gap-10 mb-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
                 {% for member in team_members %}
                 <div class="cart flex-shrink-0 h-[300px] relative rounded-lg pb-[4rem] mb-14">
                     <figure>
                         <img class="w-full h-[300px] object-cover rounded-lg" src="{{ member.lawyer_image }}" alt="{{ member.name }}">
                     </figure>
-                    <div class="absolute bg-white -bottom-[3rem] p-1.5 text-center w-[70%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                    <div class="absolute bg-white -bottom-[3rem] p-1.5 text-center w-[265px] md:w-[70%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
                         <h3 class="text-lg font-bold mt-2 text-black capitalize">{{ member.name }}</h3>
                         <p class="text-sm text-black capitalize mb-2">{{ member.position|safe }}</p>
                         <a href="{% url 'core:team_member_detail' member.slug %}" class="inline-block p-1.5 py-0.5 text-black rounded max-w-28 border hover:bg-[#274F74] transition delay-150 duration-300 hover:text-white">View Details</a>
+
                     </div>
                 </div>
                 {% empty %}

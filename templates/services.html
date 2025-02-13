@@ -1,15 +1,35 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block hero %}
-    <section>
-        <div class="relative h-[300px] w-full">
-            <img class="h-full w-full object-cover " src="image/service.png" alt="">
-            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
-            <div class="absolute top-0 left-0 w-full h-full z-20 flex justify-center items-center">
-                <h1 class="text-5xl text-white font-bold">Our Services</h1>
-            </div>
-        </div>
-    </section>
+<section class="px-[100px] py-3">
+  <div class="space-y-10">
+    {% for Service in Service %}
+    <div class="card flex flex-col md:flex-row gap-20">
+      
+      <!-- Text Section -->
+      <div class="flex flex-col md:w-[65%] w-full justify-center items-center ">
+        <h3 class="text-2xl">{{ Service.title }}</h3>
+        <p class="text-base">
+          {{ Service.description|safe }}
+        </p>
+      </div>
 
-{% endblock  %}
+      <!-- Image Section -->
+      <figure class="flex md:w-[35%] w-full md:sticky md:top-4 h-max">
+        <img src="{{ Service.image }}" alt="{{ Service.title }}" class="h-[300px] w-full object-cover">
+      </figure>
+    </div>
+
+    {% endfor %}
+  </div>
+
+  <!-- CSS to reverse the layout for odd cards -->
+  <style>
+    .card:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+  </style>
+  
+</section>
+{% endblock %}
