@@ -1,12 +1,15 @@
 from django.contrib import admin
-from .models import FAQ,TeamMember,services,publication
+from .models import FAQ,TeamMember,services,publication,about
 from django.utils.html import mark_safe
 from django.utils.html import format_html
 
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):
-    list_display = ('question','answer') 
-    search_fields = ('question', 'answer')
+    list_display = ('question', 'answer', 'category')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        print("FAQAdmin initialized")
 
 
 
@@ -44,6 +47,19 @@ class services(admin.ModelAdmin):
     def get_queryset(self, request):
         return super().get_queryset(request).filter(is_services=True)
 
+
+
+@admin.register(about)
+class about(admin.ModelAdmin):
+    list_display = ('image_tag', 'title','category')
+    search_fields = ('title', 'category')
+    list_filter = ('category',)
+    def image_tag(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" width="150" height="100" style="border-radius:5px;"/>', obj.image)
+        return "No Image"
+
+    image_tag.short_description = 'Image'
 
 
 

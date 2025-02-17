@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'dashub',
+    'django_bleach',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,18 +1,23 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from .models import FAQ,TeamMember,services,publication
+from .models import FAQ,TeamMember,services,publication,about
 # Create your views here.
 
 class indexView(View):
     def get(self, request):
-        faqs = FAQ.objects.all()
+        faqs = FAQ.objects.filter(category='Home')
         return render(request, 'index.html', {'faqs': faqs})
-
 
 
 class AboutView(View):
     def get(self, request):
-        return render(request, 'about.html')
+        faqs = FAQ.objects.filter(category='About')
+        about_items = about.objects.all()
+        context = {
+            'faqs': faqs,
+            'about_items': about_items,
+        }
+        return render(request, 'about.html',context)
 
 
 

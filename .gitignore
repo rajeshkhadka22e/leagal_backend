@@ -1,38 +1,9 @@
-# Ignore dependencies
-node_modules/
-package-lock.json
-yarn.lock
-# Ignore Tailwind CSS files
-tailwind.config.js
-
-# Ignore SQLite database files
-*.sqlite3
-*.db
-
-# Ignore PostCSS files
-postcss.config.js
-# Ignore environment files
-env/
+# created by virtualenv automatically
+.venv/bin
+db.sqlite3/
 .venv/
-venv/
-
-# Ignore Python cache files
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Ignore IDE/editor-specific files
-.vscode/
-.idea/
-*.swp
-
-# Ignore OS-generated files
-.DS_Store
-Thumbs.db
-
-# Ignore build and compiled files
-dist/
-build/
-path/
-staticfiles/
+requirements.txt/
+tailwind.config.js/
+manage.py/
+postcss.config.js/
+db.sqlite3/

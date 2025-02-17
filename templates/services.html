@@ -3,7 +3,7 @@
 
 {% block hero %}
 <section>
-  <div class="relative h-[300px] w-full">
+  <div class="relative md:h-[300px] h-[200px] w-full">
       <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
       <div class="absolute top-0 left-0 w-full h-full z-20 flex justify-center items-center">
           <h1 class="text-5xl text-white font-bold">Our Services</h1>
@@ -11,7 +11,7 @@
   </div>
 </section>
 
-<section class="px-[100px] py-3">
+<section class="lg:px-0 md:px-[75px] px-[20px] py-3 max-w-7xl m-auto">
   <div class="space-y-10">
     {% for Service in Service %}
     <div class="card flex flex-col md:flex-row gap-20">
@@ -33,10 +33,11 @@
     {% endfor %}
   </div>
 
-  <!-- CSS to reverse the layout for odd cards -->
   <style>
-    .card:nth-child(odd) {
-      flex-direction: row-reverse;
+    @media (min-width: 768px) {
+      .card:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
     }
   </style>
   

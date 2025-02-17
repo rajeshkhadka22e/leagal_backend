@@ -9,6 +9,8 @@
     <title>Legal Avenues</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+      <link href="./output.css" rel="stylesheet">
+
     {% block extrastyle %}
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/custom.css' %}">
 {% endblock %}
@@ -25,11 +27,13 @@
     <!-- Navbar -->
     {% include "navbar.html" %}
 
-    {% block hero %}
+  <div class="">
+        {% block hero %}
     <h2>please connect </h2>
 
     {% endblock  %}
     {% include "footer.html" %}
+  </div>
 </body>
 
 <script src="{% static 'js/script.js' %}"></script>

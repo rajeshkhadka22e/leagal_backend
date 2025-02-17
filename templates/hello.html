@@ -1,0 +1,415 @@
+{% extends "base.html" %}
+{% load static %}
+{% block hero %}
+<!-- About section -->
+<section
+  class="relative"
+  style="
+    background-image: url('https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-attachment: fixed;
+  "
+>
+  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-0 z-0"></div>
+
+  <div class="relative md:h-[300px] h-[200px] w-full">
+    <img
+      src="{% static 'image/about_img.avif' %}"
+      alt="Overlay"
+      class="absolute top-0 left-0 w-full h-full object-cover opacity-100 z-20"
+    />
+
+    <div
+      class="absolute top-0 left-0 w-full h-full z-30 flex justify-center items-center"
+    >
+      <h1 class="text-5xl text-white font-bold">About Us</h1>
+    </div>
+  </div>
+
+  <div class="bg-white">
+    <section class="bg-white z-20 opacity-100 max-w-7xl m-auto px-4">
+      <div class="card grid md:grid-cols-2 grid-cols-1 lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4 mb-10 ">
+        {% for item in about_items %}
+          {% if item.category == "About" %}
+
+          <figure>
+            <img
+              src="{{ item.image }}"
+              class="h-full w-full object-cover"
+              alt="{{ item.title }}"
+            />
+          </figure>
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              {{ item.title }}
+            </h3>
+            <p class="text-sm items-center">
+              {{ item.description|safe }}
+
+            </p>
+          </div>
+        </div>
+          {% endif %}
+
+      {% endfor %}
+    </section>
+    <section class="bg-[#274F74] px-4">
+      <div class=" text-white z-20 opacity-100  max-w-7xl m-auto">
+        <div class="grid md:grid-cols-2 grid-cols-1 lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4">
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              Society where there is understanding
+            </h3>
+            <p class="text-sm justify-center items-center">
+              Founded in 1988, Putnam Associates has been serving global
+              biopharmaceutical, diagnostics, and medical device clients, along
+              with private equity and venture capital clients, providing world
+              class strategic advice based on sophisticated, robust analytics. Our
+              focus enables us to provide customized, actionable recommendations
+              that draw on robust problem framing, cutting-edge methodologies,
+              deep therapeutic area knowledge, extensive global networks of health
+              care stakeholders, and expert synthesis across scientific, clinical,
+              and business disciplines. Our consultants have similar professional
+              and educational backgrounds to those at generalist strategy
+              consulting firms but with a significant advantage: 100% of Putnam’s
+              work is dedicated to maximizing the value of the pharmaceutical,
+              biotechnology, diagnostic and device products. We serve clients who
+              market many of the world’s best-known biopharmaceuticals, and who
+              are leveraging the genomics and “big data” revolutions month by
+              month with new breakthrough therapies and higher quality patient
+              care.
+            </p>
+          </div>
+
+          <figure>
+            <img
+              src="{% static 'image/about_img.avif' %}"
+              class="h-full w-full object-cover"
+              alt=""
+            />
+          </figure>
+        </div>
+      </div>
+  </section>
+
+    <!--    Our vesion-->
+
+    <section
+      class="bg-white opacity-100 lg:py-20 md:py-10 py-4 grid grid-cols-1 md:grid-cols-2 px-4 md:px-10 lg:px-20 z-20 max-w-7xl m-auto lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4"
+    >
+      <div class="flex flex-col gap-6">
+        <h3 class="text-xl font-bold">Our version</h3>
+        <div class="flex gap-6">
+        {% for item in about_items %}
+          {% if item.category == "vision" %}
+
+          <figure>
+            <img
+              src="{{ item.image }}"
+              class="h-full w-full object-cover"
+              alt="{{ item.title }}"
+            />
+          </figure>
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              {{ item.title }}
+            </h3>
+            <p class="text-sm items-center">
+              {{ item.description|safe }}
+
+            </p>
+          </div>
+        </div>
+          {% endif %}
+
+      {% endfor %}
+      </div>
+      <div class="flex flex-col gap-6">
+        {% for item in about_items %}
+          {% if item.category == "exit" %}
+
+
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              {{ item.title }}
+            </h3>
+            <p class="text-sm items-center">
+              {{ item.description|safe }}
+
+            </p>
+          </div>
+        </div>
+          {% endif %}
+
+      {% endfor %}
+<!--        <h3 class="text-xl">Why we exist</h3>-->
+<!--        <div class="">-->
+<!--          <p>-->
+<!--            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi-->
+<!--            cupiditate dicta ducimus incidunt ipsa necessitatibus, numquam-->
+<!--            possimus temporibus. A accusantium aspernatur debitis delectus-->
+<!--            dolorem, doloremque ducimus eius eveniet excepturi illum magnam nam-->
+<!--            natus nesciunt quisquam, ratione repellendus, soluta unde vel.-->
+<!--            Aliquid architecto asperiores, dolore eum facere facilis illo natus-->
+<!--            nesciunt nisi optio possimus quaerat quasi quia sed vel, velit vero-->
+<!--            voluptates. Ab ad alias, animi aperiam asperiores aspernatur-->
+<!--            assumenda consectetur corporis debitis facilis hic illum incidunt-->
+<!--            molestiae mollitia nam nemo nulla, odio pariatur perspiciatis quae-->
+<!--            quaerat quidem rerum similique vel voluptatem. Adipisci aliquam-->
+<!--            atque aut consequatur deserunt dignissimos ducimus enim eos est-->
+<!--            facilis fugiat impedit odio pariatur perspiciatis quibusdam, ratione-->
+<!--            voluptas! Asperiores aspernatur, beatae cumque dolor, doloremque,-->
+<!--            explicabo laborum maiores nam nobis qui quibusdam voluptate? Ad-->
+<!--            aliquam, cupiditate debitis deleniti dolor et harum illo illum in-->
+<!--            ipsa magnam mollitia nemo, perferendis perspiciatis possimus-->
+<!--            praesentium quae quibusdam quod quos sit unde vero vitae, voluptate-->
+<!--            voluptates voluptatibus. A amet architecto autem blanditiis-->
+<!--            consectetur eum iste non quam! A nemo nulla quam. Alias blanditiis-->
+<!--            eos eveniet, minus nobis numquam obcaecati praesentium quas!-->
+<!--            Accusantium amet atque consequuntur culpa dolorum error fuga in iure-->
+<!--            laboriosam maiores, odio officia perspiciatis similique sunt-->
+<!--            suscipit tenetur veritatis voluptatum!-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+    </section>
+  </div>
+
+
+  <section class="w-full ">
+    <div class="text-white flex justify-center items-center h-64">
+      <h3 class="text-5xl text-center max-w-4xl">
+        We are true to ourselves, and commit to always perform at our best.
+      </h3>
+    </div>
+  </section>
+</section>
+<!--    Frequently asked questions  -->
+<section class="max-w-7xl m-auto lg:px-0  md:px-10 px-4 lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4">
+  <h2 class="text-3xl font-bold text-center mb-8">
+    Frequently Asked Questions
+  </h2>
+  <div class="grid md:grid-cols-2 grid-cols-1 gap-10">
+    <div class="w-full">
+      {% for faq in faqs %}
+        <details class="bg-white border rounded-lg p-4 mb-4 shadow">
+          <summary class="cursor-pointer text-lg font-semibold">
+           {{ faq.question }}
+          </summary>
+          <p class="mt-2 text-gray-700">
+             {{ faq.answer }}
+          </p>
+        </details>
+      {% endfor %}
+    </div>
+
+    <div class="w-full">
+      <figure class="w-full">
+        <img class="w-full" src="{% static 'image/about_img.avif' %}" alt="" />
+      </figure>
+    </div>
+  </div>
+
+  <style>
+    @media (min-width: 768px) {
+      .card:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+    }
+  </style>
+
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block hero %}
+<!-- About section -->
+<section
+  class="relative"
+  style="
+    background-image: url('https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-attachment: fixed;
+  "
+>
+  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-0 z-0"></div>
+
+  <div class="relative md:h-[300px] h-[200px] w-full">
+    <img
+      src="{% static 'image/about_img.avif' %}"
+      alt="Overlay"
+      class="absolute top-0 left-0 w-full h-full object-cover opacity-100 z-20"
+    />
+
+    <div
+      class="absolute top-0 left-0 w-full h-full z-30 flex justify-center items-center"
+    >
+      <h1 class="text-5xl text-white font-bold">About Us</h1>
+    </div>
+  </div>
+
+  <div class="bg-white">
+    <section class="bg-white z-20 opacity-100 max-w-7xl m-auto px-4">
+      <div class="card grid md:grid-cols-2 grid-cols-1 lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4 mb-10 ">
+        {% for item in about_items %}
+          {% if item.category == "About" %}
+
+          <figure>
+            <img
+              src="{{ item.image }}"
+              class="h-full w-full object-cover"
+              alt="{{ item.title }}"
+            />
+          </figure>
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              {{ item.title }}
+            </h3>
+            <p class="text-sm items-center">
+              {{ item.description|safe }}
+
+            </p>
+          </div>
+        </div>
+          {% endif %}
+
+      {% endfor %}
+    </section>
+    <section class="bg-[#274F74] px-4">
+      <div class=" text-white z-20 opacity-100  max-w-7xl m-auto">
+        <div class="grid md:grid-cols-2 grid-cols-1 lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4">
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              Society where there is understanding
+            </h3>
+            <p class="text-sm justify-center items-center">
+              Founded in 1988, Putnam Associates has been serving global
+              biopharmaceutical, diagnostics, and medical device clients, along
+              with private equity and venture capital clients, providing world
+              class strategic advice based on sophisticated, robust analytics. Our
+              focus enables us to provide customized, actionable recommendations
+              that draw on robust problem framing, cutting-edge methodologies,
+              deep therapeutic area knowledge, extensive global networks of health
+              care stakeholders, and expert synthesis across scientific, clinical,
+              and business disciplines. Our consultants have similar professional
+              and educational backgrounds to those at generalist strategy
+              consulting firms but with a significant advantage: 100% of Putnam’s
+              work is dedicated to maximizing the value of the pharmaceutical,
+              biotechnology, diagnostic and device products. We serve clients who
+              market many of the world’s best-known biopharmaceuticals, and who
+              are leveraging the genomics and “big data” revolutions month by
+              month with new breakthrough therapies and higher quality patient
+              care.
+            </p>
+          </div>
+
+          <figure>
+            <img
+              src="{% static 'image/about_img.avif' %}"
+              class="h-full w-full object-cover"
+              alt=""
+            />
+          </figure>
+        </div>
+      </div>
+  </section>
+
+    <!--    Our vesion-->
+
+    <section
+      class="bg-white opacity-100 lg:py-20 md:py-10 py-4 grid grid-cols-1 md:grid-cols-2 px-4 md:px-10 lg:px-20 z-20 max-w-7xl m-auto lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4"
+    >
+      <div class="flex flex-col gap-6">
+        <h3 class="text-xl font-bold">Our version</h3>
+        <div class="flex gap-6">
+            {% for item in about_items %}
+          {% if item.category == "vision" %}
+          <figure>
+            <img class="object-cover h-20 w-20" src="{{ item.image }}" alt="{{ item.title }}" />
+          </figure>
+          <div class="flex flex-col">
+            <h2 class="text-base font-bold">  {{ item.title }}</h2>
+            <div class="text-sm">
+              {{ item.description|safe }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        {% for item in about_items %}
+          {% if item.category == "exit" %}
+        <h3 class="text-xl">{{ item.title }}</h3>
+        <div class="">
+          <p>
+           {{ item.description|safe }}
+          </p>
+        </div>
+        {% endif %}
+      {% endfor %}
+      </div>
+    </section>
+  </div>
+
+
+  <section class="w-full ">
+    <div class="text-white flex justify-center items-center h-64">
+      <h3 class="text-5xl text-center max-w-4xl">
+        We are true to ourselves, and commit to always perform at our best.
+      </h3>
+    </div>
+  </section>
+</section>
+<!--    Frequently asked questions  -->
+<section class="max-w-7xl m-auto lg:px-0  md:px-10 px-4 lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4">
+  <h2 class="text-3xl font-bold text-center mb-8">
+    Frequently Asked Questions
+  </h2>
+  <div class="grid md:grid-cols-2 grid-cols-1 gap-10">
+    <div class="w-full">
+      {% for faq in faqs %}
+        <details class="bg-white border rounded-lg p-4 mb-4 shadow">
+          <summary class="cursor-pointer text-lg font-semibold">
+           {{ faq.question }}
+          </summary>
+          <p class="mt-2 text-gray-700">
+             {{ faq.answer }}
+          </p>
+        </details>
+      {% endfor %}
+    </div>
+
+    <div class="w-full">
+      <figure class="w-full">
+        <img class="w-full" src="{% static 'image/about_img.avif' %}" alt="" />
+      </figure>
+    </div>
+  </div>
+
+  <style>
+    @media (min-width: 768px) {
+      .card:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+    }
+  </style>
+
+</section>
+
+{% endblock %}

@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block hero %}
-    <section class="bg-[#274F74] text-white md:px-[6.25rem] px-3 py-14 ">
+<section class="bg-[#274F74] ">
+    <div class="max-w-7xl m-auto text-white md:px-0  px-3 py-14 ">
         <div class="justify-center text-center mb-10">
             <h3 class="text-white capitalize text-3xl font-bold">Our Legal team </h3>
         </div>
@@ -14,10 +15,10 @@
                     <figure>
                         <img class="w-full h-[300px] object-cover rounded-lg" src="{{ member.lawyer_image }}" alt="{{ member.name }}">
                     </figure>
-                    <div class="absolute bg-white -bottom-[3rem] p-1.5 text-center w-[265px] md:w-[70%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
-                        <h3 class="text-lg font-bold mt-2 text-black capitalize">{{ member.name }}</h3>
-                        <p class="text-sm text-black capitalize mb-2">{{ member.position|safe }}</p>
-                        <a href="{% url 'core:team_member_detail' member.slug %}" class="inline-block p-1.5 py-0.5 text-black rounded max-w-28 border hover:bg-[#274F74] transition delay-150 duration-300 hover:text-white">View Details</a>
+                    <div class="absolute bg-white -bottom-[3rem] py-2 px-1.5 text-center w-[265px] md:w-[70%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
+                        <h3 class="text-base font-bold  text-black capitalize">{{ member.name }}</h3>
+                        <p class="text-sm text-black capitalize mb-1">{{ member.position|safe }}</p>
+                        <a href="{% url 'core:team_member_detail' member.slug %}" class="inline-block px-1 mb-2 text-black rounded max-w-28 border hover:bg-[#274F74] transition delay-150 duration-300 hover:text-white">View Details</a>
 
                     </div>
                 </div>
@@ -26,5 +27,6 @@
                 {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}

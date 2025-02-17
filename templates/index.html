@@ -2,12 +2,12 @@
 {% load static %}
     {% block hero %}
     <!-- Hero Section -->
-    <section class="bg-[#274F74] z-10 text-white min-w-full lg:pl-[6.25rem] md:h-[658px] ">
-        <div class="grid grid-cols-1 md:grid-cols-2  lg:gap-[7.8125rem] md:h-[658px] gap-0 md:gap-10 md:gap-0">
-            <div class="gap-10 flex flex-col py-0 py-[3rem] md:pt-[9rem] px-4 lg:px-0 ">
+    <section class="bg-[#274F74] z-10 text-white min-w-full md:h-[658px] ">
+        <div class="grid grid-cols-1 md:grid-cols-2  lg:gap-[7.8125rem] md:h-[658px] gap-0 md:gap-10  ">
+            <div class="gap-10 flex flex-col  py-[3rem] md:pt-[9rem] px-4 lg:px-0 max-w-xl lg:ml-auto ">
                 <div class="flex flex-col gap-10">
                     <!-- <h1>Welcome To Legal Avenues</h1> -->
-                    <h2 class="capitalize font-bold lg:text-[2.8rem] text-2xl text-white text-center md:text-left">
+                    <h2 class="capitalize font-bold lg:text-[2.5rem] text-2xl text-white text-center md:text-left">
                         Dedicated to Achieving the Best Possible Outcome
                     </h2>
                     <p class="text-base leading-6">
@@ -37,13 +37,13 @@
     <!-- About Section -->
 
 
-    <section class="bg-white lg:pl-[6.25rem] md:py-[6.25rem] pt-[3rem]">
+    <section class="bg-white  md:py-[6.25rem] pt-[3rem] max-w-7xl m-auto">
         <h1 class="capitalize font-bold text-3xl  md:mb-20 mb-[2rem] text-[#274F74] text-center md:text-left px-20"> 
             <!-- text-center   -->
             About Legal Avenues
         </h1>
-        <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full md:gap-4 md:items-center lg:items-auto  md:px-0 ">
-            <div class="relative md:w-[24rem]  h-[24rem] ">
+        <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full md:gap-[6.25rem] md:items-center lg:items-auto  md:px-0 ">
+            <div class="relative   h-[24rem] ">
                 <div
                     class="absolute top-[1.25rem] left-[1.25rem] transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-[#274F74] z-10 hidden lg:flex flex-col justify-center items-center rounded-lg ">
                     <div class="h-16 w-16 bg-white rounded-full mb-2"></div>
@@ -53,7 +53,7 @@
 
                 <figure class="h-full w-full">
                     <img src="{% static 'image/about_img.avif' %}" alt="about_img"
-                        class="md:w-[24rem] h-[24rem] w-full rounded object-cover" />
+                        class=" h-[24rem] w-full rounded object-cover" />
                 </figure>
 
                 <div
@@ -64,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col lg:pr-[6.25rem] lg:col-span-2 px-3 md:px-0 py-[3rem] md:py-0">
+            <div class="flex flex-col  lg:col-span-2 px-3 md:px-0 py-[3rem] md:py-0">
                 <h2 class=" text-base ">At <span class="text-lg font-bold">Legal Avenues</span>, we understand
                     the importance of timely and effective legal solutions. Our team works closely with clients to
                     provide expert guidance and ensure their legal rights are protected. We offer personalized services
@@ -83,7 +83,7 @@
                             committed to helping you navigate the complexities of Nepali law and ensure your legal
                             matters are handled with the utmost care and attention.</p>
                     </div>
-                    <a href="#"
+                    <a href="{% url 'core:about' %}"
                         class="bg-[#3C6183] items-center text-white py-2  px-2 rounded min-w-6 hover:bg-[#274F74]  transition delay-150 duration-300">Know
                         More</a>
             </div>
@@ -93,7 +93,8 @@
 
     <!-- our practice  person -->
 
-    <section class="bg-[#274F74] text-white md:px-[6.25rem] pl-3 md:py-[6.25rem] py-[3rem] relative">
+    <section class="bg-[#274F74] text-white"> 
+        <div class=" md:px-0 md:pl-0  pl-3md:py-[6.25rem] py-[3rem] relative max-w-7xl m-auto">
         <div class="justify-center text-center mb-10">
             <h3 class="text-white capitalize font-bold text-3xl ">Our Practice Areas</h3>
         </div>
@@ -127,7 +128,7 @@
                     <div class="bg-white px-3 text-center rounded-b-lg py-3 cursor-pointer ">
                         <h3 class="text-sm font-bold text-black">Criminal Law
                         </h3>
-                        <p class="text-sm text-black line-clamp-2 overflow-hidden">We provide legal defense and
+                        <p class="text-sm text-black line-clamp-3 overflow-hidden">We provide legal defense and
                             representation for individuals facing criminal charges.
 
                             White-collar crimes and fraud cases
@@ -148,12 +149,12 @@
                             in financial transactions, banking regulations, and compliance...
                             <span class="flex flex-col absolute">
 
-                                <span> Business and company registration</sapn>
+                                <span> Business and company registration</span>
                                     <span>Foreign direct investment (FDI) advisory</span>
                                     <span>Mergers & acquisitions (M&A)</span>
                                     <span>Corporate governance & regulatory compliance</span>
                                     <span>Intellectual property (trademarks, patents, copyright)</span>
-                                    <sapn>Commercial contracts and agreements
+                                    <span>Commercial contracts and agreements
                                 </span>
                             </span>
                         </p>
@@ -224,7 +225,7 @@
                                 <span>Mergers & acquisitions (M&A)</span>
                                 <span>Corporate governance & regulatory compliance</span>
                                 <span>Intellectual property (trademarks, patents, copyright)</span>
-                                <sapn>Commercial contracts and agreements
+                                <span>Commercial contracts and agreements
                             </span>
                             <span>
                         </p>
@@ -235,6 +236,7 @@
 
         </div>
 
+        </div>
     </section>
 
     <div id="popupOverlay" class="hidden fixed inset-0 bg-transparent  bg-opacity-50 z-10"></div> <!-- Overlay for darkening background -->
@@ -252,27 +254,28 @@
 
 
     <!-- faq Section -->
-    <section class="bg-white px-[2rem] lg:px-[6.25rem] md:py-[6.25rem] py-[3rem]  ">
+    <section class="bg-white px-[2rem] lg:px-0 md:py-[6.25rem] py-[3rem] max-w-7xl m-auto ">
         <h2 class="text-3xl font-bold mb-5 text-[#274F74] text-center md:px-0 ">Frequently Asked Questions</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-[6.25rem] gap-[3rem] md:px-0 px-3">
+        <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-10 gap-[3rem] md:px-0 px-3">
             <div class=" ">
-                <div class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2">
                     <!-- FAQ Items -->
                     {% for faq in faqs %}
-                    <div class="border-2 border-gray-300 p-2 rounded ">
-                        <div class="flex justify-between cursor-pointer" onclick="toggleFaq({{ faq.id }})">
-                            <button class="w-full text-left font-semibold">{{ faq.question }}</button>
-                            <div id="icon{{ faq.id }}" class="text-gray-400 font-bold text-2xl">+</div>
-                        </div>
-                        <p id="faq{{ faq.id }}" class="hidden text-black mt-2">{{ faq.answer }}</p>
-                    </div>
+                    <details class="border-2 text-gray-600 border-gray-300 p-1.5 rounded ">
+                        <summary class="cursor-pointer w-full text-left font-semibold">
+                            {{ faq.question }}
+                         </summary>
+                        <p class="mt-1 text-gray-700">
+                            {{ faq.answer }}
+                        </p>
+                      </details>
                     {% endfor %}
 
                 </div>
             </div>
 
 
-            <div class="col-span-1  ">
+            <div class="col-span-1 hidden lg:block ">
                 <img src="{% static 'image/law_.jpg' %}" alt="Sample Image"
                     class="w-full h-full object-cover rounded-lg">
             </div>
@@ -288,8 +291,8 @@
     <!--  form  -->
 
     <section class="bg-[#274F74] ">
-        <div class="grid md:grid-cols-2 grid-cols-1">
-            <form action="#" method="post" class=" lg:px-[6.25rem] lg:py-[6.25rem] px-3 py-[3rem] col-span-1 md:h-[40.625rem] flex flex-col gap-5 justify-center ">
+        <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-[7.8125rem]  ">
+            <form action="#" method="post" class="  max-w-xl ml-auto lg:px-0 lg:py-[6.25rem] px-3 py-[3rem] col-span-1 md:h-[40.625rem] flex flex-col gap-5 justify-center ">
                 <h3 class="capitalize text-white text-3xl font-bold">We Are Committed To Help You With Your Requirements </h3>
                 <div class="flex flex-col gap-2">
                     <div class=" grid grid-cols-2 gap-4 ">
@@ -319,7 +322,7 @@
                         required></textarea>
                     <div class="flex items-center text-center ">
                             <button
-                            class="border-1 flex items-center text-center  border-white px-2 py-2 gap-0.5 rounded mt-2 bg-white text-black transition delay-100 duration-75">Send
+                            class=" cursor-pointer flex items-center text-center   px-2 py-2 gap-0.5 rounded mt-2 bg-white text-black hover:text-white  hover:bg-[#326a9f]  transition delay-150 duration-300">Send
                             Message <img class=' w-4  ' src="{% static 'image/Frame.png' %}" alt=""></button>
                     </div>
                 </div>

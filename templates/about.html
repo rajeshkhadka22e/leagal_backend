@@ -1,90 +1,165 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block hero %}
-    <!-- services section -->
-    <div class="mt-24">
-        <div class="flex flex-col  w-full">
-            <div class="absolute w-full ">
-                <img class="h-56 w-full object-cover " src="image/abut.png" alt="">
+<!-- About section -->
+<section
+  class="relative"
+  style="
+    background-image: url('https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-attachment: fixed;
+  "
+>
+  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-0 z-0"></div>
+
+  <div class="relative md:h-[300px] h-[200px] w-full">
+    <img
+      src="{% static 'image/about_img.avif' %}"
+      alt="Overlay"
+      class="absolute top-0 left-0 w-full h-full object-cover opacity-100 z-20"
+    />
+
+    <div
+      class="absolute top-0 left-0 w-full h-full z-30 flex justify-center items-center"
+    >
+      <h1 class="text-5xl text-white font-bold">About Us</h1>
+    </div>
+  </div>
+
+  <div class="bg-white">
+    <section class="bg-white z-20 opacity-100 max-w-7xl m-auto px-4 ">
+      <div class="card flex flex-col">
+        <div class="  grid md:grid-cols-2 grid-cols-1 lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4 mb-10 ">
+        {% for item in about_items %}
+          {% if item.category == "About" %}
+
+          <figure>
+            <img
+              src="{{ item.image }}"
+              class="h-52 w-full object-cover"
+              alt="{{ item.title }}"
+            />
+          </figure>
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              {{ item.title }}
+            </h3>
+            <div class="text-sm items-center">
+              {{ item.description|safe }}
+
             </div>
-            <div class="z-10 container px-5 md:px-10 lg:px-20 mx-auto md:mb-10 mb-5">
-                <div class="rounded-2xl mt-36  bg-white shadow-md  py-8 justify-between flex items-center  mb-8 px-10">
-                    <div>
-                        <h3 class="">About</h3>
-                        <div class=" w-20 h-1 bg-yellow-500"></div>
-                    </div>
-                    <a class="text-2xl font-normal" href="">Home > About us </a>
-                </div>
-            </div>
+          </div>
+                {% endif %}
+
+      {% endfor %}
         </div>
+         </div>
+    </section>
+
+
+    <!--    Our vesion-->
+
+    <section
+      class="bg-white opacity-100 lg:py-20 md:py-10 py-4 flex flex-col md:flex-row px-4 md:px-10 lg:px-0 z-20 max-w-7xl m-auto lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4"
+    >
+      <div class="flex flex-col gap-6">
+        <h3 class="text-xl font-bold">Our version</h3>
+
+          <div class="flex  flex-col gap-6">
+
+          {% for item in about_items %}
+            {% if item.category == "vision" %}
+      <div class="flex   ">
+            <figure>
+            <img
+              src="{{ item.image }}"
+              class="object-cover h-8 w-[200px] "
+              alt="{{ item.title }}"
+            />
+            </figure>
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              {{ item.title }}
+            </h3>
+            <div class="text-sm items-center">
+              {{ item.description|safe }}
+
+            </div>
+          </div>
+         </div>
+          {% endif %}
+
+        {% endfor %}
+
+
+      </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        {% for item in about_items %}
+          {% if item.category == "exit" %}
+
+
+          <div class="flex flex-col justify-center">
+            <h3 class="text-2xl font-bold">
+              {{ item.title }}
+            </h3>
+            <div class="text-sm items-center flex flex-col">
+              {{ item.description|safe }}
+
+            </div>
+          </div>
+        </div>
+          {% endif %}
+
+      {% endfor %}
+
+    </section>
+  </div>
+
+
+  <section class="w-full ">
+    <div class="text-white flex justify-center items-center h-64">
+      <h3 class="text-5xl text-center max-w-4xl">
+        We are true to ourselves, and commit to always perform at our best.
+      </h3>
+    </div>
+  </section>
+</section>
+<!--    Frequently asked questions  -->
+<section class="max-w-7xl m-auto lg:px-0  md:px-10 px-4 lg:pt-20 md:pt-10 pt-4 lg:gap-20 md:gap-10 gap-4">
+  <h2 class="text-3xl font-bold text-center mb-8">
+    Frequently Asked Questions
+  </h2>
+  <div class="grid md:grid-cols-2 grid-cols-1 gap-10">
+    <div class="w-full">
+      {% for faq in faqs %}
+        <details class="bg-white border rounded-lg p-4 mb-4 shadow">
+          <summary class="cursor-pointer text-lg font-semibold">
+           {{ faq.question }}
+          </summary>
+          <p class="mt-2 text-gray-700">
+             {{ faq.answer }}
+          </p>
+        </details>
+      {% endfor %}
     </div>
 
-    <!-- STAT section -->
+    <div class="w-full">
+      <figure class="w-full">
+        <img class="w-full" src="{% static 'image/about_img.avif' %}" alt="" />
+      </figure>
+    </div>
+  </div>
 
-    <section class="container px-5 md:px-10 lg:px-20 mx-auto md:mb-10 mb-5">
-        <h2 class="font-bold lg:text-[3.29rem] mb-8">We will have a STAT section here. just like below one</h2>
-        <div class="grid  grid-col-1 md:grid-cols-2 lg:grid-cols-4 border-gray-300 lg:items-center lg:gap-0 gap-4 lg:border-x-2">
-            <div class="col-span-1 lg:border-r-2 md:border-2 lg:border-0 border-2 rounded-xl ">
-                <div class="bg-white p-4 rounded-lg text-center">
-                    <h3 class="text-6xl font-bold text-orange-600 ">60%</h3>
-                    <p class="text-black uppercase font-bold text-xl ">Clients <br> with us 10 or <br> more years</p>
-                </div>
-            </div>
-            <div class="col-span-1 lg:border-r-2 lg:border-0 border-2 md:border-2 rounded-xl ">
-                <div class="bg-white p-4  text-center">
-                    <h3 class="text-4xl text-black font-bold">25</h3>
-                    <p class="text-black font-bold text-base uppercase"><span class="uppercase text-6xl font-bold text-orange-600 ">cfp</span><br> <span class=" text-orange-600 text-2xl">professionals</span> <br> and just as many mba's</p>
-                </div>
-            </div>
-            <div class="col-span-1 lg:border-r-2 md:border-2 border-2 lg:border-0 rounded-xl ">
-                <div class="bg-white p-4  text-center">
-                    <h3 class="text-base uppercase text-black font-bold">our associates <br> stay and grow with us </h3>
-                    <p class="text-orange-600  font-bold"><span class="text-6xl font-bold text-orange-600">9</span> <br> <span class="text-2xl ">years</span> <br>
-                        <span class="text-black uppercase font-bold text-base">average employment</span>
+  <style>
+    @media (min-width: 768px) {
+      .card:nth-child(even) {
+        flex-direction: row-reverse;
+        background-color: #274F74;
+      }
+    }
+  </style>
 
-                    </p>
-                </div>
-            </div>
-            <div class="col-span-1  lg:border-0 border-2 rounded-xl  ">
-                <div class="bg-white p-4 rounded-lg my-auto text-center py-9 md:pt-9 lg:pt-0 ">
-                    <h3 class="text-2xl font-bold text-orange-600 uppercase ">retention</h3>
-                    <span class="text-6xl font-bold text-black">95%</span>
-                    <p class="text-orange-600 uppercase font-bold text-base">3 years average</p>
-                </div>
-            </div>
-        </div>
-    </section>
+</section>
 
-<!-- mission vission up cntent pages -->
-    <section class="container px-5  md:px-10 lg:px-20 mx-auto md:mb-10 mb-5">
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center w-full h-full">
-            <p class=" md:col-span-3 font-light text-gray-500">In publishing and graphic design, Lorem ipsum is a
-                placeholder text commonly used to demonstrate the visual form of a document or a typeface without
-                relying on meaningful content.In publishing and graphic design, Lorem ipsum is a placeholder text
-                commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful
-                content. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi quidem rem hic natus aliquid, nemo eaque asperiores, quasi, quibusdam nobis adipisci magni totam iure molestias odit laborum cum explicabo? Amet!
-            </p>
-            <img class="md:col-span-2 w-full h-full" src="image/about_img.png" alt="">
-        </div>
-    </section>
+{% endblock %}
 
-    <!-- Mission & Vision -->
-
-    <section class="container px-5 md:px-10 lg:px-20 mx-auto md:mb-10 mb-5 ">
-        <div class="mx-auto bg-white">
-            <h3>Mission & Vision</h3>
-            <div class="mt-2 w-20 h-1 bg-yellow-500"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-5 items-center md:h-full w-full">
-                <div class="col-span-2 w-full h-full">
-                    <img class=" object-cover w-full " src="image/rocket.png" alt="mission and vission">
-                </div>
-             <p class="col-span-3 p-12 rounded-2xl bg-yellow-50"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis iure facilis non sed sapiente itaque provident beatae et, cumque culpa magnam vel sit animi hic esse iste sint. Commodi, laudantium! In publishing and graphic design, Lorem ipsum is a placeholder text commonly
-                used to demonstrate the visual form of a document or a typeface without relying on meaningful content
-            </p>
-         
-        </div>
-    </section>
-{% endblock  %}

@@ -2,10 +2,10 @@
 {% load static %}
 
 {% block hero %}
-<div class="md:px-[6.25rem] px-[2rem] mx-auto mt-10 flex flex-wrap gap-10">
-    <div class="w-full sm:w-auto mb-4 md:sticky md:top-4 h-max">
-        <img class="md:w-[300px] h-[300px] object-cover rounded-lg item-center md:item-left" src="{{ publication.image }}" alt="{{ publication.title }}">
-        <h1 class="text-2xl font-bold mt-4 capitalize text-center md:text-left">{{ publication.title }}</h1>
+<div class="md:px-0 px-[2rem] mx-auto mt-10 flex flex-wrap gap-10  max-w-7xl m-auto">
+    <div class="w-full sm:w-auto mb-4 md:sticky md:w-[300px] md:top-4 h-max">
+        <img class=" h-[300px] object-cover rounded-lg item-center md:item-left" src="{{ publication.image }}" alt="{{ publication.title }}">
+        <h1 class="text-xl font-bold mt-4 capitalize text-center md:text-left">{{ publication.title }}</h1>
     </div>
     
     <!-- Main Content Section -->

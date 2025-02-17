@@ -5,8 +5,15 @@ from tinymce.models import HTMLField
 import bleach
 
 class FAQ(models.Model):
+    CATEGORY_CHOICES = [
+        ('Home', 'Home'),
+        ('About', 'About'),
+    ]
+    category = models.CharField(
+        max_length=20, choices=CATEGORY_CHOICES, default='Home'
+    )
     question = models.CharField("Question", max_length=255)
-    answer =models.CharField(max_length=255)
+    answer = models.CharField(max_length=255)
 
     class Meta:
         verbose_name = "FAQ"
@@ -14,7 +21,7 @@ class FAQ(models.Model):
 
     def __str__(self):
         return self.question
-    
+
 
 class TeamMember(models.Model):
     name = models.CharField("Name", max_length=100)
@@ -63,6 +70,27 @@ class services(models.Model):
     def __str__(self):
         return self.title
 
+
+class about(models.Model):
+    title = models.CharField("Title", max_length=255)
+    description = HTMLField("Description")
+    image = ImagePickerField("Image")
+    CATEGORY_CHOICES = [
+        ('vision', 'vision'),
+        ('About', 'About'),
+        ('exit','exit'),
+    ]
+    category = models.CharField(
+        max_length=20, choices=CATEGORY_CHOICES, default='About'
+    )
+    class Meta:
+        verbose_name = "about"
+        verbose_name_plural = "about"
+
+    def __str__(self):
+        return self.title
+
+
 class publication(services):
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
 
@@ -72,7 +100,7 @@ class publication(services):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title)  # Generate slug only for publications
+            self.slug = slugify(self.title)
         self.is_services = False
         super().save(*args, **kwargs)
 
