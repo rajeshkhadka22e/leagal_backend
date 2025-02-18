@@ -1,17 +1,27 @@
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuBtn = document.getElementById("menu-btn");
+        const closeMenu = document.getElementById("close-menu");
+        const overlay = document.getElementById("overlay");
 
-  // leagel person
-  const slider = document.getElementById("slider");
+        // Function to open the mobile menu
+        function openMenu() {
+            mobileMenu.classList.remove("translate-x-full"); // Show the menu by removing translate-x-full
+            overlay.classList.remove("hidden"); // Show overlay
+        }
 
-  function slideLeft() {
-      slider.scrollBy({ left: -310, behavior: "smooth" }); // Adjust scroll distance as needed
-  }
+        // Function to close the mobile menu
+        function closeMenuFunc() {
+            mobileMenu.classList.add("translate-x-full"); // Hide the menu by adding translate-x-full
+            overlay.classList.add("hidden"); // Hide overlay
+        }
 
-  function slideRight() {
-      slider.scrollBy({ left: 310, behavior: "smooth" }); // Adjust scroll distance as needed
-  }
-
-
+        // Event listeners for opening and closing the menu
+        menuBtn.addEventListener("click", openMenu); // Open menu when menu button is clicked
+        closeMenu.addEventListener("click", closeMenuFunc); // Close menu when close button is clicked
+        overlay.addEventListener("click", closeMenuFunc); // Close menu when overlay is clicked
+    });
 
   // faq section
   function toggleFaq(id) {

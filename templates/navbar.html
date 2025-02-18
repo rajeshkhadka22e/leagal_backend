@@ -81,54 +81,133 @@
             </div>
         </div>
     </div>
-    <div class=" lg:px-[6.25rem]">
-        <div class="flex justify-between items-center py-3 max-w-7xl m-auto px-4 lg:px-0 ">
-            <div class="flex items-center space-x-2 gap-1">
-            <a href="{% url 'core:index' %}">
-                <img src="{% static 'image/image 2.png' %}" alt="Legal Avenues" class="h-14" />
-            </a>
-            </div>
-
-            <!-- Hamburger Menu for Mobile -->
-            <button id="menu-toggle" class="md:hidden text-gray-500 hover:text-[#025098] focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-
-            <!-- Navigation Menu -->
-            <nav id="menu"
-                class="hidden md:flex lg:space-x-6 space-x-2 text-base text-gray-500 font-medium items-center">
-                <a href="{% url 'core:index' %}" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Home</a>
-                <a href="{% url 'core:about' %}" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">About
-                    Us</a>
-                <a href="{% url 'core:service' %}"
-                    class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Services</a>
-                <a href="{% url 'core:publication' %}" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Publication</a>
-                <a href="{% url 'core:team' %}" class="border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Team</a>
-            
-                <a href="#"  target="_blank" aria-label="Contact us"
-                class="hover:bg-[#274F74] items-center  flex py-2  px-2  gap-0.5 rounded bg-[#3C6183] text-white transition delay-150 duration-300">Contact us
-                <img src="{% static 'image/frame1.png' %}" alt="View us" /></a>
-            </nav>
-        </div>
     </div>
-    
 
+<div id="navbar" class="lg:px-[6.25rem] transition-all duration-700">
+    <div class="flex justify-between items-center py-3 max-w-7xl m-auto px-4 lg:px-0">
+        <div class="flex items-center space-x-2 gap-1">
+            <a href="{% url 'core:index' %}">
+                <img src="{% static 'image/logo.png' %}" alt="Legal Avenues" class="h-14 object-cover" />
+            </a>
+        </div>
+        <!-- Hamburger Menu for Mobile -->
+        <button id="menu-btn" class="md:hidden text-gray-500 hover:text-[#025098] focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav id="menu" class="hidden md:flex lg:space-x-6 space-x-2 text-base text-gray-500 font-medium items-center">
+            <a href="{% url 'core:index' %}" class="nav-link border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Home</a>
+            <a href="{% url 'core:about' %}" class="nav-link border-b-2 border-white hover:border-b-2 hover:border-[#025098]">About Us</a>
+            <a href="{% url 'core:service' %}" class="nav-link border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Services</a>
+            <a href="{% url 'core:publication' %}" class="nav-link border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Publication</a>
+            <a href="{% url 'core:team' %}" class="nav-link border-b-2 border-white hover:border-b-2 hover:border-[#025098]">Team</a>
+            <a href="#" target="_blank" aria-label="Contact us" class="nav-link hover:bg-[#274F74] items-center flex py-2 px-2 gap-0.5 rounded bg-[#3C6183] text-white transition delay-150 duration-300">Contact us
+                <img src="{% static 'image/frame1.png' %}" alt="View us" />
+            </a>
+        </nav>
+    </div>
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class=" md:hidden absolute right-0 top-[124px] flex-col space-y-4 mt-4 bg-white p-4 z-50 rounded-b-lg  text-gray-500 font-medium">
-        <a href="index.html" class="block hover:text-[#025098]">Home</a>
-        <a href="about.html" class="block hover:text-[#025098]">About Us</a>
-        <a href="services.html" class="block hover:text-[#025098]">Services</a>
-        <a href="#" class="block hover:text-[#025098]">Publication</a>
-        <a href="team.html" class="block hover:text-[#025098]">Team</a>
-        <a href="#" class="rounded-xl bg-[#025098] px-3 py-3 flex border-2 shadow text-white items-center gap-1 hover:bg-green-500 transition-transform object-contain"
+        class="fixed top-0 right-0 h-full w-[250px] bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 p-4 text-gray-700 font-medium">
+        <button id="close-menu" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+        <a href="{% url 'core:index' %}" class="block py-2 hover:text-[#025098]">Home</a>
+        <a href="{% url 'core:about' %}" class="block py-2 hover:text-[#025098]">About Us</a>
+        <a href="{% url 'core:service' %}" class="block py-2 hover:text-[#025098]">Services</a>
+        <a href="{% url 'core:publication' %}" class="block py-2 hover:text-[#025098]">Publication</a>
+        <a href="{% url 'core:team' %}" class="block py-2 hover:text-[#025098]">Team</a>
+        <a href="#" class="mt-4 rounded-xl bg-[#025098] px-3 py-3 flex border-2 shadow text-white items-center gap-1 hover:bg-green-500 transition-transform"
             target="_blank" aria-label="Contact us">
             Contact us <img src="{% static 'image/frame1.png' %}" alt="contact us" />
         </a>
     </div>
+    <!-- Overlay -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"></div>
+</div>
 
+
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function setActiveLink(activeLink) {
+        navLinks.forEach(link => {
+            link.classList.remove("border-[#025098]", "text-[#025098]", "bg-[#f0f9ff]");
+            link.classList.add("border-white", "text-gray-500");
+        });
+
+        activeLink.classList.add("border-[#025098]", "text-[#025098]");
+        activeLink.classList.remove("border-white", "text-gray-500");
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            if (!link.href || link.href === "#") {
+                event.preventDefault();
+            }
+            setActiveLink(this);
+        });
+    });
+    const currentPageUrl = window.location.href;
+    navLinks.forEach(link => {
+        if (link.href === currentPageUrl) {
+            setActiveLink(link);
+        }
+    });
+});
+        </script>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuBtn = document.getElementById("menu-btn");
+        const closeMenu = document.getElementById("close-menu");
+        const overlay = document.getElementById("overlay");
+
+        // Function to open the mobile menu
+        function openMenu() {
+            mobileMenu.classList.remove("translate-x-full"); // Show the menu by removing translate-x-full
+            overlay.classList.remove("hidden"); // Show overlay
+        }
+
+        // Function to close the mobile menu
+        function closeMenuFunc() {
+            mobileMenu.classList.add("translate-x-full"); // Hide the menu by adding translate-x-full
+            overlay.classList.add("hidden"); // Hide overlay
+        }
+
+        // Event listeners for opening and closing the menu
+        menuBtn.addEventListener("click", openMenu); // Open menu when menu button is clicked
+        closeMenu.addEventListener("click", closeMenuFunc); // Close menu when close button is clicked
+        overlay.addEventListener("click", closeMenuFunc); // Close menu when overlay is clicked
+    });
+</script>
+
+<style>
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+/* Active link styles */
+.nav-link.border-[#025098] {
+    border-color: #025098;
+}
+.nav-link.text-[#025098] {
+    color: #025098;
+}
+
+</style>
+<script src="{% static 'js/script.js' %}"></script>
 
 </header>
