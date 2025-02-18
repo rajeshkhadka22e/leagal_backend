@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block hero %}
+    <section class="bg-[#274F74] ">
+        <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-[7.8125rem] max-w-7xl m-auto   lg:px-0 lg:py-10 px-[3rem] py-[3rem] col-span-1 md:h-[40.625rem] ">
+            <div class="col-span-1 w-full gap-5  ">
+                <p class="text-white text-xl items-center  my-auto">
+                    Thank you for contacting Legal Avenues!
+
+                    We appreciate you taking the time to get in touch with us. Our team of experienced legal professionals is reviewing your inquiry, and we will get back to you as soon as possible.
+
+                    If your matter is urgent, please don't hesitate to contact us directly at [Phone Number]. Otherwise, one of our representatives will respond to your message promptly.
+
+                    Our Expertise: With over [Number] years of experience in [mention areas of law you specialize in], we are dedicated to providing you with the best legal guidance and solutions.
+
+                    Thank you for choosing Legal Avenues. We look forward to assisting you with your legal needs.                </p>
+                    <!--                <img src="{% static 'image/image 3.png' %}" alt="" style="height: 650px;" class="h-[500px] w-full object-cover">-->
+            </div>
+
+            <form action="{% url 'core:contact' %}" method="POST" class="flex flex-col gap-2">
+                {% csrf_token %}
+
+                <!-- Render First Name and Last Name in the same row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex-col flex gap-2 text-base">
+                        <label class="capitalize text-white" for="{{ form.first_name.id_for_label }}" required>First Name</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="flex flex-col gap-2 text-base">
+                        <label class="capitalize text-white" for="{{ form.last_name.id_for_label }}" required>Last Name</label>
+                        {{ form.last_name }}
+                    </div>
+                </div>
+
+                <!-- Render Email Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="{{ form.email.id_for_label }}" class="capitalize text-white" required>Email</label>
+                    {{ form.email }}
+                </div>
+
+                <!-- Render Message Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="{{ form.message.id_for_label }}" class="capitalize text-white" required>Your Message</label>
+                    {{ form.message }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex items-center justify-center mt-4">
+                    <button type="submit" class="cursor-pointer flex items-center text-center px-4 py-2 gap-1 rounded mt-2 bg-white text-black hover:text-white hover:bg-[#326a9f] transition delay-150 duration-300">
+                        Send Message
+                        <img class="w-4" src="{% static 'image/Frame.png' %}" alt="Send Icon">
+                    </button>
+                </div>
+            </form>
+        </div>
+    <section>
+{% endblock %}

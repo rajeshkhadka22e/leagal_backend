@@ -1,7 +1,16 @@
 from django.contrib import admin
-from .models import FAQ,TeamMember,services,publication,about
+from .models import FAQ,TeamMember,services,publication,about,ContactMessage
 from django.utils.html import mark_safe
 from django.utils.html import format_html
+
+@admin.register(ContactMessage)
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'email', 'message', 'date_created')
+    search_fields = ('first_name', 'last_name', 'email')
+    list_filter = ('date_created',)
+    ordering = ('-date_created',)
+
+
 
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):
