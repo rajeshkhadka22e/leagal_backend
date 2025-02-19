@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 DASHHUB_SETTINGS = {
-    "site_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw2_pVkRRqmwVonhBj-iZu6WsmDcL6bLjYww&s",
+    "site_logo": "http://127.0.0.1:8000/static/image/logo.png",
     "theme_color": "#009688",
     "custom_css": "admin/css/custom.css",
     "hide_models": [
@@ -119,8 +119,14 @@ DASHHUB_SETTINGS = {
     "icons": {
         "core.publication": "fa-solid fa-book-open",
         "core.faq": "fa-solid fa-circle-question",
-        "core.TeamMember": "fa-solid fa-user"
-    },
+        "core.TeamMember": "fa-solid fa-user",
+        "core.about": "fa-solid fa-user",
+        "core.ContactMessage": "fa-solid fa-envelope",
+        "core.practicearea": "fa-solid fa-briefcase",
+        "core.services": "fa-solid fa-cogs"
+},
+
+
     "default_orders": {
     "core.teammember": 3,
     "core.faq": 1,

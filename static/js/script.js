@@ -23,19 +23,6 @@
         overlay.addEventListener("click", closeMenuFunc); // Close menu when overlay is clicked
     });
 
-  // faq section
-  function toggleFaq(id) {
-    let faqs = document.querySelectorAll("[id^=faq]");
-    
-    faqs.forEach(faq => {
-        if (faq.id !== "faq" + id) {
-            faq.classList.add("hidden");
-        }
-    });
-
-    document.getElementById("faq" + id).classList.toggle("hidden");
-}
-
 
 
 //  JavaScript for Toggle 

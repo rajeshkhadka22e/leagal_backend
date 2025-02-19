@@ -98,12 +98,12 @@
         <div class="justify-center text-center mb-10">
             <h3 class="text-white capitalize font-bold text-3xl ">Our Practice Areas</h3>
         </div>
-        <button onclick="slideLeft()"
+        {% comment %} <button onclick="slideLeft()"
             class="absolute left-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">
             <p class="px-[0.68rem] py-[0.75rem]">◀</p>
         </button>
         <button onclick="slideRight()"
-            class="absolute right-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">▶</button>
+            class="absolute right-[40px] top-1/2 -translate-y-1/2 bg-gray-800 text-white h-10 w-10 rounded-full z-10">▶</button> {% endcomment %}
 
         <div class="w-full overflow-hidden  custom-scrollbar">
 
@@ -120,118 +120,58 @@
                             -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
                         }
                 </style>
-                <div class="cart flex-shrink-0 w-[300px] cursor-pointer " onclick="openPopup(this)">
-                    <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/criminal.jpeg' %}"
-                            alt="">
-                    </figure>
-                    <div class="bg-white px-3 text-center rounded-b-lg py-3 cursor-pointer ">
-                        <h3 class="text-sm font-bold text-black">Criminal Law
-                        </h3>
-                        <p class="text-sm text-black line-clamp-3 overflow-hidden">We provide legal defense and
-                            representation for individuals facing criminal charges.
-
-                            White-collar crimes and fraud cases
-                            Criminal defense litigation
-                            Anti-corruption laws and investigations</p>
-                        <button class="readMore text-blue-600 text-sm mt-1 cursor-pointer ">Read More</button>
+                {% for practice in practice %}
+                    <div class="cart flex-shrink-0 w-[300px] cursor-pointer" onclick="openPopup(this)">
+                        <figure>
+                            <img class="w-full h-[150px] object-cover rounded-t-lg" src="{{ practice.image }}" alt="">
+                        </figure>
+                        <div class="bg-white px-3 text-center rounded-b-lg py-3">
+                            <h3 class="text-sm font-bold text-black">{{ practice.title }}</h3>
+                            <p class="text-sm text-black overflow-hidden line-clamp-1">
+                                {{ practice.description }}
+                            </p>
+                            <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
 
-                <div class="cart flex-shrink-0 w-[300px] cursor-pointer " onclick="openPopup(this)">
-                    <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg"
-                            src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
-                    </figure>
-                    <div class="bg-white px-3 text-center rounded-b-lg py-3 cursor-pointer ">
-                        <h3 class="text-sm font-bold text-black">Banking & Finance Law</h3>
-                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance
-                            in financial transactions, banking regulations, and compliance...
-                            <span class="flex flex-col absolute">
+                <script>
 
-                                <span> Business and company registration</span>
-                                    <span>Foreign direct investment (FDI) advisory</span>
-                                    <span>Mergers & acquisitions (M&A)</span>
-                                    <span>Corporate governance & regulatory compliance</span>
-                                    <span>Intellectual property (trademarks, patents, copyright)</span>
-                                    <span>Commercial contracts and agreements
-                                </span>
-                            </span>
-                        </p>
-                        <button class="readMore text-blue-600 text-sm mt-1 cursor-pointer ">Read More</button>
-                    </div>
-                </div>
-
-                <div class="cart flex-shrink-0 w-[300px] cursor-pointer " onclick="openPopup(this)">
-                    <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg" src="{% static 'image/criminal.jpeg' %}"
-                            alt="">
-                    </figure>
-                    <div class="bg-white px-3 text-center rounded-b-lg py-3 ">
-                        <h3 class="text-sm font-bold text-black"> Technology, Media & Telecommunications (TMT) Law
-                        </h3>
-                        <p class="text-sm text-black overflow-hidden line-clamp-1">We assist businesses in managing
-                            legal risks in the digital and media landscape.
-
-                            Cyber law and data protection compliance
-                            E-commerce regulations
-                            IT contracts and software licensing
-                        </p>
-                        <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
-                    </div>
-                </div>
-
-                <div class="cart flex-shrink-0 w-[300px] cursor-pointer " onclick="openPopup(this)">
-                    <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg"
-                            src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
-                    </figure>
-                    <div class="bg-white px-3 text-center rounded-b-lg py-3">
-                        <h3 class="text-sm font-bold text-black"> Immigration & Nationality Law
-                        </h3>
-                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance
-                            in financial transactions, banking regulations, and compliance...
-                            <span class="flex flex-col absolute">
-
-                                <span> Business and company registration</sapn>
-                                    <span>Foreign direct investment (FDI) advisory</span>
-                                    <span>Mergers & acquisitions (M&A)</span>
-                                    <span>Corporate governance & regulatory compliance</span>
-                                    <span>Intellectual property (trademarks, patents, copyright)</span>
-                                    <sapn>Commercial contracts and agreements
-                                </span>
-                            </span>
-                        </p>
-                        <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
-                    </div>
-                </div>
+document.addEventListener("DOMContentLoaded", function () {
+    const popupModal = document.getElementById("popupModal");
+    const popupContent = popupModal.querySelector("div"); // The inner content box
+    const popupOverlay = document.getElementById("popupOverlay");
 
 
+    function openPopup(element) {
+        const title = element.querySelector("h3").innerText;
+        const content = element.querySelector("p").innerText;
+        // popupOverlay.classList.remove("hidden");
+        document.getElementById("popupTitle").innerText = title;
+        document.getElementById("popupContent").innerText = content;
+        popupModal.classList.remove("hidden");
+    }
 
+    function closePopup() {
+        popupModal.classList.add("hidden");
+        // popupOverlay.classList.add("hidden");
 
-                <div class="cart flex-shrink-0 w-[300px] cursor-pointer " onclick="openPopup(this)">
-                    <figure>
-                        <img class="w-full h-[150px] object-cover rounded-t-lg"
-                            src="{% static 'image/Bankruptcy-Law.jpg' %}" alt="">
-                    </figure>
-                    <div class="bg-white px-3 text-center rounded-b-lg py-3">
-                        <h3 class="text-sm font-bold text-black">Banking & Finance Law</h3>
-                        <p class="text-sm text-black line-clamp-2 overflow-hidden relative">We provide legal assistance
-                            in financial transactions, banking regulations, and compliance...
-                            <span class="flex flex-col absolute">
+    }
 
-                                <span> Business and company registration</span>
-                                <span>Foreign direct investment (FDI) advisory</span>
-                                <span>Mergers & acquisitions (M&A)</span>
-                                <span>Corporate governance & regulatory compliance</span>
-                                <span>Intellectual property (trademarks, patents, copyright)</span>
-                                <span>Commercial contracts and agreements
-                            </span>
-                            <span>
-                        </p>
-                        <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
-                    </div>
-                </div>
+    // Close when clicking outside the content box
+    popupModal.addEventListener("click", function (event) {
+        if (!popupContent.contains(event.target)) {
+            closePopup();
+        }
+    });
+
+    window.openPopup = openPopup;
+    window.closePopup = closePopup;
+});
+
+                </script>
+
+          
             </div>
 
         </div>

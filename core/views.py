@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views import View
-from .models import FAQ,TeamMember,services,publication,about
+from .models import FAQ,TeamMember,services,publication,about,practicearea
 from .forms import ContactForm
 
 # Create your views here.
 
 class indexView(View):
     def get(self, request):
-        faqs = FAQ.objects.filter(category='Home')
+        faqs = FAQ.objects.filter(category='Home'),
+        practice = practicearea.objects.all()
+
         if request.method == "POST":
             form = ContactForm(request.POST)
             if form.is_valid():
@@ -18,6 +20,7 @@ class indexView(View):
         context = {
             'faqs': faqs,
             'form': form,
+            'practice':practice
         }
 
         return render(request, 'index.html',context )
