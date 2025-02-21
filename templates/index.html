@@ -4,7 +4,7 @@
     <!-- Hero Section -->
     <section class="bg-[#274F74] z-10 text-white min-w-full md:h-[658px] ">
         <div class="grid grid-cols-1 md:grid-cols-2  lg:gap-[7.8125rem] md:h-[658px] gap-0 md:gap-10  ">
-            <div class="gap-10 flex flex-col  py-[3rem] md:pt-[9rem] px-4 lg:px-0 max-w-xl lg:ml-auto ">
+            <div class="gap-10 flex flex-col  py-[3rem] md:pt-[9rem] px-4 lg:px-0 md:max-w-xl max-w-full lg:ml-auto ">
                 <div class="flex flex-col gap-10">
                     <!-- <h1>Welcome To Legal Avenues</h1> -->
                     <h2 class="capitalize font-bold lg:text-[2.5rem] text-2xl text-white text-center md:text-left">
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Popup Modal -->
 <div id="popupModal" class="hidden fixed inset-0 bg-gray-500 flex items-center justify-center z-30"  style="background:rgb(0,0,0, 0.5);"> 
     <!-- Added 'flex items-center justify-center' to center the popup -->
-    <div class="bg-black p-6 rounded-lg text-white w-[400px] opacity-100 text-center mx-auto z-50">
+    <div class="bg-black p-6 rounded-lg bg-gray-600 text-white max-w-4xl opacity-100 text-center mx-auto z-50">
         <h3 id="popupTitle" class="text-lg font-bold "></h3>
         <p id="popupContent" class="text-sm  mt-2"></p>
         <button onclick="closePopup()" class="mt-3 bg-[#274F74] text-white px-4 py-2 rounded-md">Complete</button>
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <section class="bg-[#274F74] ">
         <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-[7.8125rem]  ">
-            <div class="  max-w-xl ml-auto lg:px-0 lg:py-[6.25rem] px-3 py-[3rem] col-span-1 md:h-[40.625rem] flex flex-col gap-5 justify-center ">
+            <div class="  max-w-xl lg:ml-auto m-auto lg:px-0 lg:py-[6.25rem] px-3 py-[3rem] col-span-1 md:h-[40.625rem] flex flex-col gap-5 justify-center ">
                 <h3 class="capitalize text-white text-3xl font-bold">We Are Committed To Help You With Your Requirements </h3>
             <form action="{% url 'core:contact' %}" method="POST" class="flex flex-col gap-2">
                 {% csrf_token %}
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
                 <!-- Submit Button -->
-                <div class="flex items-center justify-center mt-4">
+                <div class="flex items-center mt-4">
                     <button type="submit" class="cursor-pointer flex items-center text-center px-4 py-2 gap-1 rounded mt-2 bg-white text-black hover:text-white hover:bg-[#326a9f] transition delay-150 duration-300">
                         Send Message
                         <img class="w-4" src="{% static 'image/Frame.png' %}" alt="Send Icon">

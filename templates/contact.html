@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% block title %}: contact Us{% endblock %}
 {% load static %}
 {% block hero %}
-    <section class="bg-[#274F74] ">
+
+<section>
+    <div class="bg-[#274F74] ">
         <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-[7.8125rem] max-w-7xl m-auto   lg:px-0 lg:py-10 px-[3rem] py-[3rem] col-span-1 md:h-[40.625rem] ">
             <div class="col-span-1 w-full gap-5  ">
                 <p class="text-white text-xl items-center  my-auto">
@@ -13,7 +16,8 @@
 
                     Our Expertise: With over [Number] years of experience in [mention areas of law you specialize in], we are dedicated to providing you with the best legal guidance and solutions.
 
-                    Thank you for choosing Legal Avenues. We look forward to assisting you with your legal needs.                </p>
+                    Thank you for choosing Legal Avenues. We look forward to assisting you with your legal needs.
+                </p>
                     <!--                <img src="{% static 'image/image 3.png' %}" alt="" style="height: 650px;" class="h-[500px] w-full object-cover">-->
             </div>
 
@@ -45,7 +49,7 @@
                 </div>
 
                 <!-- Submit Button -->
-                <div class="flex items-center justify-center mt-4">
+                <div class="flex items-center  mt-4">
                     <button type="submit" class="cursor-pointer flex items-center text-center px-4 py-2 gap-1 rounded mt-2 bg-white text-black hover:text-white hover:bg-[#326a9f] transition delay-150 duration-300">
                         Send Message
                         <img class="w-4" src="{% static 'image/Frame.png' %}" alt="Send Icon">
@@ -53,6 +57,6 @@
                 </div>
             </form>
         </div>
-        
-    <section>
+    </div>
+</section>
 {% endblock %}

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
+{% block title %}publication{% endblock %}
 {% load static %}
 
 {% block hero %}
-
 <section>
   <div class="relative md:h-[300px] h-[200px] w-full">
       <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
@@ -12,30 +12,44 @@
   </div>
 </section>
 
-    <section class="bg-[#274F74] text-white md:px-0 px-3 py-14 ">
-
-      
-      <div class="w-full mb-10  max-w-7xl m-auto ">       
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10  ">
-          {% for publication in publications %}
-            <div class="cart flex-shrink-0 h-[450px] relative rounded-lg ">
-              <figure>
-                <img class="w-full h-[300px] object-cover rounded-lg" src="{{ publication.image }}" alt="{{ publication.name }}">
-              </figure>
-              <div class="text-white ">
-                <h3 class="text-lg font-bold mt-2 capitalize line-clamp-2">{{ publication.title }}</h3>
-<!--                 <div class="text-sm capitalize my-2 line-clamp-2">{{ publication.description|safe }}</div>-->
-                <!-- Corrected: Removed extra loop -->
-                <a href="{% url 'core:publication_detail' publication.slug %}" 
-                  class="inline-block p-1.5 py-0.5  rounded max-w-36 border hover:bg-[#274F74] transition delay-150 duration-300 text-white">
-                    View publication
-                </a>                    
-              </div>
-            </div>
-          {% empty %}
-            <p>No publications found.</p>
-          {% endfor %}
+<section class="bg-[#274F74] text-white md:px-0 px-3 py-14 ">
+  <div class="w-full mb-10 max-w-7xl m-auto">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      {% for publication in publications %}
+        <div class="cart flex-shrink-0 h-[450px] relative rounded-lg">
+          <figure>
+            <img class="w-full h-[300px] object-cover rounded-lg" src="{{ publication.image }}" alt="{{ publication.name }}">
+          </figure>
+          <div class="text-white">
+            <h3 class="text-lg font-bold mt-2 capitalize line-clamp-2">{{ publication.title }}</h3>
+            <a href="{% url 'core:publication_detail' publication.slug %}"
+              class="inline-block p-1.5 py-0.5 rounded max-w-36 border hover:bg-[#274F74] transition delay-150 duration-300 text-white">
+                View publication
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      {% empty %}
+        <p>No publications found.</p>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="flex justify-center mt-8">
+      {% if publications.has_previous %}
+        <a href="?page=1" class="mx-1 px-3 py-1 border rounded bg-white text-black">First</a>
+        <a href="?page={{ publications.previous_page_number }}" class="mx-1 px-3 py-1 border rounded bg-white text-black">Previous</a>
+      {% endif %}
+
+      <span class="mx-2 px-3 py-1 border rounded bg-gray-700 text-white">
+        Page {{ publications.number }} of {{ publications.paginator.num_pages }}
+      </span>
+
+      {% if publications.has_next %}
+        <a href="?page={{ publications.next_page_number }}" class="mx-1 px-3 py-1 border rounded bg-white text-black">Next</a>
+        <a href="?page={{ publications.paginator.num_pages }}" class="mx-1 px-3 py-1 border rounded bg-white text-black">Last</a>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
 {% endblock %}

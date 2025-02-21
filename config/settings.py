@@ -122,7 +122,7 @@ DASHHUB_SETTINGS = {
         "core.TeamMember": "fa-solid fa-user",
         "core.about": "fa-solid fa-user",
         "core.ContactMessage": "fa-solid fa-envelope",
-        "core.practicearea": "fa-solid fa-briefcase",
+        "core.practiceArea": "fa-solid fa-briefcase",
         "core.services": "fa-solid fa-cogs"
 },
 

@@ -5,18 +5,39 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="{% static 'image/logo.jpg' %}">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Legal Avenues - Your trusted legal services">
+    <meta name="keywords" content="Law, Legal Services, Attorneys, Lawyers">
+    <meta name="author" content="Legal Avenues">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Legal Avenues">
+    <meta property="og:description" content="Providing expert legal services to clients worldwide.">
+    <meta property="og:image" content="{% static 'images/og-image.jpg' %}">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Legal Avenues">
+    <meta name="twitter:description" content="Your trusted legal advisors.">
+    <meta name="twitter:image" content="{% static 'images/og-image.jpg' %}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Legal Avenues</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 <!--      <link href="{% static 'css/output.css' %}" rel="stylesheet">-->
+
+      <title>Legal Avenues:{% block title %}{% endblock %}</title>
+
 
 
     {% block extrastyle %}
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/custom.css' %}">
 {% endblock %}
     <!-- Your custom CSS -->
-     
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"

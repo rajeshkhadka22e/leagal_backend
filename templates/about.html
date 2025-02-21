@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+{% block title %}About Us{% endblock %}
 {% load static %}
+
 {% block hero %}
 <!-- About section -->
 <section
@@ -35,7 +37,7 @@
           <figure>
             <img
               src="{{ item.image }}"
-              class="h-52 w-full object-cover"
+              class="min-h-52 w-full object-cover"
               alt="{{ item.title }}"
             />
           </figure>

@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% block title %}team{% endblock %}
 {% load static %}
 
 {% block hero %}
 <section class="bg-[#274F74] ">
-    <div class="max-w-7xl m-auto text-white md:px-0  px-3 py-14 ">
+    <div class="max-w-7xl m-auto text-white md:px-0 px-3 py-14">
         <div class="justify-center text-center mb-10">
-            <h3 class="text-white capitalize text-3xl font-bold">Our Legal team </h3>
+            <h3 class="text-white capitalize text-3xl font-bold">Our Legal Team</h3>
         </div>
-      
-        <div class="w-full">       
+
+        <div class="w-full">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
                 {% for member in team_members %}
                 <div class="cart flex-shrink-0 h-[300px] relative rounded-lg pb-[4rem] mb-14">
@@ -16,10 +17,9 @@
                         <img class="w-full h-[300px] object-cover rounded-lg" src="{{ member.lawyer_image }}" alt="{{ member.name }}">
                     </figure>
                     <div class="absolute bg-white -bottom-[3rem] py-2 px-1.5 text-center w-[265px] md:w-[70%] left-1/2 -translate-x-1/2 shadow-lg rounded-lg">
-                        <h3 class="text-base font-bold  text-black capitalize">{{ member.name }}</h3>
+                        <h3 class="text-base font-bold text-black capitalize">{{ member.name }}</h3>
                         <p class="text-sm text-black capitalize mb-1">{{ member.position|safe }}</p>
                         <a href="{% url 'core:team_member_detail' member.slug %}" class="inline-block px-1 mb-2 text-black rounded max-w-28 border hover:bg-[#274F74] transition delay-150 duration-300 hover:text-white">View Details</a>
-
                     </div>
                 </div>
                 {% empty %}
@@ -27,6 +27,24 @@
                 {% endfor %}
             </div>
         </div>
+
+        <!-- Pagination Controls -->
+        <div class="flex justify-center mt-6 space-x-2">
+            {% if team_members.has_previous %}
+                <a href="?page=1" class="px-3 py-1 border rounded bg-white text-black">First</a>
+                <a href="?page={{ team_members.previous_page_number }}" class="px-3 py-1 border rounded bg-white text-black">Previous</a>
+            {% endif %}
+
+            <span class="px-3 py-1 border rounded bg-gray-700 text-white">
+                Page {{ team_members.number }} of {{ team_members.paginator.num_pages }}
+            </span>
+
+            {% if team_members.has_next %}
+                <a href="?page={{ team_members.next_page_number }}" class="px-3 py-1 border rounded bg-white text-black">Next</a>
+                <a href="?page={{ team_members.paginator.num_pages }}" class="px-3 py-1 border rounded bg-white text-black">Last</a>
+            {% endif %}
+        </div>
+
     </div>
 </section>
 {% endblock %}

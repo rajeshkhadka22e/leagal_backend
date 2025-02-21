@@ -5,26 +5,25 @@ from django.utils.html import format_html
 
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'message', 'date_created')
+    list_display = ('first_name', 'last_name', 'email', 'message' )
     search_fields = ('first_name', 'last_name', 'email')
-    list_filter = ('date_created',)
-    ordering = ('-date_created',)
+
 
 
 
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):
-    list_display = ('question', 'answer', 'category')
+    list_display = ('question', 'category')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
 @admin.register(practicearea)
 class practiceareadmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'image_tag')
+    list_display = ('title', 'image_tag')
 
     def image_tag(self, obj):
-        if obj.image:  
+        if obj.image:
             return format_html('<img src="{}" width="150" height="100" style="border-radius:5px;"/>', obj.image)
         return "No Image"
 
@@ -32,9 +31,8 @@ class practiceareadmin(admin.ModelAdmin):
 
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
-    # inlines = [TeamMemberDescriptionInline]
-    list_display = ('image_tag', 'name', 'position', 'number')  
-    ordering = ('number',) 
+    list_display = ('image_tag', 'name', 'position', 'number')
+    ordering = ('number',)
     prepopulated_fields = {"slug": ("name",)}
     fields = ("name", "slug", "number", "position", "description", "lawyer_image")
 
@@ -42,7 +40,7 @@ class TeamMemberAdmin(admin.ModelAdmin):
         return mark_safe(obj.position)
     description_display.short_description = 'Description'
     def image_tag(self, obj):
-        if obj.lawyer_image:  
+        if obj.lawyer_image:
             return format_html('<img src="{}" width="150" height="100" style="border-radius:5px; object-fit:cover;"/>', obj.lawyer_image)
         return "No Image"
 
@@ -50,20 +48,17 @@ class TeamMemberAdmin(admin.ModelAdmin):
 
 
 
+
 @admin.register(services)
 class services(admin.ModelAdmin):
-    list_display = ('image_tag', 'title', 'is_services')  # Use 'image_tag' instead of 'image'
+    list_display = ('image_tag', 'title')  # Use 'image_tag' instead of 'image'
 
     def image_tag(self, obj):
-        if obj.image:  
+        if obj.image:
             return format_html('<img src="{}" width="150" height="100" style="border-radius:5px;"/>', obj.image)
         return "No Image"
 
     image_tag.short_description = 'Image'
-
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(is_services=True)
-
 
 
 @admin.register(about)
@@ -80,16 +75,15 @@ class about(admin.ModelAdmin):
 
 
 
+
 @admin.register(publication)
 class PublicationAdmin(admin.ModelAdmin):
-    list_display = ('title', 'image_tag', 'is_services')
+    fields = ("title", "slug", "image","description")
+    list_display = ('title', 'image_tag')
     def image_tag(self, obj):
-        if obj.image:  
+        if obj.image:
             return format_html('<img src="{}" width="150" height="100" style="border-radius:5px;"/>', obj.image)
         return "No Image"
 
     image_tag.short_description = 'Image'
 
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(is_services=False)
-    
