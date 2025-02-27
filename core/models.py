@@ -13,6 +13,8 @@ class practicearea(models.Model):
     class Meta:
         verbose_name = "practice Area"
         verbose_name_plural = "Practice Area"
+
+
 class FAQ(models.Model):
     CATEGORY_CHOICES = [
         ('Home', 'Home'),

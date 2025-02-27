@@ -7,14 +7,14 @@ from django.utils.html import format_html
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email', 'message' )
     search_fields = ('first_name', 'last_name', 'email')
-
+    list_per_page = 10
 
 
 
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):
     list_display = ('question', 'category')
-
+    list_per_page = 10
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -32,6 +32,7 @@ class practiceareadmin(admin.ModelAdmin):
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
     list_display = ('image_tag', 'name', 'position', 'number')
+    list_per_page = 10
     ordering = ('number',)
     prepopulated_fields = {"slug": ("name",)}
     fields = ("name", "slug", "number", "position", "description", "lawyer_image")
@@ -52,7 +53,7 @@ class TeamMemberAdmin(admin.ModelAdmin):
 @admin.register(services)
 class services(admin.ModelAdmin):
     list_display = ('image_tag', 'title')  # Use 'image_tag' instead of 'image'
-
+    list_per_page = 10
     def image_tag(self, obj):
         if obj.image:
             return format_html('<img src="{}" width="150" height="100" style="border-radius:5px;"/>', obj.image)
@@ -65,6 +66,7 @@ class services(admin.ModelAdmin):
 class about(admin.ModelAdmin):
     list_display = ('image_tag', 'title','category')
     search_fields = ('title', 'category')
+    list_per_page = 10
     list_filter = ('category',)
     def image_tag(self, obj):
         if obj.image:
@@ -80,6 +82,7 @@ class about(admin.ModelAdmin):
 class PublicationAdmin(admin.ModelAdmin):
     fields = ("title", "slug", "image","description")
     list_display = ('title', 'image_tag')
+    list_per_page = 10
     def image_tag(self, obj):
         if obj.image:
             return format_html('<img src="{}" width="150" height="100" style="border-radius:5px;"/>', obj.image)

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'filehub',
     'core',
     'tinymce',
-
+    'debug_toolbar'
     
 
 ]
@@ -56,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
+
 ]
 
 ROOT_URLCONF = 'config.urls'

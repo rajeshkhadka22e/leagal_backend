@@ -65,7 +65,7 @@
             </div>
 
             <div class="flex flex-col  lg:col-span-2 px-3 md:px-0 py-[3rem] md:py-0">
-                <h2 class=" text-base ">At <span class="text-lg font-bold">Legal Avenues</span>, we understand
+                <p class=" text-base ">At <span class="text-lg font-bold">Legal Avenues</span>, we understand
                     the importance of timely and effective legal solutions. Our team works closely with clients to
                     provide expert guidance and ensure their legal rights are protected. We offer personalized services
                     tailored to meet the specific needs of each client, striving to achieve the best possible outcomes
@@ -120,15 +120,15 @@
                             -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
                         }
                 </style>
-                {% for practice in practice %}
+                {% for practices in practice %}
                     <div class="cart flex-shrink-0 w-[300px] cursor-pointer" onclick="openPopup(this)">
                         <figure>
-                            <img class="w-full h-[150px] object-cover rounded-t-lg" src="{{ practice.image }}" alt="">
+                            <img class="w-full h-[150px] object-cover rounded-t-lg" src="{{ practices.image }}" alt="">
                         </figure>
                         <div class="bg-white px-3 text-center rounded-b-lg py-3">
-                            <h3 class="text-sm font-bold text-black">{{ practice.title }}</h3>
+                            <h3 class="text-sm font-bold text-black">{{ practices.title }}</h3>
                             <p class="text-sm text-black overflow-hidden line-clamp-1">
-                                {{ practice.description }}
+                                {{ practices.description }}
                             </p>
                             <button class="readMore text-blue-600 text-sm mt-1">Read More</button>
                         </div>

@@ -14,20 +14,20 @@
 
 <section class="lg:px-0 md:px-[75px] px-[20px] py-3 max-w-7xl m-auto">
   <div class="space-y-10">
-    {% for Service in Service %}
+    {% for Services in Service %}
     <div class="card flex flex-col md:flex-row gap-20">
       
       <!-- Text Section -->
       <div class="flex flex-col md:w-[65%] w-full justify-center items-center ">
-        <h3 class="text-2xl">{{ Service.title }}</h3>
+        <h3 class="text-2xl">{{ Services.title }}</h3>
         <p class="text-base">
-          {{ Service.description|safe }}
+          {{ Services.description|safe }}
         </p>
       </div>
 
       <!-- Image Section -->
       <figure class="flex md:w-[35%] w-full md:sticky md:top-4 h-max">
-        <img src="{{ Service.image }}" alt="{{ Service.title }}" class="h-[300px] w-full object-cover">
+        <img src="{{ Services.image }}" alt="{{ Services.title }}" class="h-[300px] w-full object-cover">
       </figure>
     </div>
 
