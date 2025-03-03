@@ -28,8 +28,11 @@ class indexView(View):
 
 class AboutView(View):
     def get(self, request):
+        print("🚀 AboutView GET method called!")
         faqs = FAQ.objects.filter(category='About')
         about_items = about.objects.all()
+        print(f"Total items fetched: {faqs.count()}")
+
         context = {
             'faqs': faqs,
             'about_items': about_items,
