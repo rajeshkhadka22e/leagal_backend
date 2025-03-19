@@ -1,0 +1,37 @@
+.no-scrollbar::-webkit-scrollbar {
+    display: none; 
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+#slider {
+    white-space: nowrap;
+    display: flex; 
+    min-width: 100%; 
+}
+.font-body{
+    font-family: "PT Serif", serif;
+
+}
+
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+/* Active link styles */
+.nav-link.border-[#025098] {
+    border-color: #025098;
+}
+.nav-link.text-[#025098] {
+    color: #025098;
+}
+

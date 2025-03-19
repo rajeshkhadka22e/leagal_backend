@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404,redirect
 from django.views import View
 from .models import FAQ,TeamMember,services,publication,about,practicearea
@@ -28,10 +29,9 @@ class indexView(View):
 
 class AboutView(View):
     def get(self, request):
-        print("🚀 AboutView GET method called!")
         faqs = FAQ.objects.filter(category='About')
-        about_items = about.objects.all()
-        print(f"Total items fetched: {faqs.count()}")
+        about_items = list(about.objects.only("title", "image", "category", "description"))
+
 
         context = {
             'faqs': faqs,
@@ -42,7 +42,7 @@ class AboutView(View):
 
 class TeamView(View):
     def get(self, request):
-        team_members_list = TeamMember.objects.all().order_by('number')
+        team_members_list = list(TeamMember.objects.only("name", "position", "lawyer_image", "slug").order_by("number"))
         paginator = Paginator(team_members_list, 8)
 
         page_number = request.GET.get("page")
@@ -81,10 +81,8 @@ class publicationdetailView(View):
 
 class ServiceView(View):
     def get(self, request):
-        Service = services.objects.all()
-        return render(request, 'services.html',{'Service': Service})
-
-
+        service_list = services.objects.all()
+        return render(request, 'services.html',{'Service': service_list})
 
 def Contact(request):
     if request.method == "POST":

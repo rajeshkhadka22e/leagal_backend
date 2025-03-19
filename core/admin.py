@@ -14,7 +14,7 @@ class ContactMessageAdmin(admin.ModelAdmin):
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):
     list_display = ('question', 'category')
-    list_per_page = 10
+    list_per_page = 1000
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

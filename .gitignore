@@ -7,3 +7,4 @@ tailwind.config.js/
 manage.py/
 postcss.config.js/
 REDACTED/
+.vercel

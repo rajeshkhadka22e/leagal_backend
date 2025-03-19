@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* Hides scrollbar for Chrome, Brave, Edge, Safari */
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;  /* Hides scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hides scrollbar for Firefox */
+}
+#slider {
+    white-space: nowrap; /* Ensures content stays in a single line */
+    display: flex; /* Keeps items in a row */
+    min-width: 100%; /* Ensures slider takes full width */
+}
+.font-body{
+    font-family: "PT Serif", serif;
+
+}
